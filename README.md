@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Parabrahman — Escuela de Vedanta Advaita
 
-## Getting Started
+Universidad online interactiva, gratuita y centrada en la enseñanza mediante video.
 
-First, run the development server:
+## Estado
+
+Base técnica del MVP. Las funciones de identidad, panel del alumno y lección pública se implementarán en pasos separados y validados.
+
+## Tecnología
+
+- Next.js con App Router
+- React y TypeScript
+- Tailwind CSS
+- ESLint
+- Node.js 24 LTS
+- Supabase Auth con sesiones SSR basadas en cookies
+
+Se eligió un monolito modular para mantener baja la complejidad inicial y permitir que los dominios funcionales se separen en el futuro solamente cuando exista una necesidad comprobada.
+
+## Desarrollo local
+
+Requisitos:
+
+- Node.js 24
+- npm
+
+En Windows, la forma más sencilla es ejecutar `INICIAR_PARABRAHMAN.cmd`, ubicado en la carpeta superior. El lanzador utiliza el runtime portátil preparado para el proyecto y abre el navegador automáticamente.
+
+En una copia descargada desde GitHub, puedes ejecutar el `INICIAR_PARABRAHMAN.cmd` incluido en esta misma carpeta después de instalar Node.js 24 y ejecutar `npm install`.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación queda disponible en [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuración de Supabase
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Crear un proyecto en Supabase.
+2. Copiar `.env.example` como `.env.local`.
+3. Reemplazar la URL y la clave publicable con los valores del proyecto.
 
-## Learn More
+La clave publicable puede utilizarse en el navegador cuando las tablas están protegidas mediante Row Level Security. Las claves secretas o de servicio nunca deben usar el prefijo `NEXT_PUBLIC_` ni incorporarse al frontend.
 
-To learn more about Next.js, take a look at the following resources:
+## Verificación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No deben guardarse claves o secretos en el repositorio. Las variables locales se incorporarán mediante `.env.local` cuando comience la integración con Supabase.
 
-## Deploy on Vercel
+## Documentación del producto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+La visión, las decisiones arquitectónicas y las fases se mantienen en `docs/DOCUMENTO_MAESTRO_PARABRAHMAN.md`.
