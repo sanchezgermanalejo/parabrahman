@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.6
+**Versión:** 0.7
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -496,6 +496,19 @@ Cada decisión importante se documentará con:
 
 Las decisiones arquitectónicas detalladas podrán vivir como ADR individuales. Este documento conservará su síntesis y enlaces.
 
+### Sincronización obligatoria con GitHub
+
+Un cambio de código, configuración, arquitectura o documentación no se considera terminado hasta que:
+
+1. el documento maestro y los ADR afectados estén actualizados;
+2. las validaciones proporcionales al cambio hayan pasado;
+3. se haya comprobado que no se incluyen secretos ni archivos locales;
+4. exista un commit descriptivo;
+5. el commit esté publicado en GitHub en la rama correspondiente;
+6. el PR asociado refleje el alcance y las validaciones realizadas.
+
+GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los secretos, archivos `.env.local`, dependencias instaladas, compilaciones y credenciales permanecen fuera del repositorio.
+
 ### Decisiones actualmente recomendadas, aún por ratificar
 
 | ID | Decisión | Estado |
@@ -550,14 +563,15 @@ Las decisiones arquitectónicas detalladas podrán vivir como ADR individuales. 
 
 ## 18. Próximo hito
 
-Completar la Fase 0 con cuatro entregables:
+Completar la conexión real con Supabase:
 
-1. respuestas a las preguntas abiertas prioritarias;
-2. inventario del curso y materiales piloto;
-3. comparación documentada entre plataforma propia y LMS existente;
-4. aprobación o modificación de las decisiones DM-001 a DM-008.
+1. crear o confirmar el proyecto Supabase;
+2. agregar localmente la URL y la clave publicable en `.env.local`;
+3. verificar la conexión sin exponer credenciales;
+4. implementar y probar registro, confirmación de correo, acceso, cierre de sesión y recuperación de contraseña;
+5. publicar el cambio y actualizar el PR en GitHub.
 
-Después comenzará el diseño detallado del módulo de identidad y acceso.
+Después se implementará el panel protegido del alumno.
 
 ---
 
@@ -565,6 +579,7 @@ Después comenzará el diseño detallado del módulo de identidad y acceso.
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.7 | 12-07-2026 | Política obligatoria de sincronización con GitHub y actualización del próximo hito | Mantener código, arquitectura y documentación respaldados y trazables en cada entrega |
 | 0.6 | 12-07-2026 | Preparación técnica de Supabase Auth y política de verificación de sesiones | Establecer una base segura antes de construir formularios y rutas protegidas |
 | 0.5 | 12-07-2026 | Aprobación y creación de la base técnica del MVP | Fijar arquitectura, runtime y política de acceso público antes de implementar funciones |
 | 0.4 | 12-07-2026 | Confirmación de identidad y orientación pedagógica centrada en video | Alinear el producto con la experiencia universitaria online definida |
