@@ -2,6 +2,8 @@
 
 Universidad online interactiva, gratuita y centrada en la enseñanza mediante video.
 
+La identidad visual inicial utiliza el emblema Om dorado como marca compacta y la composición panorámica de Parabrahman como portada institucional. Los archivos originales están versionados en `public/brand/`.
+
 ## Estado
 
 Base técnica del MVP. Las funciones de identidad, panel del alumno y lección pública se implementarán en pasos separados y validados.

@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.7
+**Versión:** 0.8
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -33,6 +33,15 @@ El código describe cómo funciona el sistema. Este documento explica por qué s
 Esta escritura es obligatoria en documentación, arquitectura, interfaces, metadatos, código y comunicaciones del proyecto. No se utilizarán como variantes “Para Brahmam”, “Parabrama”, “Paragonal”, “Veranta Baita” ni otras grafías. Los identificadores técnicos usarán `parabrahman` en URLs, nombres de paquetes, prefijos y símbolos en minúsculas, y `Parabrahman` en símbolos de código que utilicen PascalCase.
 
 Si una decisión o contenido futuro contradice esta identidad, deberá señalarse antes de incorporarlo.
+
+### 1.2 Identidad visual inicial
+
+- **Emblema principal:** símbolo Om dorado sobre fondo cósmico oscuro, conservado en `public/brand/parabrahman-emblem.png`.
+- **Portada institucional:** paisaje cósmico panorámico con el nombre Parabrahman y el lema “Tat Tvam Asi — Tú eres Eso”, conservado en `public/brand/parabrahman-hero.png`.
+- **Uso del emblema:** cabeceras compactas, perfiles, miniaturas y presentación móvil.
+- **Uso de la portada:** apertura institucional en pantallas medianas y grandes, metadatos sociales y piezas panorámicas.
+- **Accesibilidad:** el nombre oficial y la información esencial deben existir también como texto HTML; ninguna imagen con texto será la única fuente de significado.
+- **Adaptación:** se respetará la proporción de los originales y se evitarán recortes que eliminen símbolos, lemas o el nombre institucional. Las variantes optimizadas futuras deberán derivarse de estos archivos sin reemplazarlos.
 
 ---
 
@@ -526,6 +535,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-011 | Node.js 24 LTS como runtime reproducible del MVP | Aceptada |
 | DM-012 | Contenido público sin registro; cuenta requerida para funciones personales | Aceptada |
 | DM-013 | Supabase Auth con correo/contraseña, cookies SSR y verificación cercana a los datos | Aceptada |
+| DM-014 | Emblema Om dorado y portada cósmica como identidad visual inicial | Aceptada |
 
 ---
 
@@ -579,6 +589,7 @@ Después se implementará el panel protegido del alumno.
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.8 | 13-07-2026 | Incorporación del emblema principal, la portada institucional y sus reglas de uso | Mantener una identidad visual consistente, adaptable y accesible desde el inicio |
 | 0.7 | 12-07-2026 | Política obligatoria de sincronización con GitHub y actualización del próximo hito | Mantener código, arquitectura y documentación respaldados y trazables en cada entrega |
 | 0.6 | 12-07-2026 | Preparación técnica de Supabase Auth y política de verificación de sesiones | Establecer una base segura antes de construir formularios y rutas protegidas |
 | 0.5 | 12-07-2026 | Aprobación y creación de la base técnica del MVP | Fijar arquitectura, runtime y política de acceso público antes de implementar funciones |
