@@ -15,8 +15,6 @@ export type AuthState = {
   };
 };
 
-export const initialAuthState: AuthState = { status: "idle" };
-
 function readCredentials(formData: FormData) {
   return {
     email: String(formData.get("email") ?? "")

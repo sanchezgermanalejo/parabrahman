@@ -3,11 +3,12 @@
 import { useActionState } from "react";
 
 import {
-  initialAuthState,
   signIn,
   signUp,
   type AuthState,
 } from "./actions";
+
+const initialAuthState: AuthState = { status: "idle" };
 
 type AuthFormProps = {
   mode: "signin" | "signup";
