@@ -8,6 +8,8 @@ La identidad visual inicial utiliza el emblema Om dorado como marca compacta y l
 
 Base técnica del MVP. Las funciones de identidad, panel del alumno y lección pública se implementarán en pasos separados y validados.
 
+La interfaz de autenticación está disponible en `/acceso`. Incluye registro e inicio de sesión mediante acciones del servidor y una ruta de confirmación de correo preparada para Supabase. La prueba real requiere las variables locales del proyecto.
+
 ## Tecnología
 
 - Next.js con App Router

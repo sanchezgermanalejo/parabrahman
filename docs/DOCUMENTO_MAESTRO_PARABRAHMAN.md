@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.8
+**Versión:** 0.9
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -536,6 +536,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-012 | Contenido público sin registro; cuenta requerida para funciones personales | Aceptada |
 | DM-013 | Supabase Auth con correo/contraseña, cookies SSR y verificación cercana a los datos | Aceptada |
 | DM-014 | Emblema Om dorado y portada cósmica como identidad visual inicial | Aceptada |
+| DM-015 | Formularios de acceso con acciones del servidor, validación en servidor y confirmación PKCE | Aceptada |
 
 ---
 
@@ -577,9 +578,11 @@ Completar la conexión real con Supabase:
 
 1. crear o confirmar el proyecto Supabase;
 2. agregar localmente la URL y la clave publicable en `.env.local`;
-3. verificar la conexión sin exponer credenciales;
-4. implementar y probar registro, confirmación de correo, acceso, cierre de sesión y recuperación de contraseña;
-5. publicar el cambio y actualizar el PR en GitHub.
+3. configurar la URL del sitio y la plantilla de confirmación de correo;
+4. verificar la conexión sin exponer credenciales;
+5. probar registro, confirmación de correo, acceso y cierre de sesión;
+6. implementar y probar la recuperación de contraseña;
+7. publicar el cambio y actualizar el PR en GitHub.
 
 Después se implementará el panel protegido del alumno.
 
@@ -589,6 +592,7 @@ Después se implementará el panel protegido del alumno.
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.9 | 13-07-2026 | Interfaz real de registro e ingreso, validación del lado servidor y callback de confirmación preparados | Construir autenticación segura sin introducir usuarios simulados ni exponer credenciales |
 | 0.8 | 13-07-2026 | Incorporación del emblema principal, la portada institucional y sus reglas de uso | Mantener una identidad visual consistente, adaptable y accesible desde el inicio |
 | 0.7 | 12-07-2026 | Política obligatoria de sincronización con GitHub y actualización del próximo hito | Mantener código, arquitectura y documentación respaldados y trazables en cada entrega |
 | 0.6 | 12-07-2026 | Preparación técnica de Supabase Auth y política de verificación de sesiones | Establecer una base segura antes de construir formularios y rutas protegidas |

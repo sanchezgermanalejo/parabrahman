@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import emblem from "../../public/brand/parabrahman-emblem.png";
 import hero from "../../public/brand/parabrahman-hero.png";
 
@@ -29,9 +30,17 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <p className="hidden text-xs uppercase tracking-[0.22em] text-stone-500 sm:block">
-            MVP · En construcción
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="hidden text-xs uppercase tracking-[0.22em] text-stone-500 lg:block">
+              MVP · En construcción
+            </p>
+            <Link
+              href="/acceso"
+              className="rounded-full border border-amber-300/30 px-4 py-2 text-sm text-amber-100 transition hover:border-amber-300/60 hover:bg-amber-300/10"
+            >
+              Acceder
+            </Link>
+          </div>
         </header>
 
         <section className="border-b border-amber-100/10 bg-black">
