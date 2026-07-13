@@ -13,18 +13,27 @@ echo   Parabrahman - Escuela de Vedanta Advaita
 echo =====================================================
 echo.
 echo Iniciando la plataforma en http://localhost:3000
-echo Para detenerla, vuelve a esta ventana y presiona Ctrl+C.
+echo El servidor quedara abierto en una ventana minimizada.
 echo.
-
-start "" powershell.exe -NoProfile -WindowStyle Hidden -Command "Start-Sleep -Seconds 4; Start-Process 'http://localhost:3000'"
 
 if exist "%PORTABLE_NODE%" if exist "%NPM_CLI%" (
   set "PATH=%ROOT%..\work\runtime\node_modules\node-win-x64\bin;%PATH%"
-  "%PORTABLE_NODE%" "%NPM_CLI%" run dev
+  powershell.exe -NoProfile -Command "if (Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }"
+  if errorlevel 1 start "Parabrahman servidor" /min "%PORTABLE_NODE%" "%NPM_CLI%" run dev
 ) else (
-  npm run dev
+  powershell.exe -NoProfile -Command "if (Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }"
+  if errorlevel 1 start "Parabrahman servidor" /min npm run dev
+)
+
+powershell.exe -NoProfile -Command "$limite=(Get-Date).AddSeconds(45); do { try { $r=Invoke-WebRequest 'http://localhost:3000' -UseBasicParsing -TimeoutSec 2; if ($r.StatusCode -eq 200) { exit 0 } } catch {}; Start-Sleep -Milliseconds 500 } while ((Get-Date) -lt $limite); exit 1"
+if errorlevel 1 (
+  echo.
+  echo El servidor no pudo responder. Revisa la ventana minimizada.
+  pause
+  exit /b 1
 )
 
 echo.
-echo La plataforma se ha detenido.
+echo Parabrahman esta listo. Abriendo el navegador...
+start "" "http://localhost:3000"
 pause
