@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import { academyCourse, youtubeChannel } from "@/content/academy";
 import { getCurrentStudent } from "@/lib/auth/current-student";
 import { getLessonDiscussions } from "@/lib/discussions";
+import { getStudentProgress } from "@/lib/progress/server-progress";
 
 export const metadata = {
   title: "Bienvenida al recorrido — Parabrahman",
@@ -15,9 +16,10 @@ export const metadata = {
 
 export default async function WelcomeLessonPage() {
   const lesson = academyCourse.lessons[0];
-  const [student, discussion] = await Promise.all([
+  const [student, discussion, progress] = await Promise.all([
     getCurrentStudent(),
     getLessonDiscussions(lesson.id),
+    getStudentProgress(),
   ]);
 
   return (
@@ -84,6 +86,7 @@ export default async function WelcomeLessonPage() {
                 lessonId={lesson.id}
                 passingScore={lesson.quiz.passingScore}
                 questions={lesson.quiz.questions}
+                initiallyPassed={progress.completedLessonIds.includes(lesson.id)}
               />
 
               <LessonDiscussion

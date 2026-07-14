@@ -11,16 +11,23 @@ import {
   subscribeToProgress,
 } from "@/lib/progress/browser-progress";
 
-export function LearningProgress() {
+export function LearningProgress({
+  initialCompleted = [],
+  synchronized = false,
+}: {
+  initialCompleted?: string[];
+  synchronized?: boolean;
+}) {
   const snapshot = useSyncExternalStore(
     subscribeToProgress,
     getProgressSnapshot,
     getServerProgressSnapshot,
   );
-  const completed = readCompletedLessons(snapshot).filter((lessonId) =>
-    availableLessonIds.includes(
-      lessonId as (typeof availableLessonIds)[number],
-    ),
+  const completed = [...new Set([...initialCompleted, ...readCompletedLessons(snapshot)])].filter(
+    (lessonId) =>
+      availableLessonIds.includes(
+        lessonId as (typeof availableLessonIds)[number],
+      ),
   );
   const percent = Math.round(
     (completed.length / Math.max(availableLessonIds.length, 1)) * 100,
@@ -48,6 +55,12 @@ export function LearningProgress() {
           style={{ width: `${percent}%` }}
         />
       </div>
+
+      <p className="mt-4 text-xs text-stone-500">
+        {synchronized
+          ? "Progreso sincronizado con tu cuenta."
+          : "Progreso local disponible; activa la tabla de Supabase para sincronizarlo."}
+      </p>
 
       <Link
         href={firstLesson.href}

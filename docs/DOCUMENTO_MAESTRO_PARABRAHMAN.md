@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.18
+**Versión:** 0.19
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -202,7 +202,7 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 
 El canal oficial `https://www.youtube.com/@parabrahmanyosoy` es la fuente audiovisual central. YouTube conserva la responsabilidad de alojamiento, publicación y reproducción; Parabrahman organiza esos contenidos en recorridos, unidades y lecciones. El catálogo académico se mantiene separado del canal para permitir selección, secuenciación y contexto sin duplicar los videos.
 
-El primer incremento registra lecciones completadas en el almacenamiento local del navegador, lo que permite validar inmediatamente la experiencia sin crear tablas prematuras. Esta solución no sincroniza dispositivos y deberá reemplazarse por una tabla `lesson_progress` de Supabase con RLS antes de considerar terminado el núcleo educativo.
+Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumnos autenticados, después de validar el cuestionario nuevamente en el servidor. Las políticas RLS limitan cada registro a su propietario. El almacenamiento local permanece temporalmente como respaldo para visitantes y mientras se aplica la migración, pero no es la fuente académica oficial.
 
 ### Biblioteca
 
@@ -572,7 +572,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-016 | Recuperación de contraseña mediante PKCE y respuesta que no revela cuentas registradas | Aceptada |
 | DM-017 | Nombre visible del MVP en metadatos autenticados; perfil académico futuro en tabla `profiles` con RLS | Aceptada |
 | DM-018 | Canal `@parabrahmanyosoy` como fuente audiovisual central y catálogo académico desacoplado | Aceptada |
-| DM-019 | Progreso local solo para validar el primer recorrido; migración obligatoria a Supabase antes de cerrar Fase 1 | Aceptada temporalmente |
+| DM-019 | Progreso local como respaldo temporal, no como fuente académica oficial | Reemplazada por DM-028 |
 | DM-020 | Uso exclusivo de “escuela” en producto y documentación | Aceptada |
 | DM-021 | Zoom separado de YouTube: reuniones y conversaciones en `/encuentros`, con acceso externo en el MVP | Aceptada |
 | DM-022 | Profundidad espiritual-tecnológica mediante CSS, movimiento reducido accesible y cero dependencia visual adicional | Aceptada |
@@ -581,6 +581,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-025 | Comentarios y preguntas de lectura pública, publicación autenticada, cinco estrellas y RLS | Aceptada |
 | DM-026 | Una lección se completa únicamente al aprobar su cuestionario mínimo | Aceptada |
 | DM-027 | Accesos de soporte identificados mediante isotipo de WhatsApp y un robot amable con auriculares en SVG local | Aceptada |
+| DM-028 | Progreso autenticado en Supabase con RLS y validación del cuestionario en servidor | Aceptada |
 
 ---
 
@@ -622,7 +623,7 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 
 1. seleccionar el primer video o lista de reproducción del canal oficial;
 2. registrar título, objetivo, duración y orden académico sin inventar metadatos;
-3. crear la tabla `lesson_progress` en Supabase con RLS y migrar el progreso local;
+3. aplicar la migración `lesson_progress` en Supabase y verificar la sincronización entre dos dispositivos;
 4. probar registro, acceso, perfil, recuperación, reproducción y avance de extremo a extremo;
 5. incorporar el enlace, horario y primeras grabaciones reales de Zoom;
 6. configurar el número institucional de WhatsApp;
@@ -638,6 +639,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.19 | 13-07-2026 | Progreso persistente con Supabase, RLS, corrección en servidor y respaldo local | Permitir continuidad entre dispositivos sin obligar al visitante a registrarse ni confiar en una puntuación calculada por el navegador |
 | 0.18 | 13-07-2026 | El asistente adopta la imagen de un robot amable con auriculares y micrófono | Comunicar de inmediato inteligencia digital y atención al público sin confundirlo con una figura docente humana |
 | 0.17 | 13-07-2026 | Identidad visual específica para los accesos flotantes de WhatsApp y asistente | Mejorar el reconocimiento inmediato, la claridad funcional y la nitidez sin agregar imágenes remotas ni dependencias |
 | 0.16 | 13-07-2026 | Comunidad pública con estrellas, permisos RLS y aprobación mediante cuestionario | Convertir cada lección en una experiencia verificable y participativa sin permitir publicaciones anónimas o progreso manual |

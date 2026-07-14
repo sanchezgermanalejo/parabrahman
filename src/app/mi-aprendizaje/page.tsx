@@ -3,13 +3,17 @@ import { redirect } from "next/navigation";
 import { LearningProgress } from "@/components/learning-progress";
 import { SiteHeader } from "@/components/site-header";
 import { getCurrentStudent } from "@/lib/auth/current-student";
+import { getStudentProgress } from "@/lib/progress/server-progress";
 
 export const metadata = {
   title: "Mi aprendizaje — Parabrahman",
 };
 
 export default async function LearningDashboardPage() {
-  const student = await getCurrentStudent();
+  const [student, progress] = await Promise.all([
+    getCurrentStudent(),
+    getStudentProgress(),
+  ]);
 
   if (!student) redirect("/acceso?next=/mi-aprendizaje");
 
@@ -31,13 +35,16 @@ export default async function LearningDashboardPage() {
         </p>
 
         <div className="mt-12">
-          <LearningProgress />
+          <LearningProgress
+            initialCompleted={progress.completedLessonIds}
+            synchronized={progress.available}
+          />
         </div>
 
         <p className="mt-6 text-sm leading-6 text-stone-500">
-          Durante esta primera etapa el avance se conserva en este navegador.
-          La sincronización entre dispositivos se añadirá con la tabla de
-          progreso de Supabase en el siguiente incremento.
+          El avance aprobado se sincroniza con tu cuenta cuando la tabla de
+          progreso está activa. El navegador conserva una copia de respaldo
+          durante la transición.
         </p>
       </section>
     </main>
