@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 
 import {
@@ -12,9 +13,10 @@ const initialAuthState: AuthState = { status: "idle" };
 
 type AuthFormProps = {
   mode: "signin" | "signup";
+  nextPath?: string;
 };
 
-export function AuthForm({ mode }: AuthFormProps) {
+export function AuthForm({ mode, nextPath = "/" }: AuthFormProps) {
   const isSignup = mode === "signup";
   const action = isSignup ? signUp : signIn;
   const [state, formAction, pending] = useActionState<AuthState, FormData>(
@@ -24,6 +26,7 @@ export function AuthForm({ mode }: AuthFormProps) {
 
   return (
     <form action={formAction} className="flex h-full flex-col gap-5">
+      <input type="hidden" name="next" value={nextPath} />
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300/70">
           {isSignup ? "Primera vez" : "Ya tengo cuenta"}
@@ -37,6 +40,28 @@ export function AuthForm({ mode }: AuthFormProps) {
             : "Continúa tu recorrido desde donde lo dejaste."}
         </p>
       </div>
+
+      {isSignup && (
+        <label className="grid gap-2 text-sm text-stone-300">
+          Nombre y apellido
+          <input
+            className="rounded-xl border border-stone-700 bg-black/35 px-4 py-3 text-stone-100 outline-none transition placeholder:text-stone-600 focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/10"
+            name="fullName"
+            type="text"
+            autoComplete="name"
+            placeholder="Tu nombre y apellido"
+            minLength={2}
+            maxLength={80}
+            required
+            aria-invalid={Boolean(state.fieldErrors?.fullName)}
+          />
+          {state.fieldErrors?.fullName && (
+            <span className="text-sm text-red-300">
+              {state.fieldErrors.fullName}
+            </span>
+          )}
+        </label>
+      )}
 
       <label className="grid gap-2 text-sm text-stone-300">
         Correo electrónico
@@ -71,6 +96,15 @@ export function AuthForm({ mode }: AuthFormProps) {
           </span>
         )}
       </label>
+
+      {!isSignup && (
+        <Link
+          href="/recuperar"
+          className="-mt-2 text-sm text-amber-200/70 transition hover:text-amber-200"
+        >
+          ¿Olvidaste tu contraseña?
+        </Link>
+      )}
 
       {state.message && (
         <p

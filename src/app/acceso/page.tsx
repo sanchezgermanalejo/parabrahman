@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 import emblem from "../../../public/brand/parabrahman-emblem.png";
+import { getCurrentStudent } from "@/lib/auth/current-student";
 import { hasSupabaseConfig } from "@/lib/supabase/config";
 
 import { AuthForm } from "./auth-form";
@@ -13,13 +15,22 @@ export const metadata = {
 type AccessPageProps = {
   searchParams: Promise<{
     confirmado?: string;
+    contrasena?: string;
     error?: string;
+    next?: string;
   }>;
 };
 
 export default async function AccessPage({ searchParams }: AccessPageProps) {
   const configured = hasSupabaseConfig();
   const query = await searchParams;
+  const student = await getCurrentStudent();
+  const nextPath =
+    query.next?.startsWith("/") && !query.next.startsWith("//")
+      ? query.next
+      : "/";
+
+  if (student) redirect(nextPath);
 
   return (
     <main className="min-h-screen bg-[#03070d] px-4 py-8 text-stone-100 sm:px-8">
@@ -76,6 +87,12 @@ export default async function AccessPage({ searchParams }: AccessPageProps) {
           </div>
         )}
 
+        {query.contrasena === "actualizada" && (
+          <div className="mb-6 rounded-2xl border border-emerald-300/25 bg-emerald-300/10 px-5 py-4 text-sm leading-6 text-emerald-100">
+            Contraseña actualizada correctamente. Ya puedes ingresar.
+          </div>
+        )}
+
         {query.error === "confirmacion" && (
           <div className="mb-6 rounded-2xl border border-red-300/25 bg-red-300/10 px-5 py-4 text-sm leading-6 text-red-100">
             El enlace de confirmación no es válido o ya venció. Solicita uno
@@ -84,11 +101,11 @@ export default async function AccessPage({ searchParams }: AccessPageProps) {
         )}
 
         <section className="grid gap-5 md:grid-cols-2">
-          <article className="rounded-3xl border border-amber-100/10 bg-stone-900/70 p-6 shadow-xl shadow-black/20 sm:p-8">
-            <AuthForm mode="signin" />
+          <article className="luminous-card rounded-3xl border border-amber-100/10 bg-stone-900/70 p-6 shadow-xl shadow-black/20 sm:p-8">
+            <AuthForm mode="signin" nextPath={nextPath} />
           </article>
-          <article className="rounded-3xl border border-amber-100/10 bg-[radial-gradient(circle_at_top_right,rgba(217,160,85,0.12),transparent_45%),rgba(28,25,23,0.72)] p-6 shadow-xl shadow-black/20 sm:p-8">
-            <AuthForm mode="signup" />
+          <article className="luminous-card rounded-3xl border border-amber-100/10 bg-[radial-gradient(circle_at_top_right,rgba(217,160,85,0.12),transparent_45%),rgba(28,25,23,0.72)] p-6 shadow-xl shadow-black/20 sm:p-8">
+            <AuthForm mode="signup" nextPath={nextPath} />
           </article>
         </section>
       </div>

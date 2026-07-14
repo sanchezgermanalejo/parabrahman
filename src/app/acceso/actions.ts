@@ -10,6 +10,7 @@ export type AuthState = {
   status: "idle" | "error" | "success";
   message?: string;
   fieldErrors?: {
+    fullName?: string;
     email?: string;
     password?: string;
   };
@@ -17,6 +18,9 @@ export type AuthState = {
 
 function readCredentials(formData: FormData) {
   return {
+    fullName: String(formData.get("fullName") ?? "")
+      .trim()
+      .replace(/\s+/g, " "),
     email: String(formData.get("email") ?? "")
       .trim()
       .toLowerCase(),
@@ -24,8 +28,22 @@ function readCredentials(formData: FormData) {
   };
 }
 
-function validateCredentials(email: string, password: string, signup: boolean) {
+function readNextPath(formData: FormData) {
+  const value = String(formData.get("next") ?? "");
+  return value.startsWith("/") && !value.startsWith("//") ? value : "/";
+}
+
+function validateCredentials(
+  fullName: string,
+  email: string,
+  password: string,
+  signup: boolean,
+) {
   const fieldErrors: AuthState["fieldErrors"] = {};
+
+  if (signup && (fullName.length < 2 || fullName.length > 80)) {
+    fieldErrors.fullName = "Ingresa un nombre de entre 2 y 80 caracteres.";
+  }
 
   if (!/^\S+@\S+\.\S+$/.test(email)) {
     fieldErrors.email = "Ingresa un correo electrónico válido.";
@@ -54,8 +72,9 @@ export async function signIn(
 ): Promise<AuthState> {
   if (!hasSupabaseConfig()) return configurationError();
 
-  const { email, password } = readCredentials(formData);
-  const fieldErrors = validateCredentials(email, password, false);
+  const { fullName, email, password } = readCredentials(formData);
+  const nextPath = readNextPath(formData);
+  const fieldErrors = validateCredentials(fullName, email, password, false);
 
   if (Object.keys(fieldErrors).length > 0) {
     return { status: "error", fieldErrors };
@@ -71,7 +90,7 @@ export async function signIn(
     };
   }
 
-  redirect("/");
+  redirect(nextPath);
 }
 
 export async function signUp(
@@ -80,8 +99,9 @@ export async function signUp(
 ): Promise<AuthState> {
   if (!hasSupabaseConfig()) return configurationError();
 
-  const { email, password } = readCredentials(formData);
-  const fieldErrors = validateCredentials(email, password, true);
+  const { fullName, email, password } = readCredentials(formData);
+  const nextPath = readNextPath(formData);
+  const fieldErrors = validateCredentials(fullName, email, password, true);
 
   if (Object.keys(fieldErrors).length > 0) {
     return { status: "error", fieldErrors };
@@ -97,6 +117,7 @@ export async function signUp(
     email,
     password,
     options: {
+      data: { full_name: fullName },
       emailRedirectTo: `${siteUrl.replace(/\/$/, "")}/auth/confirm`,
     },
   });
@@ -109,7 +130,7 @@ export async function signUp(
     };
   }
 
-  if (data.session) redirect("/");
+  if (data.session) redirect(nextPath);
 
   return {
     status: "success",

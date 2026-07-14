@@ -18,7 +18,12 @@ function isEmailOtpType(value: string | null): value is EmailOtpType {
 }
 
 export async function GET(request: NextRequest) {
-  const destination = new URL("/acceso", request.url);
+  const requestedNext = request.nextUrl.searchParams.get("next");
+  const nextPath =
+    requestedNext?.startsWith("/") && !requestedNext.startsWith("//")
+      ? requestedNext
+      : "/acceso";
+  const destination = new URL(nextPath, request.url);
 
   if (!hasSupabaseConfig()) {
     destination.searchParams.set("error", "configuracion");
@@ -33,7 +38,9 @@ export async function GET(request: NextRequest) {
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
-      destination.searchParams.set("confirmado", "1");
+      if (nextPath === "/acceso") {
+        destination.searchParams.set("confirmado", "1");
+      }
       return NextResponse.redirect(destination);
     }
   }
@@ -44,11 +51,14 @@ export async function GET(request: NextRequest) {
       type,
     });
     if (!error) {
-      destination.searchParams.set("confirmado", "1");
+      if (nextPath === "/acceso") {
+        destination.searchParams.set("confirmado", "1");
+      }
       return NextResponse.redirect(destination);
     }
   }
 
-  destination.searchParams.set("error", "confirmacion");
-  return NextResponse.redirect(destination);
+  const errorDestination = new URL("/acceso", request.url);
+  errorDestination.searchParams.set("error", "confirmacion");
+  return NextResponse.redirect(errorDestination);
 }

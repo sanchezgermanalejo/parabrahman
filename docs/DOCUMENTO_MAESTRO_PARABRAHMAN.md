@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.9
+**Versión:** 0.18
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -42,12 +42,16 @@ Si una decisión o contenido futuro contradice esta identidad, deberá señalars
 - **Uso de la portada:** apertura institucional en pantallas medianas y grandes, metadatos sociales y piezas panorámicas.
 - **Accesibilidad:** el nombre oficial y la información esencial deben existir también como texto HTML; ninguna imagen con texto será la única fuente de significado.
 - **Adaptación:** se respetará la proporción de los originales y se evitarán recortes que eliminen símbolos, lemas o el nombre institucional. Las variantes optimizadas futuras deberán derivarse de estos archivos sin reemplazarlos.
+- **Lenguaje de interfaz:** profundidad oscura, luz dorada vinculada a la identidad espiritual y acentos azules vinculados a la dimensión tecnológica.
+- **Movimiento:** lento, ambiental y funcional; nunca debe competir con el video, la lectura o los formularios.
+- **Accesibilidad del movimiento:** toda animación deberá respetar `prefers-reduced-motion`, mantener contraste y evitar destellos rápidos.
+- **Rendimiento:** se priorizarán CSS y recursos locales antes que bibliotecas de animación o efectos que aumenten innecesariamente el JavaScript del cliente.
 
 ---
 
 ## 2. Misión
 
-Facilitar el acceso libre, ordenado y sostenible al conocimiento ofrecido por Parabrahman mediante una universidad online interactiva, centrada en la enseñanza por video y capaz de conectar contenidos, docentes y estudiantes sin establecer barreras económicas de acceso.
+Facilitar el acceso libre, ordenado y sostenible al conocimiento ofrecido por Parabrahman mediante una escuela online interactiva, centrada en la enseñanza por video y capaz de conectar contenidos, docentes y estudiantes sin establecer barreras económicas de acceso.
 
 ## 3. Visión
 
@@ -145,7 +149,7 @@ Estos indicadores son hipótesis y deberán recibir metas después del piloto:
 ### Lo que la plataforma será
 
 - Un entorno educativo propio de Parabrahman.
-- Una universidad online interactiva centrada principalmente en lecciones de video.
+- Una escuela online interactiva centrada principalmente en lecciones de video.
 - Un catálogo público de cursos y recursos.
 - Un espacio para aprendizaje asincrónico y encuentros programados.
 - Una biblioteca digital con derechos y metadatos controlados.
@@ -196,6 +200,10 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 - Continuación desde el último punto.
 - Evaluaciones y certificados en fases posteriores.
 
+El canal oficial `https://www.youtube.com/@parabrahmanyosoy` es la fuente audiovisual central. YouTube conserva la responsabilidad de alojamiento, publicación y reproducción; Parabrahman organiza esos contenidos en recorridos, unidades y lecciones. El catálogo académico se mantiene separado del canal para permitir selección, secuenciación y contexto sin duplicar los videos.
+
+El primer incremento registra lecciones completadas en el almacenamiento local del navegador, lo que permite validar inmediatamente la experiencia sin crear tablas prematuras. Esta solución no sincroniza dispositivos y deberá reemplazarse por una tabla `lesson_progress` de Supabase con RLS antes de considerar terminado el núcleo educativo.
+
 ### Biblioteca
 
 - Obras, autores, temas, idiomas y ediciones.
@@ -212,6 +220,8 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 - Recordatorios y cambios de agenda.
 - Integración automática con Zoom solo si la operación manual deja de ser suficiente.
 
+Zoom tendrá un espacio propio y visible junto al canal de YouTube. YouTube concentrará las enseñanzas unipersonales; `/encuentros` presentará reuniones en vivo, conversaciones con participantes y grabaciones anteriores mediante miniaturas. La portada destacará el próximo encuentro. Hasta disponer de enlaces reales, la interfaz mostrará un estado vacío y no inventará reuniones.
+
 ### Comunidad
 
 - Foros asociados a cursos.
@@ -219,6 +229,16 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 - Reglas, reportes y moderación.
 - Notificaciones controlables.
 - Sin chat privado durante las primeras fases.
+
+La primera lección incorpora una conversación pública con comentarios o preguntas, autor visible y valoración obligatoria de una a cinco estrellas. La lectura es pública y la publicación requiere una cuenta autenticada. La tabla `lesson_discussions` aplica RLS para impedir publicaciones en nombre de otra persona. Antes de ampliar el acceso deberán incorporarse reporte, moderación y límites de frecuencia.
+
+### Evaluación y aprobación
+
+- Cada lección publicada deberá definir un cuestionario breve y un puntaje mínimo.
+- La finalización no se otorgará mediante un botón manual: se registrará al aprobar el cuestionario.
+- Cada intento mostrará el puntaje sin revelar automáticamente una interpretación filosófica no documentada.
+- Los cuestionarios de conocimiento se redactarán a partir de los objetivos y materiales reales de la lección.
+- El resultado local del MVP se migrará a Supabase junto con el progreso académico.
 
 ### Sostenibilidad
 
@@ -246,6 +266,18 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 - Declaración explícita cuando no existe evidencia suficiente.
 - Reporte y revisión humana de respuestas problemáticas.
 - Separación de corpus según permisos.
+
+La interfaz flotante del asistente se incorpora antes que el motor de conocimiento para validar lenguaje, preguntas frecuentes y ubicación. En esta etapa solo responde información institucional explícita y declara su límite ante consultas filosóficas. No se presentará como tutor entrenado hasta disponer de materiales autorizados, evaluación y citas verificables.
+
+El orden de implementación será: inventario de fuentes, permisos, extracción, fragmentos versionados, índices semánticos, recuperación, generación limitada al contexto, citas, evaluación humana y despliegue gradual. Se mantendrá separada la orientación institucional de la interpretación filosófica.
+
+### Atención y consultas
+
+- Botón flotante de WhatsApp disponible en todas las rutas.
+- Número público configurado mediante variable de entorno, nunca fijado en componentes.
+- Mensaje inicial institucional y apertura en una pestaña externa.
+- Estado informativo cuando el número todavía no está configurado.
+- Ningún número privado, clave, token o historial de conversación se guardará en GitHub.
 
 ---
 
@@ -531,12 +563,24 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-007 | Patrocinio directo antes que red publicitaria conductual | Recomendada |
 | DM-008 | RAG antes que entrenamiento propio para el tutor | Recomendada |
 | DM-009 | Identidad “Parabrahman — Escuela de Vedanta Advaita” | Aceptada |
-| DM-010 | Universidad online interactiva centrada en video | Aceptada |
+| DM-010 | Escuela online interactiva centrada en video | Aceptada |
 | DM-011 | Node.js 24 LTS como runtime reproducible del MVP | Aceptada |
 | DM-012 | Contenido público sin registro; cuenta requerida para funciones personales | Aceptada |
 | DM-013 | Supabase Auth con correo/contraseña, cookies SSR y verificación cercana a los datos | Aceptada |
 | DM-014 | Emblema Om dorado y portada cósmica como identidad visual inicial | Aceptada |
 | DM-015 | Formularios de acceso con acciones del servidor, validación en servidor y confirmación PKCE | Aceptada |
+| DM-016 | Recuperación de contraseña mediante PKCE y respuesta que no revela cuentas registradas | Aceptada |
+| DM-017 | Nombre visible del MVP en metadatos autenticados; perfil académico futuro en tabla `profiles` con RLS | Aceptada |
+| DM-018 | Canal `@parabrahmanyosoy` como fuente audiovisual central y catálogo académico desacoplado | Aceptada |
+| DM-019 | Progreso local solo para validar el primer recorrido; migración obligatoria a Supabase antes de cerrar Fase 1 | Aceptada temporalmente |
+| DM-020 | Uso exclusivo de “escuela” en producto y documentación | Aceptada |
+| DM-021 | Zoom separado de YouTube: reuniones y conversaciones en `/encuentros`, con acceso externo en el MVP | Aceptada |
+| DM-022 | Profundidad espiritual-tecnológica mediante CSS, movimiento reducido accesible y cero dependencia visual adicional | Aceptada |
+| DM-023 | WhatsApp global configurado por variable pública y sin credenciales en código | Aceptada |
+| DM-024 | Asistente institucional limitado ahora; tutor filosófico futuro mediante RAG, fuentes citadas y evaluación humana | Aceptada |
+| DM-025 | Comentarios y preguntas de lectura pública, publicación autenticada, cinco estrellas y RLS | Aceptada |
+| DM-026 | Una lección se completa únicamente al aprobar su cuestionario mínimo | Aceptada |
+| DM-027 | Accesos de soporte identificados mediante isotipo de WhatsApp y un robot amable con auriculares en SVG local | Aceptada |
 
 ---
 
@@ -574,17 +618,19 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 
 ## 18. Próximo hito
 
-Completar la conexión real con Supabase:
+Completar la primera unidad audiovisual con datos editoriales reales:
 
-1. crear o confirmar el proyecto Supabase;
-2. agregar localmente la URL y la clave publicable en `.env.local`;
-3. configurar la URL del sitio y la plantilla de confirmación de correo;
-4. verificar la conexión sin exponer credenciales;
-5. probar registro, confirmación de correo, acceso y cierre de sesión;
-6. implementar y probar la recuperación de contraseña;
-7. publicar el cambio y actualizar el PR en GitHub.
+1. seleccionar el primer video o lista de reproducción del canal oficial;
+2. registrar título, objetivo, duración y orden académico sin inventar metadatos;
+3. crear la tabla `lesson_progress` en Supabase con RLS y migrar el progreso local;
+4. probar registro, acceso, perfil, recuperación, reproducción y avance de extremo a extremo;
+5. incorporar el enlace, horario y primeras grabaciones reales de Zoom;
+6. configurar el número institucional de WhatsApp;
+7. inventariar y autorizar el primer corpus del tutor;
+8. aplicar la migración de comunidad y probar dos usuarios reales;
+9. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
 
-Después se implementará el panel protegido del alumno.
+Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
 ---
 
@@ -592,6 +638,15 @@ Después se implementará el panel protegido del alumno.
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.18 | 13-07-2026 | El asistente adopta la imagen de un robot amable con auriculares y micrófono | Comunicar de inmediato inteligencia digital y atención al público sin confundirlo con una figura docente humana |
+| 0.17 | 13-07-2026 | Identidad visual específica para los accesos flotantes de WhatsApp y asistente | Mejorar el reconocimiento inmediato, la claridad funcional y la nitidez sin agregar imágenes remotas ni dependencias |
+| 0.16 | 13-07-2026 | Comunidad pública con estrellas, permisos RLS y aprobación mediante cuestionario | Convertir cada lección en una experiencia verificable y participativa sin permitir publicaciones anónimas o progreso manual |
+| 0.15 | 13-07-2026 | Botones flotantes de WhatsApp y asistente institucional, con límites explícitos y plan RAG | Habilitar consultas desde toda la escuela sin presentar respuestas filosóficas no verificadas como conocimiento |
+| 0.14 | 13-07-2026 | Sistema visual con profundidad, resplandor, movimiento ambiental y adaptación a movimiento reducido | Comunicar una escuela virtual profesional sin perjudicar concentración, accesibilidad o rendimiento |
+| 0.13 | 13-07-2026 | Se consolida “escuela”, se crea el espacio Zoom y se amplían las rutas con cuaderno personal | Reforzar la identidad institucional y diferenciar enseñanzas unipersonales de encuentros con personas |
+| 0.12 | 13-07-2026 | Primera experiencia audiovisual: navegación, catálogo, aula, canal oficial, panel y progreso local | Convertir la base técnica en un recorrido educativo visible sin inventar metadatos del canal ni introducir una integración prematura |
+| 0.11 | 13-07-2026 | La portada reconoce la sesión y se incorpora un perfil mínimo para el nombre visible del alumno | Evitar que una persona autenticada siga viendo “Acceder” y permitir completar cuentas existentes sin datos simulados |
+| 0.10 | 13-07-2026 | Recuperación y actualización segura de contraseña preparadas mediante PKCE | Completar el ciclo mínimo de identidad antes de construir el panel del alumno |
 | 0.9 | 13-07-2026 | Interfaz real de registro e ingreso, validación del lado servidor y callback de confirmación preparados | Construir autenticación segura sin introducir usuarios simulados ni exponer credenciales |
 | 0.8 | 13-07-2026 | Incorporación del emblema principal, la portada institucional y sus reglas de uso | Mantener una identidad visual consistente, adaptable y accesible desde el inicio |
 | 0.7 | 12-07-2026 | Política obligatoria de sincronización con GitHub y actualización del próximo hito | Mantener código, arquitectura y documentación respaldados y trazables en cada entrega |

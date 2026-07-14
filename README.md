@@ -1,14 +1,24 @@
 # Parabrahman — Escuela de Vedanta Advaita
 
-Universidad online interactiva, gratuita y centrada en la enseñanza mediante video.
+Escuela online interactiva, gratuita y centrada en la enseñanza mediante video.
 
 La identidad visual inicial utiliza el emblema Om dorado como marca compacta y la composición panorámica de Parabrahman como portada institucional. Los archivos originales están versionados en `public/brand/`.
 
 ## Estado
 
-Base técnica del MVP. Las funciones de identidad, panel del alumno y lección pública se implementarán en pasos separados y validados.
+MVP audiovisual navegable. La portada dirige a un primer recorrido, existe un catálogo inicial en `/cursos`, un aula pública en `/aprender/fundamentos/bienvenida` y un panel protegido en `/mi-aprendizaje`.
 
-La interfaz de autenticación está disponible en `/acceso`. Incluye registro e inicio de sesión mediante acciones del servidor y una ruta de confirmación de correo preparada para Supabase. La prueba real requiere las variables locales del proyecto.
+La interfaz de autenticación está disponible en `/acceso`. Incluye registro, inicio de sesión y recuperación de contraseña mediante acciones del servidor, más una ruta de confirmación de correo preparada para Supabase. La portada reconoce la sesión activa y enlaza con `/cuenta`, donde cada alumno puede guardar su nombre visible y cerrar sesión.
+
+El canal oficial [@parabrahmanyosoy](https://www.youtube.com/@parabrahmanyosoy) es la fuente audiovisual central. YouTube aloja y distribuye los videos; la plataforma aporta organización académica, contexto y seguimiento. El progreso del primer incremento se conserva localmente en el navegador y se migrará a Supabase para sincronizar dispositivos.
+
+Las reuniones participativas tienen un espacio separado en `/encuentros`: la portada destaca la próxima sala de Zoom y el archivo mostrará las grabaciones como miniaturas cuando existan enlaces públicos verificados. Las lecciones también incluyen un cuaderno personal local para preguntas y reflexiones.
+
+El lenguaje visual combina profundidad cósmica, luz dorada y acentos tecnológicos azules. Los movimientos se implementan con CSS, respetan `prefers-reduced-motion` y no agregan dependencias de animación al cliente.
+
+Todas las rutas incorporan un acceso flotante a WhatsApp, identificado por su isotipo, y al asistente inteligente de Parabrahman, representado por un robot amable con auriculares de atención al público. WhatsApp se activa mediante `NEXT_PUBLIC_WHATSAPP_NUMBER`. El asistente actual responde un conjunto institucional explícito; las respuestas filosóficas permanecerán limitadas hasta conectar un corpus autorizado con recuperación y citas.
+
+Cada lección puede incorporar un cuestionario con puntaje mínimo; aprobarlo registra la finalización. La primera aula también incluye preguntas y comentarios públicos con valoración de cinco estrellas. Para compartir estos aportes entre usuarios debe aplicarse la migración `supabase/migrations/202607130001_lesson_discussions.sql`.
 
 ## Tecnología
 
