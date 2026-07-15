@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
-import { AiSupportIcon, WhatsAppIcon } from "@/components/support-icons";
 
 type ChatMessage = {
   id: number;
@@ -13,12 +13,30 @@ const initialMessages: ChatMessage[] = [
   {
     id: 1,
     role: "assistant",
-    text: "Namasté. Soy el asistente inicial de Parabrahman. Puedo orientarte sobre la escuela, el acceso, YouTube y los encuentros de Zoom. El tutor filosófico con fuentes todavía está en preparación.",
+    text: "Namasté. Soy el asistente inicial de Parabrahman. Puedo orientarte sobre la escuela, el acceso, YouTube y los encuentros de Zoom. Si no puedo resolver una consulta, te compartiré el contacto de atención humana.",
   },
 ];
 
-function answerQuestion(question: string) {
+function humanContact(whatsappNumber?: string) {
+  return whatsappNumber
+    ? `Puedes continuar la consulta con atención humana por WhatsApp al +${whatsappNumber}.`
+    : "El contacto humano todavía no está configurado. Inténtalo nuevamente más adelante.";
+}
+
+function answerQuestion(question: string, whatsappNumber?: string) {
   const normalized = question.toLocaleLowerCase("es");
+
+  if (
+    normalized.includes("whatsapp") ||
+    normalized.includes("teléfono") ||
+    normalized.includes("telefono") ||
+    normalized.includes("contacto") ||
+    normalized.includes("persona") ||
+    normalized.includes("humano") ||
+    normalized.includes("asesor")
+  ) {
+    return humanContact(whatsappNumber);
+  }
 
   if (normalized.includes("gratis") || normalized.includes("precio")) {
     return "El acceso a las enseñanzas esenciales de Parabrahman es libre y gratuito. La sostenibilidad se proyecta mediante donaciones voluntarias y publicidad no invasiva.";
@@ -39,13 +57,13 @@ function answerQuestion(question: string) {
     return "Parabrahman — Escuela de Vedanta Advaita es una escuela virtual de autogestión para el autoconocimiento, centrada en video y encuentros. El nombre Parabrahman se presenta institucionalmente como «más allá de Brahman».";
   }
   if (normalized.includes("advaita") || normalized.includes("vedanta") || normalized.includes("metafísica") || normalized.includes("filosofía") || normalized.includes("consciencia")) {
-    return "Esa es una consulta de conocimiento. Para responderla con rigor, el tutor necesita recuperar materiales autorizados y citar su fuente. Esa base todavía no está conectada; mientras tanto, te invito a consultar las rutas y el canal oficial.";
+    return `Esa es una consulta de conocimiento. Para responderla con rigor, el tutor necesita recuperar materiales autorizados y citar su fuente. Esa base todavía no está conectada. ${humanContact(whatsappNumber)}`;
   }
-  return "Todavía no tengo una respuesta verificada para esa pregunta. Prefiero reconocer el límite antes que inventar información. Puedes consultar las rutas, el canal oficial o escribir por WhatsApp cuando el número institucional esté conectado.";
+  return `Todavía no tengo una respuesta verificada para esa pregunta. Prefiero reconocer el límite antes que inventar información. ${humanContact(whatsappNumber)}`;
 }
 
 export function SupportDock({ whatsappNumber }: { whatsappNumber?: string }) {
-  const [panel, setPanel] = useState<"chat" | "whatsapp" | null>(null);
+  const [panel, setPanel] = useState<"chat" | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
 
   function sendQuestion(formData: FormData) {
@@ -56,13 +74,9 @@ export function SupportDock({ whatsappNumber }: { whatsappNumber?: string }) {
     setMessages((current) => [
       ...current,
       { id, role: "student", text: question },
-      { id: id + 1, role: "assistant", text: answerQuestion(question) },
+      { id: id + 1, role: "assistant", text: answerQuestion(question, whatsappNumber) },
     ]);
   }
-
-  const whatsappUrl = whatsappNumber
-    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quisiera hacer una consulta sobre Parabrahman — Escuela de Vedanta Advaita.")}`
-    : undefined;
 
   return (
     <div className="support-dock fixed right-4 bottom-4 z-50 flex flex-col items-end gap-3 sm:right-6 sm:bottom-6">
@@ -95,33 +109,16 @@ export function SupportDock({ whatsappNumber }: { whatsappNumber?: string }) {
         </section>
       )}
 
-      {panel === "whatsapp" && !whatsappUrl && (
-        <section className="support-panel luminous-card w-[min(340px,calc(100vw-2rem))] rounded-3xl border border-emerald-300/20 bg-[#07110d]/96 p-5 shadow-2xl shadow-black/60 backdrop-blur-2xl">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300/70">Consultas</p>
-              <h2 className="mt-2 text-lg font-semibold">WhatsApp institucional</h2>
-            </div>
-            <button type="button" onClick={() => setPanel(null)} className="text-xl text-stone-500 hover:text-white" aria-label="Cerrar WhatsApp">×</button>
-          </div>
-          <p className="mt-4 text-sm leading-6 text-stone-400">El botón está preparado. Falta incorporar el número público de la escuela para iniciar conversaciones.</p>
-        </section>
-      )}
-
-      <div className="flex items-center gap-3">
-        {whatsappUrl ? (
-          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="support-button grid size-14 place-items-center rounded-full border border-emerald-200/30 bg-[#25d366] text-white shadow-lg shadow-emerald-900/40 transition hover:scale-105 hover:bg-[#20bd5a]" aria-label="Consultar por WhatsApp" title="Consultar por WhatsApp">
-            <WhatsAppIcon className="size-8" />
-          </a>
-        ) : (
-          <button type="button" onClick={() => setPanel(panel === "whatsapp" ? null : "whatsapp")} className="support-button grid size-14 place-items-center rounded-full border border-emerald-200/25 bg-[#25d366] text-white shadow-lg shadow-emerald-900/40 transition hover:scale-105 hover:bg-[#20bd5a]" aria-label="Configurar consultas por WhatsApp" title="WhatsApp institucional">
-            <WhatsAppIcon className="size-8" />
-          </button>
-        )}
-        <button type="button" onClick={() => setPanel(panel === "chat" ? null : "chat")} className="support-button sacred-emblem grid size-16 place-items-center overflow-hidden rounded-full border border-blue-200/40 bg-stone-950 shadow-xl shadow-blue-950/50 transition hover:scale-105" aria-label="Abrir asistente inteligente de atención al público" aria-expanded={panel === "chat"} title="Asistente inteligente de Parabrahman">
-          <AiSupportIcon className="size-[3.65rem]" />
-        </button>
-      </div>
+      <button type="button" onClick={() => setPanel(panel === "chat" ? null : "chat")} className="support-button sacred-emblem relative grid size-16 place-items-center overflow-visible rounded-full border border-amber-200/40 bg-stone-950 shadow-xl shadow-amber-950/50 transition hover:scale-105" aria-label="Abrir chat de inteligencia artificial de Parabrahman, disponible" aria-expanded={panel === "chat"} title="Chat inteligente de Parabrahman">
+        <span className="relative size-full overflow-hidden rounded-full">
+          <Image src="/brand/parabrahman-emblem.png" alt="" fill sizes="64px" className="scale-110 object-cover" />
+        </span>
+        <span className="absolute right-0 top-0 flex size-4" aria-hidden="true">
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-70" />
+          <span className="relative inline-flex size-4 rounded-full border-2 border-[#03070d] bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
+        </span>
+        <span className="sr-only">Asistente disponible</span>
+      </button>
     </div>
   );
 }

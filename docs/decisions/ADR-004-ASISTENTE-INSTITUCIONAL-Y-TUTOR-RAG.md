@@ -16,6 +16,8 @@ Se implementan dos niveles:
 
 La presencia del botón no implica que el corpus filosófico ya esté conectado. La interfaz lo comunicará claramente.
 
+El acceso flotante utiliza el emblema OM institucional y una luz verde de disponibilidad. No existe un segundo botón flotante de WhatsApp: cuando el asistente no puede responder o el visitante solicita atención humana, comparte el número público configurado mediante `NEXT_PUBLIC_WHATSAPP_NUMBER`.
+
 ## Por qué se elige
 
 - permite validar qué preguntan realmente los estudiantes;

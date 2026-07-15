@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.19
+**Versión:** 0.20
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -273,10 +273,10 @@ El orden de implementación será: inventario de fuentes, permisos, extracción,
 
 ### Atención y consultas
 
-- Botón flotante de WhatsApp disponible en todas las rutas.
+- Un único botón flotante de asistencia, identificado por el emblema OM y una luz verde de disponibilidad.
+- Sin botón independiente de WhatsApp para reducir ruido visual y concentrar la atención.
 - Número público configurado mediante variable de entorno, nunca fijado en componentes.
-- Mensaje inicial institucional y apertura en una pestaña externa.
-- Estado informativo cuando el número todavía no está configurado.
+- Derivación al contacto humano cuando el agente no puede resolver la consulta o el visitante la solicita.
 - Ningún número privado, clave, token o historial de conversación se guardará en GitHub.
 
 ---
@@ -576,12 +576,13 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-020 | Uso exclusivo de “escuela” en producto y documentación | Aceptada |
 | DM-021 | Zoom separado de YouTube: reuniones y conversaciones en `/encuentros`, con acceso externo en el MVP | Aceptada |
 | DM-022 | Profundidad espiritual-tecnológica mediante CSS, movimiento reducido accesible y cero dependencia visual adicional | Aceptada |
-| DM-023 | WhatsApp global configurado por variable pública y sin credenciales en código | Aceptada |
+| DM-023 | WhatsApp global configurado por variable pública y sin credenciales en código | Reemplazada por DM-029 |
 | DM-024 | Asistente institucional limitado ahora; tutor filosófico futuro mediante RAG, fuentes citadas y evaluación humana | Aceptada |
 | DM-025 | Comentarios y preguntas de lectura pública, publicación autenticada, cinco estrellas y RLS | Aceptada |
 | DM-026 | Una lección se completa únicamente al aprobar su cuestionario mínimo | Aceptada |
-| DM-027 | Accesos de soporte identificados mediante isotipo de WhatsApp y un robot amable con auriculares en SVG local | Aceptada |
+| DM-027 | Accesos de soporte identificados mediante isotipo de WhatsApp y un robot amable con auriculares en SVG local | Reemplazada por DM-029 |
 | DM-028 | Progreso autenticado en Supabase con RLS y validación del cuestionario en servidor | Aceptada |
+| DM-029 | Un único chat flotante con emblema OM, indicador verde y derivación al teléfono público configurado | Aceptada |
 
 ---
 
@@ -626,7 +627,7 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 3. aplicar la migración `lesson_progress` en Supabase y verificar la sincronización entre dos dispositivos;
 4. probar registro, acceso, perfil, recuperación, reproducción y avance de extremo a extremo;
 5. incorporar el enlace, horario y primeras grabaciones reales de Zoom;
-6. configurar el número institucional de WhatsApp;
+6. configurar el número público para la derivación humana del asistente;
 7. inventariar y autorizar el primer corpus del tutor;
 8. aplicar la migración de comunidad y probar dos usuarios reales;
 9. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
@@ -639,6 +640,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.20 | 15-07-2026 | Se elimina el botón flotante de WhatsApp y el asistente adopta el OM, indicador verde y derivación humana | Simplificar la interfaz, reforzar la identidad institucional y ofrecer una salida clara cuando la IA no puede responder |
 | 0.19 | 13-07-2026 | Progreso persistente con Supabase, RLS, corrección en servidor y respaldo local | Permitir continuidad entre dispositivos sin obligar al visitante a registrarse ni confiar en una puntuación calculada por el navegador |
 | 0.18 | 13-07-2026 | El asistente adopta la imagen de un robot amable con auriculares y micrófono | Comunicar de inmediato inteligencia digital y atención al público sin confundirlo con una figura docente humana |
 | 0.17 | 13-07-2026 | Identidad visual específica para los accesos flotantes de WhatsApp y asistente | Mejorar el reconocimiento inmediato, la claridad funcional y la nitidez sin agregar imágenes remotas ni dependencias |

@@ -16,7 +16,7 @@ Las reuniones participativas tienen un espacio separado en `/encuentros`: la por
 
 El lenguaje visual combina profundidad cósmica, luz dorada y acentos tecnológicos azules. Los movimientos se implementan con CSS, respetan `prefers-reduced-motion` y no agregan dependencias de animación al cliente.
 
-Todas las rutas incorporan un acceso flotante a WhatsApp, identificado por su isotipo, y al asistente inteligente de Parabrahman, representado por un robot amable con auriculares de atención al público. WhatsApp se activa mediante `NEXT_PUBLIC_WHATSAPP_NUMBER`. El asistente actual responde un conjunto institucional explícito; las respuestas filosóficas permanecerán limitadas hasta conectar un corpus autorizado con recuperación y citas.
+Todas las rutas incorporan un único asistente inteligente flotante, identificado por el emblema OM y una luz verde de disponibilidad. El botón independiente de WhatsApp fue retirado para simplificar la interfaz. `NEXT_PUBLIC_WHATSAPP_NUMBER` configura el teléfono público que el agente comparte cuando una consulta requiere atención humana. El asistente actual responde un conjunto institucional explícito; las respuestas filosóficas permanecerán limitadas hasta conectar un corpus autorizado con recuperación y citas.
 
 Cada lección puede incorporar un cuestionario con puntaje mínimo; aprobarlo registra la finalización. La primera aula también incluye preguntas y comentarios públicos con valoración de cinco estrellas. Para compartir estos aportes entre usuarios debe aplicarse la migración `supabase/migrations/202607130001_lesson_discussions.sql`.
 
