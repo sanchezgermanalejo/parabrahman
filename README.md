@@ -6,11 +6,11 @@ La identidad visual inicial utiliza el emblema Om dorado como marca compacta y l
 
 ## Estado
 
-MVP audiovisual navegable. La portada dirige a un primer recorrido, existe un catálogo inicial en `/cursos`, un aula pública en `/aprender/fundamentos/bienvenida` y un panel protegido en `/mi-aprendizaje`.
+MVP audiovisual navegable. La portada dirige a un primer recorrido, existe un catálogo inicial en `/cursos`, un aula pública en `/aprender/fundamentos/bienvenida`, un panel protegido en `/mi-aprendizaje`, un foro en `/comunidad` y un mapa histórico-tradicional en `/tradicion`.
 
 La interfaz de autenticación está disponible en `/acceso`. Incluye registro, inicio de sesión y recuperación de contraseña mediante acciones del servidor, más una ruta de confirmación de correo preparada para Supabase. La portada reconoce la sesión activa y enlaza con `/cuenta`, donde cada alumno puede guardar su nombre visible y cerrar sesión.
 
-El canal oficial [@parabrahmanyosoy](https://www.youtube.com/@parabrahmanyosoy) es la fuente audiovisual central. YouTube aloja y distribuye los videos; la plataforma aporta organización académica, contexto y seguimiento. El progreso del primer incremento se conserva localmente en el navegador y se migrará a Supabase para sincronizar dispositivos.
+El canal oficial [@parabrahmanyosoy](https://www.youtube.com/@parabrahmanyosoy) es la fuente audiovisual central. YouTube aloja y distribuye los videos; la plataforma aporta organización académica, contexto y seguimiento. El progreso autenticado se conserva en Supabase cuando la migración correspondiente está activa, con respaldo local durante la transición.
 
 Las reuniones participativas tienen un espacio separado en `/encuentros`: la portada destaca la próxima sala de Zoom y el archivo mostrará las grabaciones como miniaturas cuando existan enlaces públicos verificados. Las lecciones también incluyen un cuaderno personal local para preguntas y reflexiones.
 
@@ -19,6 +19,8 @@ El lenguaje visual combina profundidad cósmica, luz dorada y acentos tecnológi
 Todas las rutas incorporan un único asistente inteligente flotante, identificado por el emblema OM y una luz verde de disponibilidad. El botón independiente de WhatsApp fue retirado para simplificar la interfaz. `NEXT_PUBLIC_WHATSAPP_NUMBER` configura el teléfono público que el agente comparte cuando una consulta requiere atención humana. El asistente actual responde un conjunto institucional explícito; las respuestas filosóficas permanecerán limitadas hasta conectar un corpus autorizado con recuperación y citas.
 
 Cada lección puede incorporar un cuestionario con puntaje mínimo; aprobarlo registra la finalización. La primera aula también incluye preguntas y comentarios públicos con valoración de cinco estrellas. Para compartir estos aportes entre usuarios debe aplicarse la migración `supabase/migrations/202607130001_lesson_discussions.sql`.
+
+La comunidad general ofrece temas, respuestas tipo chat y adjuntos públicos de hasta 5 MB. La lectura es libre y la participación requiere cuenta. La migración `supabase/migrations/202607150001_student_forum.sql` crea las tablas, políticas RLS y el bucket de Storage. El módulo Tradición organiza cronología, literatura, maestros, geografía y fuentes verificables, con foco en Vedanta Advaita dentro del marco plural del Sanātana Dharma.
 
 ## Tecnología
 

@@ -30,7 +30,7 @@ export function SiteHeader({ student }: SiteHeaderProps) {
         </Link>
 
         <nav
-          className="hidden items-center gap-6 text-sm text-stone-300 md:flex"
+          className="hidden items-center gap-4 text-sm text-stone-300 md:flex"
           aria-label="Navegación principal"
         >
           <Link href="/cursos" className="nav-glow transition hover:text-amber-200">
@@ -41,6 +41,12 @@ export function SiteHeader({ student }: SiteHeaderProps) {
             className="nav-glow transition hover:text-amber-200"
           >
             Mi aprendizaje
+          </Link>
+          <Link href="/tradicion" className="nav-glow transition hover:text-amber-200">
+            Tradición
+          </Link>
+          <Link href="/comunidad" className="nav-glow transition hover:text-sky-200">
+            Comunidad
           </Link>
           <a
             href="https://www.youtube.com/@parabrahmanyosoy"
@@ -75,6 +81,8 @@ export function SiteHeader({ student }: SiteHeaderProps) {
       >
         <Link href="/cursos">Recorridos</Link>
         <Link href="/mi-aprendizaje">Mi aprendizaje</Link>
+        <Link href="/tradicion" className="text-amber-200">Tradición</Link>
+        <Link href="/comunidad" className="text-sky-200">Comunidad</Link>
         <a
           href="https://www.youtube.com/@parabrahmanyosoy"
           target="_blank"

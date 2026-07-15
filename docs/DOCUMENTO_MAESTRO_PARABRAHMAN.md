@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.20
+**Versión:** 0.21
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -212,6 +212,8 @@ Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumn
 - Búsqueda y filtros.
 - Versionado y preparación futura para recuperación semántica.
 
+El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado.
+
 ### Encuentros
 
 - Calendario por curso y general.
@@ -226,11 +228,14 @@ Zoom tendrá un espacio propio y visible junto al canal de YouTube. YouTube conc
 
 - Foros asociados a cursos.
 - Temas y respuestas.
+- Adjuntos públicos con tipos y tamaño limitados.
 - Reglas, reportes y moderación.
 - Notificaciones controlables.
 - Sin chat privado durante las primeras fases.
 
 La primera lección incorpora una conversación pública con comentarios o preguntas, autor visible y valoración obligatoria de una a cinco estrellas. La lectura es pública y la publicación requiere una cuenta autenticada. La tabla `lesson_discussions` aplica RLS para impedir publicaciones en nombre de otra persona. Antes de ampliar el acceso deberán incorporarse reporte, moderación y límites de frecuencia.
+
+El foro general en `/comunidad` organiza conversaciones asincrónicas en formato de chat pausado. Los visitantes pueden leer; los alumnos autenticados pueden crear temas, responder y adjuntar PDF, TXT, JPG, PNG o WebP de hasta 5 MB. PostgreSQL conserva el diálogo y Supabase Storage aloja los archivos. RLS protege la escritura y separa las cargas por usuario. Realtime, mensajería privada y notificaciones se incorporarán solo cuando la moderación básica esté operativa.
 
 ### Evaluación y aprobación
 
@@ -583,6 +588,8 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-027 | Accesos de soporte identificados mediante isotipo de WhatsApp y un robot amable con auriculares en SVG local | Reemplazada por DM-029 |
 | DM-028 | Progreso autenticado en Supabase con RLS y validación del cuestionario en servidor | Aceptada |
 | DM-029 | Un único chat flotante con emblema OM, indicador verde y derivación al teléfono público configurado | Aceptada |
+| DM-030 | Foro público asincrónico; escritura autenticada y adjuntos limitados en Supabase Storage con RLS | Aceptada |
+| DM-031 | Mapa de tradición en `/tradicion`, centrado en Advaita y diferenciado del conjunto plural del Sanātana Dharma | Aceptada |
 
 ---
 
@@ -630,7 +637,9 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 6. configurar el número público para la derivación humana del asistente;
 7. inventariar y autorizar el primer corpus del tutor;
 8. aplicar la migración de comunidad y probar dos usuarios reales;
-9. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
+9. aplicar la migración del foro, probar adjuntos y definir responsables de moderación;
+10. realizar revisión académica de la cronología, maestros, regiones y bibliografía inicial;
+11. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -640,6 +649,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.21 | 15-07-2026 | Foro estudiantil con temas, chat asincrónico y adjuntos; módulo histórico-tradicional desde el corpus védico hasta la actualidad | Crear comunidad transversal y ofrecer contexto literario, geográfico y tradicional sin perder trazabilidad ni rigor |
 | 0.20 | 15-07-2026 | Se elimina el botón flotante de WhatsApp y el asistente adopta el OM, indicador verde y derivación humana | Simplificar la interfaz, reforzar la identidad institucional y ofrecer una salida clara cuando la IA no puede responder |
 | 0.19 | 13-07-2026 | Progreso persistente con Supabase, RLS, corrección en servidor y respaldo local | Permitir continuidad entre dispositivos sin obligar al visitante a registrarse ni confiar en una puntuación calculada por el navegador |
 | 0.18 | 13-07-2026 | El asistente adopta la imagen de un robot amable con auriculares y micrófono | Comunicar de inmediato inteligencia digital y atención al público sin confundirlo con una figura docente humana |
@@ -656,7 +666,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 | 0.7 | 12-07-2026 | Política obligatoria de sincronización con GitHub y actualización del próximo hito | Mantener código, arquitectura y documentación respaldados y trazables en cada entrega |
 | 0.6 | 12-07-2026 | Preparación técnica de Supabase Auth y política de verificación de sesiones | Establecer una base segura antes de construir formularios y rutas protegidas |
 | 0.5 | 12-07-2026 | Aprobación y creación de la base técnica del MVP | Fijar arquitectura, runtime y política de acceso público antes de implementar funciones |
-| 0.4 | 12-07-2026 | Confirmación de identidad y orientación pedagógica centrada en video | Alinear el producto con la experiencia universitaria online definida |
+| 0.4 | 12-07-2026 | Confirmación de identidad y orientación pedagógica centrada en video | Alinear el producto con la experiencia de escuela online definida |
 | 0.3 | 12-07-2026 | Corrección del nombre oficial a “Parabrahman” | Respetar la grafía unida y el significado institucional del término sánscrito |
 | 0.2 | 12-07-2026 | Primera definición de identidad y reglas de nomenclatura | Versión reemplazada posteriormente por la corrección de la versión 0.3 |
 | 0.1 | 12-07-2026 | Creación del documento maestro | Establecer visión, alcance, arquitectura y gobierno inicial |

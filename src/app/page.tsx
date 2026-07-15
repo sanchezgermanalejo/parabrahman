@@ -176,6 +176,27 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <article className="luminous-card rounded-3xl border border-amber-200/10 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_40%),rgba(28,25,23,0.72)] p-8 sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300/70">Contexto histórico y tradicional</p>
+            <h2 className="mt-3 text-3xl font-semibold">Del Ṛgveda al Vedanta contemporáneo</h2>
+            <p className="mt-4 max-w-xl leading-7 text-stone-400">Explora la relación entre Sanātana Dharma, los Vedas, las Upaniṣads, los maestros, la literatura y las regiones de India que sostuvieron esta tradición.</p>
+            <Link href="/tradicion" className="mt-7 inline-flex rounded-xl bg-amber-300 px-5 py-3 font-semibold text-stone-950 transition hover:bg-amber-200">
+              Abrir Tradición e historia
+            </Link>
+          </article>
+          <article className="luminous-card rounded-3xl border border-sky-200/10 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.12),transparent_40%),rgba(28,25,23,0.72)] p-8 sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300/70">Sangha digital</p>
+            <h2 className="mt-3 text-3xl font-semibold">Foro de estudiantes</h2>
+            <p className="mt-4 max-w-xl leading-7 text-stone-400">Inicia temas, conversa con otros alumnos y comparte documentos o imágenes públicas dentro de un espacio organizado y moderable.</p>
+            <Link href="/comunidad" className="mt-7 inline-flex rounded-xl bg-sky-300 px-5 py-3 font-semibold text-stone-950 transition hover:bg-sky-200">
+              Entrar a la comunidad
+            </Link>
+          </article>
+        </div>
+      </section>
+
       <footer className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-10 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p>Parabrahman — Escuela de Vedanta Advaita</p>
         <p>Contenido libre · Sostenimiento voluntario</p>
