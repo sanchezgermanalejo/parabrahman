@@ -15,6 +15,8 @@ El módulo `/tradicion` ofrece un mapa editorial desde el corpus védico hasta l
 
 Cada período y obra se enlaza con una fuente académica, institucional u oficial seleccionada. Los centros geográficos separan el enlace de contexto del enlace cartográfico: una página de estudio explica la tradición y un mapa solo localiza el lugar. Las regiones amplias o históricamente discutidas no reciben coordenadas artificialmente precisas. No se utilizan tiendas, blogs anónimos ni copias de derechos inciertos como destino principal.
 
+La sección de pasajes utiliza fragmentos breves del original sánscrito perteneciente a textos antiguos, acompañados por referencia, IAST, desglose literal, síntesis editorial propia y una advertencia contextual. No copia traducciones contemporáneas como contenido propio. Una cita aislada nunca se presenta como demostración suficiente de una doctrina posterior.
+
 ## Razones
 
 - conserva el contexto de las conversaciones y facilita moderación posterior;

@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/site-header";
 import {
+  primaryPassages,
   textFamilies,
   traditionPeriods,
   traditionPlaces,
@@ -31,9 +32,10 @@ export default async function TraditionPage() {
           <p className="mt-4 max-w-3xl text-sm leading-6 text-stone-400">
             Cada etapa y cada texto conduce a una fuente de estudio seleccionada. En geografía distinguimos el contexto histórico de la ubicación física para no confundir investigación con turismo.
           </p>
-          <div className="mt-9 grid gap-4 sm:grid-cols-3">
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <a href="#cronologia" className="rounded-2xl border border-amber-300/20 bg-amber-300/5 px-5 py-4 text-amber-100 transition hover:border-amber-300/40">Cronología esencial ↓</a>
             <a href="#literatura" className="rounded-2xl border border-sky-300/20 bg-sky-300/5 px-5 py-4 text-sky-100 transition hover:border-sky-300/40">Literatura y libros ↓</a>
+            <a href="#pasajes" className="rounded-2xl border border-violet-300/20 bg-violet-300/5 px-5 py-4 text-violet-100 transition hover:border-violet-300/40">Pasajes comentados ↓</a>
             <a href="#geografia" className="rounded-2xl border border-emerald-300/20 bg-emerald-300/5 px-5 py-4 text-emerald-100 transition hover:border-emerald-300/40">Geografía de India ↓</a>
           </div>
         </div>
@@ -112,6 +114,60 @@ export default async function TraditionPage() {
               </ul>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="pasajes" className="scroll-mt-24 border-y border-violet-100/10 bg-stone-950/65">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-300/70">Texto · palabra · contexto</p>
+          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Pasajes fundamentales con lectura literal</h2>
+          <p className="mt-4 max-w-4xl leading-7 text-stone-400">
+            Presentamos fragmentos breves del original sánscrito, un desglose pedagógico y una síntesis propia. La lectura literal ayuda a ver la construcción, pero no reemplaza el contexto completo, los comentarios tradicionales ni una traducción crítica.
+          </p>
+
+          <div className="mt-10 grid gap-6">
+            {primaryPassages.map((passage, index) => (
+              <article key={passage.id} className="overflow-hidden rounded-3xl border border-violet-200/10 bg-stone-900/55">
+                <div className="grid gap-7 p-6 sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-violet-300/70">
+                      <span>Lectura {index + 1}</span>
+                      <span className="text-stone-700">·</span>
+                      <span>{passage.source} · {passage.reference}</span>
+                    </div>
+                    <blockquote lang="sa" className="mt-6 border-l-2 border-violet-300/40 pl-5 text-2xl leading-relaxed text-violet-100 sm:text-3xl">
+                      {passage.devanagari}
+                    </blockquote>
+                    <p lang="sa-Latn" className="mt-4 font-serif text-lg italic leading-8 text-stone-300">{passage.iast}</p>
+                    <a href={passage.sourceUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full border border-violet-300/25 px-4 py-2 text-sm font-medium text-violet-100 transition hover:border-violet-300/55">
+                      Abrir texto fuente ↗
+                    </a>
+                  </div>
+
+                  <div className="grid gap-5">
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-sky-300/70">Lectura palabra por palabra</h3>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {passage.literal.map((part) => (
+                          <span key={part.term} className="rounded-xl border border-sky-300/15 bg-sky-300/[0.035] px-3 py-2 text-sm text-stone-300">
+                            <strong className="font-medium text-sky-100">{part.term}</strong> · {part.meaning}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="rounded-2xl border border-amber-300/12 bg-amber-300/[0.035] p-5">
+                      <h3 className="text-sm font-semibold text-amber-100">Síntesis para comprender</h3>
+                      <p className="mt-2 leading-7 text-stone-400">{passage.synthesis}</p>
+                    </div>
+                    <div className="rounded-2xl border border-stone-800 bg-black/20 p-5">
+                      <h3 className="text-sm font-semibold text-stone-200">Contexto y límite de lectura</h3>
+                      <p className="mt-2 text-sm leading-6 text-stone-500">{passage.context}</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

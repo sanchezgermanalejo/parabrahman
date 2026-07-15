@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.23
+**Versión:** 0.24
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -213,7 +213,7 @@ Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumn
 - Lecturas de mahāvākyas y fuentes con contexto, no como consignas aisladas.
 - Audio humano revisado en una fase posterior; la voz sintética no será autoridad fonética.
 
-El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre la conversación cotidiana. La progresión distingue escritura, transliteración, forma de diccionario, flexión y traducción. El contenido principal se renderiza en servidor y solo el laboratorio de práctica utiliza estado en el navegador. Antes de certificar aprendizajes se requerirá revisión especializada de fonética, gramática y ejercicios.
+El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre la conversación cotidiana. La progresión distingue escritura, transliteración, forma de diccionario, flexión y traducción. Su trayecto automatizado organiza cuatro ciclos, doce clases secuenciales, objetivos, contenidos, evaluaciones y logros. El progreso se conserva localmente durante el MVP; no constituye un título oficial ni una certificación de dominio, y deberá migrar a Supabase con validación en servidor antes de adquirir valor académico formal. El contenido principal se renderiza en servidor y solo los laboratorios interactivos utilizan estado en el navegador. Antes de certificar aprendizajes se requerirá revisión especializada de fonética, gramática y ejercicios.
 
 ### Biblioteca
 
@@ -223,7 +223,7 @@ El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre l
 - Búsqueda y filtros.
 - Versionado y preparación futura para recuperación semántica.
 
-El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado. Cada período y obra conduce a una fuente académica, institucional u oficial seleccionada. En geografía, el contexto histórico y la ubicación cartográfica son enlaces distintos para no confundir una fuente de estudio con una coordenada.
+El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado. Cada período y obra conduce a una fuente académica, institucional u oficial seleccionada. En geografía, el contexto histórico y la ubicación cartográfica son enlaces distintos para no confundir una fuente de estudio con una coordenada. Los pasajes comentados incorporan únicamente fragmentos breves del original sánscrito, referencia, desglose literal y síntesis editorial propia; no reproducen traducciones modernas sin autorización y siempre declaran los límites de una lectura aislada.
 
 ### Encuentros
 
@@ -603,6 +603,8 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-031 | Mapa de tradición en `/tradicion`, centrado en Advaita y diferenciado del conjunto plural del Sanātana Dharma | Aceptada |
 | DM-032 | Ruta `/sanscrito` orientada a lectura vedántica, con IAST, devanāgarī, gramática y práctica progresiva | Aceptada |
 | DM-033 | Enlaces de `/tradicion` administrados en un catálogo central, priorizando fuentes académicas u oficiales y separando contexto de ubicación | Aceptada |
+| DM-034 | Pasajes de Tradición con original sánscrito breve, referencia exacta, desglose literal, síntesis propia y límites de interpretación | Aceptada |
+| DM-035 | Trayecto automatizado de sánscrito con cuatro ciclos y doce clases secuenciales; avance local no acreditado durante el MVP | Aceptada |
 
 ---
 
@@ -652,9 +654,11 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 8. aplicar la migración de comunidad y probar dos usuarios reales;
 9. aplicar la migración del foro, probar adjuntos y definir responsables de moderación;
 10. realizar revisión académica de la cronología, maestros, regiones y bibliografía inicial;
-11. revisar el módulo de sánscrito con una persona competente y definir el primer audio humano;
-12. revisar periódicamente disponibilidad, autoridad y derechos de los enlaces externos de Tradición;
-13. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
+11. revisar el módulo de sánscrito, sus doce evaluaciones y los siete pasajes literales con personas competentes;
+12. definir el primer audio humano y la primera evaluación de escritura;
+13. migrar el progreso de la carrera de sánscrito a Supabase cuando se apruebe su modelo académico;
+14. revisar periódicamente disponibilidad, autoridad y derechos de los enlaces externos de Tradición;
+15. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -664,6 +668,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.24 | 15-07-2026 | Siete pasajes tradicionales con lectura literal y síntesis; carrera automatizada de sánscrito con cuatro ciclos, doce clases, evaluaciones y logros | Profundizar el acceso a las fuentes y ofrecer una progresión autónoma verificable sin presentar como oficial un aprendizaje todavía local y no revisado |
 | 0.23 | 15-07-2026 | Navegación contextual en Tradición para períodos, textos y centros históricos mediante fuentes seleccionadas y mapas precisos | Convertir el panorama editorial en una puerta de estudio útil sin mezclar autoridad académica, tradición institucional y ubicación física |
 | 0.22 | 15-07-2026 | Ruta de sánscrito con ocho unidades, devanāgarī, IAST, vocabulario vedántico, mahāvākyas y práctica interactiva | Dar acceso progresivo a la lengua de las fuentes sin reducirla a un glosario ni prometer dominio inmediato |
 | 0.21 | 15-07-2026 | Foro estudiantil con temas, chat asincrónico y adjuntos; módulo histórico-tradicional desde el corpus védico hasta la actualidad | Crear comunidad transversal y ofrecer contexto literario, geográfico y tradicional sin perder trazabilidad ni rigor |

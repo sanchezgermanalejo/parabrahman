@@ -140,6 +140,133 @@ export const textFamilies = [
   },
 ] as const;
 
+export const primaryPassages = [
+  {
+    id: "rigveda-one-reality",
+    source: "Ṛgveda",
+    reference: "1.164.46",
+    devanagari: "एकं सद् विप्रा बहुधा वदन्ति",
+    iast: "ekaṃ sad viprā bahudhā vadanti",
+    literal: [
+      { term: "ekam", meaning: "uno, una sola" },
+      { term: "sat", meaning: "lo real, lo existente" },
+      { term: "viprāḥ", meaning: "los inspirados o sabios" },
+      { term: "bahudhā", meaning: "de muchas maneras" },
+      { term: "vadanti", meaning: "hablan, denominan" },
+    ],
+    synthesis:
+      "El himno reconoce una unidad de lo real expresada mediante múltiples nombres. Es un antecedente importante para estudiar la búsqueda védica de unidad, pero no debe presentarse sin más como una formulación completa del Advaita posterior.",
+    context:
+      "El verso completo menciona diversos nombres divinos. La lectura exige conservar su contexto poético védico antes de proyectar sobre él categorías filosóficas posteriores.",
+    sourceUrl: "https://vedicheritage.gov.in/samhitas/rigveda/shakala-samhita/rigveda-shakala-samhitas-mandal-01-sukta-164/",
+  },
+  {
+    id: "chandogya-tat-tvam-asi",
+    source: "Chāndogya Upaniṣad",
+    reference: "6.8.7",
+    devanagari: "तत् त्वम् असि श्वेतकेतो",
+    iast: "tat tvam asi śvetaketo",
+    literal: [
+      { term: "tat", meaning: "Eso, aquella realidad" },
+      { term: "tvam", meaning: "tú" },
+      { term: "asi", meaning: "eres" },
+      { term: "śvetaketo", meaning: "oh Śvetaketu" },
+    ],
+    synthesis:
+      "Uddālaka conduce a Śvetaketu a reconocer que el fundamento sutil de todo no está separado del Sí mismo. La frase se repite dentro de una enseñanza progresiva, no como afirmación aislada del individuo psicológico.",
+    context:
+      "La sección utiliza ejemplos como la semilla y la sal disuelta. Para el Advaita, la identidad señalada requiere distinguir el sentido inmediato y el sentido indicado de ‘tú’ y ‘Eso’.",
+    sourceUrl: "https://vedicheritage.gov.in/upanishads/",
+  },
+  {
+    id: "brihadaranyaka-aham-brahmasmi",
+    source: "Bṛhadāraṇyaka Upaniṣad",
+    reference: "1.4.10",
+    devanagari: "अहं ब्रह्मास्मि",
+    iast: "ahaṃ brahmāsmi",
+    literal: [
+      { term: "aham", meaning: "yo" },
+      { term: "brahma", meaning: "Brahman, la realidad ilimitada" },
+      { term: "asmi", meaning: "soy" },
+    ],
+    synthesis:
+      "La expresión formula el reconocimiento de que la consciencia que se toma por limitada no es distinta de Brahman. No declara que la personalidad o el ego posean omnipotencia.",
+    context:
+      "El pasaje describe un conocimiento mediante el cual lo aparentemente separado se comprende desde su fundamento. Su lectura tradicional evita tanto el literalismo egocéntrico como una identidad meramente simbólica.",
+    sourceUrl: "https://vedicheritage.gov.in/upanishads/",
+  },
+  {
+    id: "mandukya-ayam-atma-brahma",
+    source: "Māṇḍūkya Upaniṣad",
+    reference: "mantra 2",
+    devanagari: "अयमात्मा ब्रह्म",
+    iast: "ayam ātmā brahma",
+    literal: [
+      { term: "ayam", meaning: "este, inmediato" },
+      { term: "ātmā", meaning: "el Sí mismo" },
+      { term: "brahma", meaning: "Brahman" },
+    ],
+    synthesis:
+      "El texto identifica el Sí mismo inmediatamente conocido con Brahman y luego analiza vigilia, sueño, sueño profundo y turīya para retirar identificaciones parciales.",
+    context:
+      "Es una Upaniṣad extremadamente breve. La Māṇḍūkya Kārikā de Gauḍapāda desarrolla su alcance y es central en la historia del Advaita preclásico.",
+    sourceUrl: "https://vedicheritage.gov.in/upanishads/",
+  },
+  {
+    id: "aitareya-prajnanam-brahma",
+    source: "Aitareya Upaniṣad",
+    reference: "3.1.3",
+    devanagari: "प्रज्ञानं ब्रह्म",
+    iast: "prajñānaṃ brahma",
+    literal: [
+      { term: "prajñānam", meaning: "consciencia, conocimiento consciente" },
+      { term: "brahma", meaning: "Brahman" },
+    ],
+    synthesis:
+      "La consciencia no se presenta como una propiedad accidental entre otras, sino como aquello por lo cual toda experiencia y conocimiento son posibles.",
+    context:
+      "El término prajñāna admite matices que una sola palabra española no agota. La enseñanza requiere diferenciar consciencia de contenidos mentales cambiantes.",
+    sourceUrl: "https://vedicheritage.gov.in/upanishads/",
+  },
+  {
+    id: "isha-all-this",
+    source: "Īśā Upaniṣad",
+    reference: "mantra 1",
+    devanagari: "ईशावास्यमिदं सर्वं यत्किञ्च जगत्यां जगत्",
+    iast: "īśāvāsyam idaṃ sarvaṃ yat kiñca jagatyāṃ jagat",
+    literal: [
+      { term: "īśā", meaning: "por el Señor, por lo soberano" },
+      { term: "vāsyam", meaning: "ha de ser cubierto o habitado" },
+      { term: "idam sarvam", meaning: "todo esto" },
+      { term: "yat kiñca", meaning: "todo cuanto" },
+      { term: "jagatyāṃ jagat", meaning: "se mueve en el mundo cambiante" },
+    ],
+    synthesis:
+      "El mantra abre una visión en la que nada queda fuera de la realidad sagrada y vincula esa comprensión con una relación no posesiva con el mundo.",
+    context:
+      "Las posibilidades gramaticales de vāsyam dan lugar a matices interpretativos. La síntesis no reemplaza el estudio de comentarios ni autoriza una traducción única como definitiva.",
+    sourceUrl: "https://vedicheritage.gov.in/upanishads/",
+  },
+  {
+    id: "gita-real-unreal",
+    source: "Bhagavad Gītā",
+    reference: "2.16",
+    devanagari: "नासतो विद्यते भावो नाभावो विद्यते सतः। उभयोरपि दृष्टोऽन्तस्त्वनयोस्तत्त्वदर्शिभिः॥",
+    iast: "nāsato vidyate bhāvo nābhāvo vidyate sataḥ; ubhayor api dṛṣṭo ’ntas tv anayos tattvadarśibhiḥ",
+    literal: [
+      { term: "na asataḥ bhāvaḥ", meaning: "de lo no-real no hay ser independiente" },
+      { term: "na sataḥ abhāvaḥ", meaning: "de lo real no hay ausencia" },
+      { term: "ubhayoḥ antaḥ", meaning: "la conclusión acerca de ambos" },
+      { term: "tattvadarśibhiḥ", meaning: "por quienes ven la realidad" },
+    ],
+    synthesis:
+      "Kṛṣṇa distingue lo cambiante de aquello que no deja de ser. En la lectura advaita, esta discriminación sostiene el examen entre el Sí mismo y los fenómenos variables.",
+    context:
+      "El verso aparece en una enseñanza sobre el duelo, el cuerpo y el ātman. La palabra asat no debe reducirse automáticamente a una nada absoluta sin atender al comentario y al nivel de realidad discutido.",
+    sourceUrl: "https://www.gitasupersite.iitk.ac.in/srimad?choose=1&field_chapter_value=2&field_nsutra_value=16&language=dv&show_mool=1",
+  },
+] as const;
+
 export const traditionPlaces = [
   {
     region: "Noroeste y norte védico",

@@ -1,9 +1,11 @@
+import { SanskritCareer } from "@/components/sanskrit-career";
 import { SanskritPractice } from "@/components/sanskrit-practice";
 import { SiteHeader } from "@/components/site-header";
 import {
   devanagariRows,
   mahavakyas,
   sanskritCurriculum,
+  sanskritProgram,
   sanskritPracticeItems,
   sanskritResources,
   vedantaVocabulary,
@@ -41,7 +43,8 @@ export default async function SanskritPage() {
             Aprende a reconocer los sonidos, leer devanāgarī, utilizar IAST, analizar formas gramaticales y acercarte progresivamente a las fuentes sin depender únicamente de una traducción.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="#ruta" className="rounded-xl bg-amber-300 px-5 py-3 font-semibold text-stone-950 transition hover:bg-amber-200">Ver ruta de estudio</a>
+            <a href="#carrera" className="rounded-xl bg-amber-300 px-5 py-3 font-semibold text-stone-950 transition hover:bg-amber-200">Comenzar carrera automatizada</a>
+            <a href="#ruta" className="rounded-xl border border-amber-300/30 px-5 py-3 font-semibold text-amber-100 transition hover:bg-amber-300/10">Ver plan académico</a>
             <a href="#practica" className="rounded-xl border border-sky-300/30 px-5 py-3 font-semibold text-sky-100 transition hover:bg-sky-300/10">Practicar ahora</a>
           </div>
         </div>
@@ -71,10 +74,24 @@ export default async function SanskritPage() {
         </div>
       </section>
 
+      <section id="carrera" className="scroll-mt-24 border-y border-amber-100/10 bg-stone-950/65">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300/70">4 ciclos · 12 clases · avance secuencial</p>
+          <h2 className="mt-3 max-w-4xl text-3xl font-semibold sm:text-4xl">Trayecto automatizado de Sánscrito para Vedanta Advaita</h2>
+          <p className="mt-4 max-w-4xl leading-7 text-stone-400">
+            Cada clase declara su clasificación, objetivo, contenidos y logro verificable. Una evaluación breve comprueba el concepto central y desbloquea la siguiente clase. La automatización organiza el estudio; la pronunciación, las traducciones complejas y la interpretación tradicional seguirán necesitando revisión humana competente.
+          </p>
+          <div className="mt-10">
+            <SanskritCareer program={sanskritProgram} />
+          </div>
+        </div>
+      </section>
+
       <section id="ruta" className="scroll-mt-24 border-y border-amber-100/10 bg-stone-950/65">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300/70">De cero a las fuentes</p>
-          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Ruta progresiva de ocho unidades</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300/70">Mapa académico de referencia</p>
+          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Ocho áreas que ordenan el aprendizaje</h2>
+          <p className="mt-4 max-w-3xl leading-7 text-stone-400">Este mapa resume las capacidades acumulativas. La carrera automatizada anterior las distribuye en clases evaluables y logros de ciclo.</p>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {sanskritCurriculum.map((unit) => (
               <article key={unit.order} className="luminous-card grid gap-5 rounded-3xl border border-stone-800 bg-stone-900/55 p-6 sm:grid-cols-[54px_1fr] sm:p-7">
@@ -146,7 +163,7 @@ export default async function SanskritPage() {
               </a>
             ))}
           </div>
-          <p className="mt-7 rounded-2xl border border-amber-300/15 bg-amber-300/5 px-5 py-4 text-sm leading-6 text-amber-100/75">Próximo incremento académico: audio humano revisado, ejercicios de escritura, paradigmas de declinación y primeras lecturas palabra por palabra. No se publicará pronunciación sintética como sustituto de una fuente competente.</p>
+          <p className="mt-7 rounded-2xl border border-amber-300/15 bg-amber-300/5 px-5 py-4 text-sm leading-6 text-amber-100/75">Próximo incremento académico: audio humano revisado, ejercicios de escritura, paradigmas completos, evaluación por unidad y sincronización del avance con la cuenta del alumno. No se publicará pronunciación sintética como sustituto de una fuente competente.</p>
         </div>
       </section>
     </main>
