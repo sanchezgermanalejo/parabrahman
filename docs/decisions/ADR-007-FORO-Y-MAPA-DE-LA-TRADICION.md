@@ -13,6 +13,8 @@ La comunidad comienza como foro público asincrónico con temas y respuestas en 
 
 El módulo `/tradicion` ofrece un mapa editorial desde el corpus védico hasta la transmisión contemporánea, con foco en Advaita Vedanta. Distingue Sanātana Dharma, Vedanta y Advaita; organiza cronología, familias textuales, maestros, geografía y fuentes. Las fechas debatidas se presentan como aproximaciones y la influencia moderna no se equipara automáticamente con pertenencia a un sampradāya tradicional.
 
+Cada período y obra se enlaza con una fuente académica, institucional u oficial seleccionada. Los centros geográficos separan el enlace de contexto del enlace cartográfico: una página de estudio explica la tradición y un mapa solo localiza el lugar. Las regiones amplias o históricamente discutidas no reciben coordenadas artificialmente precisas. No se utilizan tiendas, blogs anónimos ni copias de derechos inciertos como destino principal.
+
 ## Razones
 
 - conserva el contexto de las conversaciones y facilita moderación posterior;
@@ -21,6 +23,7 @@ El módulo `/tradicion` ofrece un mapa editorial desde el corpus védico hasta l
 - mantiene libre el acceso a la lectura y reserva la escritura a identidades verificables;
 - ofrece profundidad histórica sin presentar una selección inicial como el Sanātana Dharma completo;
 - prepara una futura biblioteca trazable y un corpus RAG con fuentes identificadas.
+- permite revisar enlaces desde un catálogo central sin acoplarlos al diseño visual.
 
 ## Consecuencias
 

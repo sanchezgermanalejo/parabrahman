@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.22
+**Versión:** 0.23
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -223,7 +223,7 @@ El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre l
 - Búsqueda y filtros.
 - Versionado y preparación futura para recuperación semántica.
 
-El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado.
+El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado. Cada período y obra conduce a una fuente académica, institucional u oficial seleccionada. En geografía, el contexto histórico y la ubicación cartográfica son enlaces distintos para no confundir una fuente de estudio con una coordenada.
 
 ### Encuentros
 
@@ -602,6 +602,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-030 | Foro público asincrónico; escritura autenticada y adjuntos limitados en Supabase Storage con RLS | Aceptada |
 | DM-031 | Mapa de tradición en `/tradicion`, centrado en Advaita y diferenciado del conjunto plural del Sanātana Dharma | Aceptada |
 | DM-032 | Ruta `/sanscrito` orientada a lectura vedántica, con IAST, devanāgarī, gramática y práctica progresiva | Aceptada |
+| DM-033 | Enlaces de `/tradicion` administrados en un catálogo central, priorizando fuentes académicas u oficiales y separando contexto de ubicación | Aceptada |
 
 ---
 
@@ -652,7 +653,8 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 9. aplicar la migración del foro, probar adjuntos y definir responsables de moderación;
 10. realizar revisión académica de la cronología, maestros, regiones y bibliografía inicial;
 11. revisar el módulo de sánscrito con una persona competente y definir el primer audio humano;
-12. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
+12. revisar periódicamente disponibilidad, autoridad y derechos de los enlaces externos de Tradición;
+13. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -662,6 +664,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.23 | 15-07-2026 | Navegación contextual en Tradición para períodos, textos y centros históricos mediante fuentes seleccionadas y mapas precisos | Convertir el panorama editorial en una puerta de estudio útil sin mezclar autoridad académica, tradición institucional y ubicación física |
 | 0.22 | 15-07-2026 | Ruta de sánscrito con ocho unidades, devanāgarī, IAST, vocabulario vedántico, mahāvākyas y práctica interactiva | Dar acceso progresivo a la lengua de las fuentes sin reducirla a un glosario ni prometer dominio inmediato |
 | 0.21 | 15-07-2026 | Foro estudiantil con temas, chat asincrónico y adjuntos; módulo histórico-tradicional desde el corpus védico hasta la actualidad | Crear comunidad transversal y ofrecer contexto literario, geográfico y tradicional sin perder trazabilidad ni rigor |
 | 0.20 | 15-07-2026 | Se elimina el botón flotante de WhatsApp y el asistente adopta el OM, indicador verde y derivación humana | Simplificar la interfaz, reforzar la identidad institucional y ofrecer una salida clara cuando la IA no puede responder |

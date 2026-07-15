@@ -28,6 +28,9 @@ export default async function TraditionPage() {
           <p className="mt-7 max-w-3xl text-lg leading-8 text-stone-300">
             Un mapa para comprender cómo la enseñanza no dual se relaciona con el corpus védico, las Upaniṣads, las escuelas de Vedanta, los ācāryas y los territorios de India, hasta su transmisión universal contemporánea.
           </p>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-stone-400">
+            Cada etapa y cada texto conduce a una fuente de estudio seleccionada. En geografía distinguimos el contexto histórico de la ubicación física para no confundir investigación con turismo.
+          </p>
           <div className="mt-9 grid gap-4 sm:grid-cols-3">
             <a href="#cronologia" className="rounded-2xl border border-amber-300/20 bg-amber-300/5 px-5 py-4 text-amber-100 transition hover:border-amber-300/40">Cronología esencial ↓</a>
             <a href="#literatura" className="rounded-2xl border border-sky-300/20 bg-sky-300/5 px-5 py-4 text-sky-100 transition hover:border-sky-300/40">Literatura y libros ↓</a>
@@ -73,6 +76,13 @@ export default async function TraditionPage() {
                   <div className="mt-5 flex flex-wrap gap-2">
                     {period.focus.map((item) => <span key={item} className="rounded-full border border-stone-700 px-3 py-1.5 text-xs text-stone-400">{item}</span>)}
                   </div>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {period.resources.map((resource) => (
+                      <a key={resource.url} href={resource.url} target="_blank" rel="noreferrer" className="rounded-full border border-amber-300/25 bg-amber-300/[0.06] px-4 py-2 text-sm font-medium text-amber-100 transition hover:border-amber-300/55 hover:bg-amber-300/10">
+                        {resource.label} ↗
+                      </a>
+                    ))}
+                  </div>
                   {period.datingNote && <p className="mt-5 border-l-2 border-sky-300/30 pl-4 text-sm leading-6 text-stone-500">{period.datingNote}</p>}
                 </div>
               </article>
@@ -84,14 +94,21 @@ export default async function TraditionPage() {
       <section id="literatura" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-20 sm:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/70">Biblioteca orientada</p>
         <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Literatura y familias de textos</h2>
-        <p className="mt-4 max-w-3xl leading-7 text-stone-400">Este mapa indica función y relación, no ofrece copias sin verificar derechos. La futura biblioteca distinguirá texto fuente, traducción, comentario tradicional y estudio contemporáneo.</p>
+        <p className="mt-4 max-w-3xl leading-7 text-stone-400">Este mapa indica función y relación. Cada título abre el portal académico u oficial más adecuado disponible; no ofrecemos copias sin verificar derechos. La futura biblioteca distinguirá texto fuente, traducción, comentario tradicional y estudio contemporáneo.</p>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {textFamilies.map((family) => (
             <article key={family.title} className="luminous-card rounded-3xl border border-sky-200/10 bg-stone-900/60 p-7">
               <p className="text-xs uppercase tracking-[0.16em] text-sky-300/65">{family.role}</p>
               <h3 className="mt-3 text-2xl font-semibold">{family.title}</h3>
               <ul className="mt-5 grid gap-3 text-stone-400">
-                {family.items.map((item) => <li key={item} className="border-b border-stone-800 pb-3 last:border-0">{item}</li>)}
+                {family.items.map((item) => (
+                  <li key={item.label} className="border-b border-stone-800 pb-3 last:border-0">
+                    <a href={item.url} target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-4 transition hover:text-sky-100">
+                      <span>{item.label}</span>
+                      <span aria-hidden="true" className="text-sky-300/60 transition group-hover:text-sky-200">↗</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </article>
           ))}
@@ -102,11 +119,20 @@ export default async function TraditionPage() {
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-300/70">Territorio y transmisión</p>
           <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Geografía esencial de India</h2>
+          <p className="mt-4 max-w-3xl leading-7 text-stone-400">“Conocer el contexto” abre una fuente de estudio. “Ver ubicación” abre el lugar en el mapa; las regiones amplias o históricamente discutidas no reciben una coordenada artificial.</p>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {traditionPlaces.map((place) => (
               <article key={place.region} className="rounded-2xl border border-emerald-200/10 bg-emerald-300/[0.03] p-6">
                 <h3 className="font-semibold text-emerald-100">{place.region}</h3>
                 <p className="mt-3 text-sm leading-6 text-stone-400">{place.significance}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {"studyUrl" in place && place.studyUrl && (
+                    <a href={place.studyUrl} target="_blank" rel="noreferrer" className="rounded-full border border-sky-300/20 px-3 py-1.5 text-xs font-medium text-sky-100 transition hover:border-sky-300/50">Conocer el contexto ↗</a>
+                  )}
+                  {"mapUrl" in place && place.mapUrl && (
+                    <a href={place.mapUrl} target="_blank" rel="noreferrer" className="rounded-full border border-emerald-300/25 px-3 py-1.5 text-xs font-medium text-emerald-100 transition hover:border-emerald-300/55">Ver ubicación ↗</a>
+                  )}
+                </div>
               </article>
             ))}
           </div>
