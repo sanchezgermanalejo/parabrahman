@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.21
+**Versión:** 0.22
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -203,6 +203,17 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 El canal oficial `https://www.youtube.com/@parabrahmanyosoy` es la fuente audiovisual central. YouTube conserva la responsabilidad de alojamiento, publicación y reproducción; Parabrahman organiza esos contenidos en recorridos, unidades y lecciones. El catálogo académico se mantiene separado del canal para permitir selección, secuenciación y contexto sin duplicar los videos.
 
 Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumnos autenticados, después de validar el cuestionario nuevamente en el servidor. Las políticas RLS limitan cada registro a su propietario. El almacenamiento local permanece temporalmente como respaldo para visitantes y mientras se aplica la migración, pero no es la fuente académica oficial.
+
+### Sánscrito para Vedanta
+
+- Ruta pública desde sonido, IAST y devanāgarī hasta lectura guiada.
+- Vocabulario contextual de Vedanta Advaita.
+- Gramática nominal y verbal, sandhi, samāsa y sintaxis.
+- Tarjetas y ejercicios interactivos de reconocimiento.
+- Lecturas de mahāvākyas y fuentes con contexto, no como consignas aisladas.
+- Audio humano revisado en una fase posterior; la voz sintética no será autoridad fonética.
+
+El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre la conversación cotidiana. La progresión distingue escritura, transliteración, forma de diccionario, flexión y traducción. El contenido principal se renderiza en servidor y solo el laboratorio de práctica utiliza estado en el navegador. Antes de certificar aprendizajes se requerirá revisión especializada de fonética, gramática y ejercicios.
 
 ### Biblioteca
 
@@ -590,6 +601,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-029 | Un único chat flotante con emblema OM, indicador verde y derivación al teléfono público configurado | Aceptada |
 | DM-030 | Foro público asincrónico; escritura autenticada y adjuntos limitados en Supabase Storage con RLS | Aceptada |
 | DM-031 | Mapa de tradición en `/tradicion`, centrado en Advaita y diferenciado del conjunto plural del Sanātana Dharma | Aceptada |
+| DM-032 | Ruta `/sanscrito` orientada a lectura vedántica, con IAST, devanāgarī, gramática y práctica progresiva | Aceptada |
 
 ---
 
@@ -639,7 +651,8 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 8. aplicar la migración de comunidad y probar dos usuarios reales;
 9. aplicar la migración del foro, probar adjuntos y definir responsables de moderación;
 10. realizar revisión académica de la cronología, maestros, regiones y bibliografía inicial;
-11. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
+11. revisar el módulo de sánscrito con una persona competente y definir el primer audio humano;
+12. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -649,6 +662,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.22 | 15-07-2026 | Ruta de sánscrito con ocho unidades, devanāgarī, IAST, vocabulario vedántico, mahāvākyas y práctica interactiva | Dar acceso progresivo a la lengua de las fuentes sin reducirla a un glosario ni prometer dominio inmediato |
 | 0.21 | 15-07-2026 | Foro estudiantil con temas, chat asincrónico y adjuntos; módulo histórico-tradicional desde el corpus védico hasta la actualidad | Crear comunidad transversal y ofrecer contexto literario, geográfico y tradicional sin perder trazabilidad ni rigor |
 | 0.20 | 15-07-2026 | Se elimina el botón flotante de WhatsApp y el asistente adopta el OM, indicador verde y derivación humana | Simplificar la interfaz, reforzar la identidad institucional y ofrecer una salida clara cuando la IA no puede responder |
 | 0.19 | 13-07-2026 | Progreso persistente con Supabase, RLS, corrección en servidor y respaldo local | Permitir continuidad entre dispositivos sin obligar al visitante a registrarse ni confiar en una puntuación calculada por el navegador |

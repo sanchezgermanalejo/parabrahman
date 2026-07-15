@@ -6,7 +6,7 @@ La identidad visual inicial utiliza el emblema Om dorado como marca compacta y l
 
 ## Estado
 
-MVP audiovisual navegable. La portada dirige a un primer recorrido, existe un catálogo inicial en `/cursos`, un aula pública en `/aprender/fundamentos/bienvenida`, un panel protegido en `/mi-aprendizaje`, un foro en `/comunidad` y un mapa histórico-tradicional en `/tradicion`.
+MVP audiovisual navegable. La portada dirige a un primer recorrido, existe un catálogo inicial en `/cursos`, un aula pública en `/aprender/fundamentos/bienvenida`, un panel protegido en `/mi-aprendizaje`, un foro en `/comunidad`, un mapa histórico-tradicional en `/tradicion` y una ruta lingüística en `/sanscrito`.
 
 La interfaz de autenticación está disponible en `/acceso`. Incluye registro, inicio de sesión y recuperación de contraseña mediante acciones del servidor, más una ruta de confirmación de correo preparada para Supabase. La portada reconoce la sesión activa y enlaza con `/cuenta`, donde cada alumno puede guardar su nombre visible y cerrar sesión.
 
@@ -21,6 +21,8 @@ Todas las rutas incorporan un único asistente inteligente flotante, identificad
 Cada lección puede incorporar un cuestionario con puntaje mínimo; aprobarlo registra la finalización. La primera aula también incluye preguntas y comentarios públicos con valoración de cinco estrellas. Para compartir estos aportes entre usuarios debe aplicarse la migración `supabase/migrations/202607130001_lesson_discussions.sql`.
 
 La comunidad general ofrece temas, respuestas tipo chat y adjuntos públicos de hasta 5 MB. La lectura es libre y la participación requiere cuenta. La migración `supabase/migrations/202607150001_student_forum.sql` crea las tablas, políticas RLS y el bucket de Storage. El módulo Tradición organiza cronología, literatura, maestros, geografía y fuentes verificables, con foco en Vedanta Advaita dentro del marco plural del Sanātana Dharma.
+
+El módulo Sánscrito ofrece una progresión pública desde sonido, IAST y devanāgarī hasta morfología, sandhi, compuestos y lectura guiada. Incluye vocabulario de Vedanta Advaita, mahāvākyas, tarjetas y ejercicios interactivos. El objetivo inicial es aprender a leer y analizar fuentes, no simular fluidez ni reemplazar revisión docente.
 
 ## Tecnología
 

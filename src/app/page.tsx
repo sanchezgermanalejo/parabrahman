@@ -177,7 +177,7 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-3">
           <article className="luminous-card rounded-3xl border border-amber-200/10 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_40%),rgba(28,25,23,0.72)] p-8 sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300/70">Contexto histórico y tradicional</p>
             <h2 className="mt-3 text-3xl font-semibold">Del Ṛgveda al Vedanta contemporáneo</h2>
@@ -192,6 +192,14 @@ export default async function Home() {
             <p className="mt-4 max-w-xl leading-7 text-stone-400">Inicia temas, conversa con otros alumnos y comparte documentos o imágenes públicas dentro de un espacio organizado y moderable.</p>
             <Link href="/comunidad" className="mt-7 inline-flex rounded-xl bg-sky-300 px-5 py-3 font-semibold text-stone-950 transition hover:bg-sky-200">
               Entrar a la comunidad
+            </Link>
+          </article>
+          <article className="luminous-card rounded-3xl border border-emerald-200/10 bg-[radial-gradient(circle_at_top_right,rgba(52,211,153,0.12),transparent_40%),rgba(28,25,23,0.72)] p-8 sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300/70">संस्कृतम् · saṃskṛtam</p>
+            <h2 className="mt-3 text-3xl font-semibold">Sánscrito para Vedanta</h2>
+            <p className="mt-4 max-w-xl leading-7 text-stone-400">Aprende sonidos, devanāgarī, IAST, vocabulario, gramática y lectura guiada para acercarte con precisión a las fuentes.</p>
+            <Link href="/sanscrito" className="mt-7 inline-flex rounded-xl bg-emerald-300 px-5 py-3 font-semibold text-stone-950 transition hover:bg-emerald-200">
+              Comenzar sánscrito
             </Link>
           </article>
         </div>
