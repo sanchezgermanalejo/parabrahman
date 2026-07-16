@@ -26,6 +26,8 @@ El módulo Sánscrito ofrece una progresión pública desde sonido, IAST y devan
 
 La Biblioteca reúne una selección inicial de textos del Sanātana Dharma y el Vedanta Advaita con búsqueda y filtros históricos. Cada ficha enlaza una fuente oficial, una edición de dominio público, una vista previa o un préstamo digital según los derechos disponibles. Las obras modernas protegidas no se alojan ni redistribuyen desde Parabrahman.
 
+La Ruta de aprendizaje pública organiza cinco ciclos, quince etapas y 92 títulos de videos futuros. Los títulos funcionan como balizado editorial: solo aparecen como publicados cuando existe una lección real. El panel autenticado “Mi aprendizaje” muestra la última tarea aprobada, la etapa actual, el próximo paso y diferencia el avance sobre contenido disponible del avance sobre la ruta total. El bloque de siete centros se identifica como especialización comparativa y no reemplaza el análisis Advaita de los cuatro pādas de la Māṇḍūkya Upaniṣad.
+
 ## Tecnología
 
 - Next.js con App Router

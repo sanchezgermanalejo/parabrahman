@@ -38,6 +38,8 @@ export default async function LearningDashboardPage() {
           <LearningProgress
             initialCompleted={progress.completedLessonIds}
             synchronized={progress.available}
+            lastCompletedLessonId={progress.lastCompletedLessonId}
+            lastCompletedAt={progress.lastCompletedAt}
           />
         </div>
 

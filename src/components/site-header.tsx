@@ -34,7 +34,7 @@ export function SiteHeader({ student }: SiteHeaderProps) {
           aria-label="Navegación principal"
         >
           <Link href="/cursos" className="nav-glow transition hover:text-amber-200">
-            Recorridos
+            Ruta de aprendizaje
           </Link>
           <Link
             href="/mi-aprendizaje"
@@ -85,7 +85,7 @@ export function SiteHeader({ student }: SiteHeaderProps) {
         className="mx-auto flex max-w-7xl justify-center gap-6 overflow-x-auto px-4 pb-3 text-xs text-stone-400 md:hidden"
         aria-label="Navegación móvil"
       >
-        <Link href="/cursos">Recorridos</Link>
+        <Link href="/cursos">Ruta</Link>
         <Link href="/mi-aprendizaje">Mi aprendizaje</Link>
         <Link href="/biblioteca" className="text-violet-200">Biblioteca</Link>
         <Link href="/tradicion" className="text-amber-200">Tradición</Link>
