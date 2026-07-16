@@ -5,11 +5,10 @@ import { getSupabaseConfig, hasSupabaseConfig } from "./config";
 
 export async function updateSession(request: NextRequest) {
   if (!hasSupabaseConfig()) {
-    if (process.env.NODE_ENV === "development") {
-      return NextResponse.next({ request });
-    }
-
-    throw new Error("Supabase no está configurado en este entorno.");
+    // La escuela mantiene su contenido público disponible aunque el servicio
+    // de identidad esté temporalmente sin configurar. Las acciones de acceso
+    // validan Supabase por separado y muestran un error específico.
+    return NextResponse.next({ request });
   }
 
   let response = NextResponse.next({ request });
