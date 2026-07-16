@@ -59,7 +59,7 @@ La aplicación queda disponible en [http://localhost:3000](http://localhost:3000
 
 ## Publicación en Internet
 
-El procedimiento del MVP está documentado en `docs/DESPLIEGUE_PUBLICO.md`. En Windows puede iniciarse con `PUBLICAR_WEB_GRATIS.cmd`, ubicado en la carpeta superior. El flujo actualiza GitHub, permite revisar la incorporación a `main` y abre la importación del proyecto en Vercel. Las variables de Supabase se cargan directamente en el proveedor y nunca se incorporan al repositorio.
+El procedimiento del MVP está documentado en `docs/DESPLIEGUE_PUBLICO.md`. En Windows puede iniciarse con `PUBLICAR_WEB_GRATIS.cmd`, ubicado en la carpeta superior. El flujo actualiza GitHub, permite revisar la incorporación a `main` y abre la importación del proyecto en Netlify Free. El plan elegido tiene un límite mensual rígido, no requiere tarjeta y no puede generar cargos automáticos. Las variables de Supabase se cargan directamente en el proveedor y nunca se incorporan al repositorio.
 
 ## Configuración de Supabase
 

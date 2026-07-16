@@ -1,6 +1,6 @@
 # ADR-011 — Alojamiento público inicial
 
-- **Estado:** Aceptada para el MVP
+- **Estado:** Reemplazada por ADR-012
 - **Fecha:** 16 de julio de 2026
 - **Proyecto:** Parabrahman — Escuela de Vedanta Advaita
 
@@ -11,6 +11,8 @@
 ## Decisión
 
 El primer alojamiento público se realizará en Vercel mediante el plan Hobby y un subdominio `vercel.app`. GitHub será la fuente de despliegue y `main` la rama de producción. Las variables de Supabase se configurarán en Vercel, nunca en el repositorio.
+
+Esta decisión fue reemplazada el 16 de julio de 2026 porque el propietario estableció como requisito no entregar una tarjeta ni aceptar un flujo que pudiera implicar pagos.
 
 ## Por qué
 
