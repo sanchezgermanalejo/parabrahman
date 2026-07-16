@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.27
+**Versión:** 0.28
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -621,6 +621,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-036 | Biblioteca pública con catálogo curado y acceso según derechos: fuente oficial, dominio público, vista previa o préstamo controlado | Aceptada |
 | DM-037 | Ruta pública de 5 ciclos, 15 etapas y 92 videos balizados, separada del panel personal de última actividad y próximo paso | Aceptada |
 | DM-038 | Chakras y siete niveles como especialización comparativa; los cuatro pādas de Māṇḍūkya permanecen como núcleo del análisis Advaita | Aceptada |
+| DM-039 | Vercel Hobby como alojamiento público inicial, GitHub `main` como fuente de producción y dominio propio como evolución portable | Aceptada para el MVP |
 
 ---
 
@@ -677,6 +678,7 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 15. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR;
 16. revisar académicamente el catálogo inicial de Biblioteca y comprobar periódicamente disponibilidad, idioma y derechos de cada enlace;
 17. revisar los 92 títulos del mapa curricular, especialmente tattvas, Parabrahman y el bloque comparativo de siete centros, antes de producir cada serie de videos.
+18. completar el primer despliegue de Vercel, registrar la URL pública y configurar Site URL y Redirect URLs en Supabase.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -686,6 +688,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.28 | 16-07-2026 | Vercel Hobby como alojamiento público inicial, asistente de publicación y guía de configuración con Supabase | Reemplazar la dependencia de localhost por una URL HTTPS reproducible sin introducir infraestructura innecesaria en el MVP |
 | 0.27 | 16-07-2026 | Se reafirma y aplica “Parabrahman” como única grafía, siempre unida, también dentro del vocabulario curricular | Evitar que una transliteración con espacio o guion se confunda con la identidad canónica del proyecto |
 | 0.26 | 16-07-2026 | Ruta curricular de cinco ciclos, quince etapas y 92 videos; panel personal con última tarea, etapa actual y próximo paso | Separar el mapa académico común del recorrido individual y preparar una producción audiovisual progresiva sin confundir modelos comparativos con doctrina Advaita central |
 | 0.25 | 15-07-2026 | Biblioteca pública con buscador, filtros y veinte accesos legales desde el corpus védico hasta Nisargadatta Maharaj | Facilitar lectura online sin confundir acceso gratuito con permiso de redistribución ni enlazar copias modernas no autorizadas |
