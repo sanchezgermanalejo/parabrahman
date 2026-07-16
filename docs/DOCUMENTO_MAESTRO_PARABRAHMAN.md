@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.26
+**Versión:** 0.27
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -686,6 +686,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.27 | 16-07-2026 | Se reafirma y aplica “Parabrahman” como única grafía, siempre unida, también dentro del vocabulario curricular | Evitar que una transliteración con espacio o guion se confunda con la identidad canónica del proyecto |
 | 0.26 | 16-07-2026 | Ruta curricular de cinco ciclos, quince etapas y 92 videos; panel personal con última tarea, etapa actual y próximo paso | Separar el mapa académico común del recorrido individual y preparar una producción audiovisual progresiva sin confundir modelos comparativos con doctrina Advaita central |
 | 0.25 | 15-07-2026 | Biblioteca pública con buscador, filtros y veinte accesos legales desde el corpus védico hasta Nisargadatta Maharaj | Facilitar lectura online sin confundir acceso gratuito con permiso de redistribución ni enlazar copias modernas no autorizadas |
 | 0.24 | 15-07-2026 | Siete pasajes tradicionales con lectura literal y síntesis; carrera automatizada de sánscrito con cuatro ciclos, doce clases, evaluaciones y logros | Profundizar el acceso a las fuentes y ofrecer una progresión autónoma verificable sin presentar como oficial un aprendizaje todavía local y no revisado |

@@ -331,9 +331,9 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
         outcomes: [
           "Distinguir Brahman nirguṇa y saguṇa sin postular dos absolutos.",
           "Comprender jīva, Īśvara y jagat en el orden empírico.",
-          "Usar Parabrahman o para-brahman con precisión terminológica.",
+          "Usar Parabrahman siempre unido y con precisión terminológica.",
         ],
-        concepts: ["Brahman", "para-brahman", "nirguṇa", "saguṇa", "Īśvara", "jīva", "jagat"],
+        concepts: ["Brahman", "Parabrahman", "nirguṇa", "saguṇa", "Īśvara", "jīva", "jagat"],
         track: "core",
         lessons: [
           planned("brahman", "Brahman: realidad, conciencia y plenitud", "Sat-cit-ānanda como indicación, no suma de propiedades."),
