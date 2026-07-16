@@ -6,7 +6,7 @@ La identidad visual inicial utiliza el emblema Om dorado como marca compacta y l
 
 ## Estado
 
-MVP audiovisual navegable. La portada dirige a un primer recorrido, existe un catálogo inicial en `/cursos`, un aula pública en `/aprender/fundamentos/bienvenida`, un panel protegido en `/mi-aprendizaje`, un foro en `/comunidad`, un mapa histórico-tradicional en `/tradicion` y una ruta lingüística en `/sanscrito`.
+MVP audiovisual navegable. La portada dirige a un primer recorrido, existe un catálogo inicial en `/cursos`, un aula pública en `/aprender/fundamentos/bienvenida`, un panel protegido en `/mi-aprendizaje`, un foro en `/comunidad`, una Biblioteca en `/biblioteca`, un mapa histórico-tradicional en `/tradicion` y una ruta lingüística en `/sanscrito`.
 
 La interfaz de autenticación está disponible en `/acceso`. Incluye registro, inicio de sesión y recuperación de contraseña mediante acciones del servidor, más una ruta de confirmación de correo preparada para Supabase. La portada reconoce la sesión activa y enlaza con `/cuenta`, donde cada alumno puede guardar su nombre visible y cerrar sesión.
 
@@ -23,6 +23,8 @@ Cada lección puede incorporar un cuestionario con puntaje mínimo; aprobarlo re
 La comunidad general ofrece temas, respuestas tipo chat y adjuntos públicos de hasta 5 MB. La lectura es libre y la participación requiere cuenta. La migración `supabase/migrations/202607150001_student_forum.sql` crea las tablas, políticas RLS y el bucket de Storage. El módulo Tradición organiza cronología, literatura, maestros, geografía y fuentes verificables, con foco en Vedanta Advaita dentro del marco plural del Sanātana Dharma. Sus períodos y textos enlazan a portales académicos u oficiales, mientras que los centros históricos ofrecen accesos separados para estudiar su contexto y abrir su ubicación cartográfica. Siete pasajes incorporan original sánscrito, IAST, lectura literal, síntesis y límites interpretativos.
 
 El módulo Sánscrito ofrece una progresión pública desde sonido, IAST y devanāgarī hasta morfología, sandhi, compuestos y lectura guiada. Incluye una carrera automatizada de cuatro ciclos y doce clases secuenciales, con clasificación, objetivos, contenidos, evaluaciones y logros; además conserva vocabulario, mahāvākyas, tarjetas y ejercicios interactivos. El progreso de la carrera es local y no acreditado durante el MVP. El objetivo inicial es aprender a leer y analizar fuentes, no simular fluidez ni reemplazar revisión docente.
+
+La Biblioteca reúne una selección inicial de textos del Sanātana Dharma y el Vedanta Advaita con búsqueda y filtros históricos. Cada ficha enlaza una fuente oficial, una edición de dominio público, una vista previa o un préstamo digital según los derechos disponibles. Las obras modernas protegidas no se alojan ni redistribuyen desde Parabrahman.
 
 ## Tecnología
 

@@ -42,6 +42,9 @@ export function SiteHeader({ student }: SiteHeaderProps) {
           >
             Mi aprendizaje
           </Link>
+          <Link href="/biblioteca" className="nav-glow transition hover:text-violet-200">
+            Biblioteca
+          </Link>
           <Link href="/tradicion" className="nav-glow transition hover:text-amber-200">
             Tradición
           </Link>
@@ -84,6 +87,7 @@ export function SiteHeader({ student }: SiteHeaderProps) {
       >
         <Link href="/cursos">Recorridos</Link>
         <Link href="/mi-aprendizaje">Mi aprendizaje</Link>
+        <Link href="/biblioteca" className="text-violet-200">Biblioteca</Link>
         <Link href="/tradicion" className="text-amber-200">Tradición</Link>
         <Link href="/sanscrito" className="text-emerald-200">Sánscrito</Link>
         <Link href="/comunidad" className="text-sky-200">Comunidad</Link>

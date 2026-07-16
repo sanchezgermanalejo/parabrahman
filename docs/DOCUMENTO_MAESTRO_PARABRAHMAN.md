@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.24
+**Versión:** 0.25
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -222,6 +222,8 @@ El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre l
 - Licencias y permisos de publicación.
 - Búsqueda y filtros.
 - Versionado y preparación futura para recuperación semántica.
+
+La primera Biblioteca pública vive en `/biblioteca` y reúne veinte obras o colecciones desde las Saṃhitās védicas y las Upaniṣads hasta Ramana Maharshi y Nisargadatta Maharaj. El catálogo permite buscar por título, autor, época o tema y filtrar por cinco etapas históricas. Cada ficha registra autoría, época, idioma, tipo de acceso, fuente y una nota de derechos. Se priorizan portales oficiales o académicos, ediciones de dominio público y descargas ofrecidas por las instituciones editoras. Para obras modernas protegidas, como *I Am That / Yo soy Eso*, se enlazan préstamos digitales controlados, vistas bibliográficas o ediciones oficiales: Parabrahman no aloja ni redistribuye copias no autorizadas. La selección es introductoria y deberá someterse a revisión académica y periódica de enlaces.
 
 El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado. Cada período y obra conduce a una fuente académica, institucional u oficial seleccionada. En geografía, el contexto histórico y la ubicación cartográfica son enlaces distintos para no confundir una fuente de estudio con una coordenada. Los pasajes comentados incorporan únicamente fragmentos breves del original sánscrito, referencia, desglose literal y síntesis editorial propia; no reproducen traducciones modernas sin autorización y siempre declaran los límites de una lectura aislada.
 
@@ -605,6 +607,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-033 | Enlaces de `/tradicion` administrados en un catálogo central, priorizando fuentes académicas u oficiales y separando contexto de ubicación | Aceptada |
 | DM-034 | Pasajes de Tradición con original sánscrito breve, referencia exacta, desglose literal, síntesis propia y límites de interpretación | Aceptada |
 | DM-035 | Trayecto automatizado de sánscrito con cuatro ciclos y doce clases secuenciales; avance local no acreditado durante el MVP | Aceptada |
+| DM-036 | Biblioteca pública con catálogo curado y acceso según derechos: fuente oficial, dominio público, vista previa o préstamo controlado | Aceptada |
 
 ---
 
@@ -659,6 +662,7 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 13. migrar el progreso de la carrera de sánscrito a Supabase cuando se apruebe su modelo académico;
 14. revisar periódicamente disponibilidad, autoridad y derechos de los enlaces externos de Tradición;
 15. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR.
+16. revisar académicamente el catálogo inicial de Biblioteca y comprobar periódicamente disponibilidad, idioma y derechos de cada enlace.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -668,6 +672,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.25 | 15-07-2026 | Biblioteca pública con buscador, filtros y veinte accesos legales desde el corpus védico hasta Nisargadatta Maharaj | Facilitar lectura online sin confundir acceso gratuito con permiso de redistribución ni enlazar copias modernas no autorizadas |
 | 0.24 | 15-07-2026 | Siete pasajes tradicionales con lectura literal y síntesis; carrera automatizada de sánscrito con cuatro ciclos, doce clases, evaluaciones y logros | Profundizar el acceso a las fuentes y ofrecer una progresión autónoma verificable sin presentar como oficial un aprendizaje todavía local y no revisado |
 | 0.23 | 15-07-2026 | Navegación contextual en Tradición para períodos, textos y centros históricos mediante fuentes seleccionadas y mapas precisos | Convertir el panorama editorial en una puerta de estudio útil sin mezclar autoridad académica, tradición institucional y ubicación física |
 | 0.22 | 15-07-2026 | Ruta de sánscrito con ocho unidades, devanāgarī, IAST, vocabulario vedántico, mahāvākyas y práctica interactiva | Dar acceso progresivo a la lengua de las fuentes sin reducirla a un glosario ni prometer dominio inmediato |
