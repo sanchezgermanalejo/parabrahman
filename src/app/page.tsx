@@ -97,16 +97,14 @@ export default async function Home() {
                 Escuela audiovisual de acceso libre
               </p>
               <div className="hero-message mt-6">
-                <p className="hero-welcome">Bienvenidos al camino del</p>
+                <p className="hero-welcome">Bienvenidos al camino del Autoconocimiento</p>
                 <h1 className="hero-title">
-                  Autoconocimiento
-                  <span> y la Realización del Sí Mismo.</span>
+                  Realización
+                  <span> del Sí Mismo.</span>
                 </h1>
                 <p className="hero-introduction">
-                  Nos adentramos en la esencia del <strong>Vedanta Advaita</strong>, una
-                  filosofía milenaria que enseña mediante el <strong>YO SOY</strong>: la
-                  Unidad entre el Atman (Ser), el Brahmán (la Consciencia Impersonal) Y
-                  Parabrahmán (El Absoluto).
+                  El <strong>Vedanta Advaita</strong> revela, mediante el <strong>YO SOY</strong>,
+                  la unidad esencial entre Atman, Brahmán y Parabrahmán.
                 </p>
                 <div className="hero-concept-path" aria-label="Unidad entre Atman, Brahmán y Parabrahmán">
                   <span><small>Ser</small>Atman</span>

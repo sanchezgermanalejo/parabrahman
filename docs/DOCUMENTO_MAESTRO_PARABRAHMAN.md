@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.39
+**Versión:** 0.40
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -719,6 +719,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.40 | 17-07-2026 | La bienvenida de portada se resume en una apertura, el título “Realización del Sí Mismo” y una frase sobre YO SOY y la unidad Atman–Brahmán–Parabrahmán | Reducir repetición, aumentar impacto visual y permitir que el recorrido conceptual complete la explicación sin convertirla en un párrafo dominante |
 | 0.39 | 17-07-2026 | El módulo Metafísica adopta un explorador integrado con recorrido único, mapa contextual, jerarquía de correspondencias, paneles desplegables y navegación anterior/siguiente | Transformar el gráfico en una herramienta práctica de estudio, eliminar controles duplicados y reducir la carga visual sin ocultar las relaciones avanzadas |
 | 0.38 | 17-07-2026 | Nueva jerarquía tipográfica de portada: bienvenida, título equilibrado, explicación institucional y recorrido visual Atman → Brahmán → Parabrahmán | Mantener íntegro el texto oficial sin tratar todo el párrafo como encabezado, mejorar legibilidad, comprensión conceptual y adaptación móvil |
 | 0.37 | 17-07-2026 | Laboratorio oral con escucha, micrófono, reproducción local, guía articulatoria y reconocimiento experimental para seis expresiones | Incorporar práctica de pronunciación desde el MVP sin presentar un reconocedor generalista como autoridad fonética ni almacenar grabaciones del alumno |
