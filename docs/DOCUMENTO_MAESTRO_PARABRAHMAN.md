@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.34
+**Versión:** 0.35
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -203,6 +203,8 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 El canal oficial `https://www.youtube.com/@parabrahmanyosoy` es la fuente audiovisual central. YouTube conserva la responsabilidad de alojamiento, publicación y reproducción; Parabrahman organiza esos contenidos en recorridos, unidades y lecciones. El catálogo académico se mantiene separado del canal para permitir selección, secuenciación y contexto sin duplicar los videos.
 
 Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumnos autenticados, después de validar el cuestionario nuevamente en el servidor. Las políticas RLS limitan cada registro a su propietario. El almacenamiento local permanece temporalmente como respaldo para visitantes y mientras se aplica la migración, pero no es la fuente académica oficial.
+
+La Ruta de Aprendizaje en `/cursos` es la única vista académica. Para visitantes muestra el mapa público completo; al iniciar sesión incorpora en la misma pantalla el último avance, la próxima tarea, porcentajes y estados secuenciales. Una lección aprobada aparece completada, la primera pendiente queda como próximo paso y las posteriores muestran candado hasta completar la secuencia. Los candados organizan progresión, no pago ni privilegios comerciales. La URL histórica `/mi-aprendizaje` redirige permanentemente a `/cursos` y no aparece en la navegación.
 
 ### Sánscrito para Vedanta
 
@@ -630,7 +632,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-034 | Pasajes de Tradición con original sánscrito breve, referencia exacta, desglose literal, síntesis propia y límites de interpretación | Aceptada |
 | DM-035 | Trayecto automatizado de sánscrito con cuatro ciclos y doce clases secuenciales; avance local no acreditado durante el MVP | Aceptada |
 | DM-036 | Biblioteca pública con catálogo curado y acceso según derechos: fuente oficial, dominio público, vista previa o préstamo controlado | Aceptada |
-| DM-037 | Ruta pública de 5 ciclos, 15 etapas y 92 videos balizados, separada del panel personal de última actividad y próximo paso | Aceptada |
+| DM-037 | Ruta pública de 5 ciclos, 15 etapas y 92 videos balizados, separada del panel personal de última actividad y próximo paso | Reemplazada por DM-046 |
 | DM-038 | Chakras y siete niveles como especialización comparativa; los cuatro pādas de Māṇḍūkya permanecen como núcleo del análisis Advaita | Aceptada |
 | DM-039 | Vercel Hobby como alojamiento público inicial | Reemplazada por DM-040 a pedido del propietario |
 | DM-040 | Netlify Free sin tarjeta ni recargas como alojamiento público inicial, GitHub `main` como fuente de producción y dominio propio como evolución portable | Aceptada para el MVP |
@@ -639,6 +641,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-043 | La bienvenida institucional de la portada presenta el camino del Autoconocimiento y la Realización del Sí Mismo mediante la relación entre Atman, Brahmán y Parabrahmán | Aceptada |
 | DM-044 | Módulo `/metafisica` con siete dimensiones, geometría fija y correspondencias comparativas; se declara como síntesis pedagógica propia y no como equivalencia canónica única del Advaita | Aceptada |
 | DM-045 | El texto institucional entregado por el fundador reemplaza íntegramente el titular anterior de la portada; Metafísica obtiene además un CTA visible dentro del hero | Aceptada |
+| DM-046 | Una sola Ruta de Aprendizaje en `/cursos`: pública para explorar y personalizada al iniciar sesión con progreso, próximo paso y candados secuenciales; `/mi-aprendizaje` redirige a ella | Aceptada |
 
 ---
 
@@ -706,6 +709,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.35 | 17-07-2026 | Se elimina “Mi aprendizaje” como vista separada y su seguimiento se integra en `/cursos` con completados, próximo paso y candados | Evitar navegación redundante y mantener mapa curricular y progreso personal dentro de una única experiencia |
 | 0.34 | 17-07-2026 | El texto institucional reemplaza por completo “Ver, comprender y profundizar” y se incorpora el acceso directo Metafísica en el hero | Aplicar literalmente la jerarquía de portada solicitada y hacer visible el nuevo módulo sin depender del desplazamiento |
 | 0.33 | 17-07-2026 | Nuevo módulo Metafísica con mapa geométrico de siete dimensiones, 25 tattvas y correspondencias seleccionables | Dar forma navegable a la metafísica conceptual de Parabrahman distinguiendo síntesis pedagógica y autoridad tradicional |
 | 0.32 | 17-07-2026 | Se incorpora en la portada el texto institucional entregado por el fundador sobre Autoconocimiento, YO SOY, Atman, Brahmán y Parabrahmán | Convertir la bienvenida en una declaración explícita de la orientación filosófica de la escuela |

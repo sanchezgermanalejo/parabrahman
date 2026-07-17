@@ -1,11 +1,14 @@
 import Link from "next/link";
 
+import { LearningProgress } from "@/components/learning-progress";
 import { SiteHeader } from "@/components/site-header";
 import {
   curriculumCycles,
+  curriculumLessons,
   curriculumSummary,
 } from "@/content/curriculum";
 import { getCurrentStudent } from "@/lib/auth/current-student";
+import { getStudentProgress } from "@/lib/progress/server-progress";
 
 export const metadata = {
   title: "Ruta de aprendizaje — Parabrahman",
@@ -14,7 +17,36 @@ export const metadata = {
 };
 
 export default async function CoursesPage() {
-  const student = await getCurrentStudent();
+  const [student, progress] = await Promise.all([
+    getCurrentStudent(),
+    getStudentProgress(),
+  ]);
+  const completedLessonIds = new Set(progress.completedLessonIds);
+  const lessonIndex = new Map(
+    curriculumLessons.map((lesson, index) => [lesson.id, index]),
+  );
+  const nextLessonIndex = curriculumLessons.findIndex(
+    (lesson) => !completedLessonIds.has(lesson.id),
+  );
+  const firstName = student?.fullName?.split(" ")[0];
+
+  function getLessonState(lessonId: string) {
+    if (!student) return "public" as const;
+    if (completedLessonIds.has(lessonId)) return "completed" as const;
+    if (lessonIndex.get(lessonId) === nextLessonIndex) return "current" as const;
+    return "locked" as const;
+  }
+
+  function getStageState(lessonIds: readonly string[]) {
+    if (!student) return "public" as const;
+    if (lessonIds.every((id) => completedLessonIds.has(id))) {
+      return "completed" as const;
+    }
+    if (lessonIds.some((id) => lessonIndex.get(id) === nextLessonIndex)) {
+      return "current" as const;
+    }
+    return "locked" as const;
+  }
 
   return (
     <main className="min-h-screen bg-[#03070d] text-stone-100">
@@ -42,12 +74,14 @@ export default async function CoursesPage() {
             >
               Explorar la ruta ↓
             </a>
-            <Link
-              href={student ? "/mi-aprendizaje" : "/acceso?next=/mi-aprendizaje"}
-              className="rounded-full border border-sky-300/25 px-5 py-3 text-sm font-semibold text-sky-100 transition hover:border-sky-300/50 hover:bg-sky-300/10"
-            >
-              {student ? "Ver por dónde voy →" : "Acceder a mi avance →"}
-            </Link>
+            {!student && (
+              <Link
+                href="/acceso?next=/cursos"
+                className="rounded-full border border-sky-300/25 px-5 py-3 text-sm font-semibold text-sky-100 transition hover:border-sky-300/50 hover:bg-sky-300/10"
+              >
+                Acceder para guardar mi avance →
+              </Link>
+            )}
           </div>
 
           <dl className="mt-12 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
@@ -66,6 +100,25 @@ export default async function CoursesPage() {
         </div>
       </section>
 
+      {student && (
+        <section className="mx-auto max-w-7xl px-5 pt-14 sm:px-8 sm:pt-16">
+          <div className="mb-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/70">
+              Seguimiento personal activo
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
+              {firstName ? `${firstName}, continuá desde donde llegaste` : "Continuá desde donde llegaste"}
+            </h2>
+          </div>
+          <LearningProgress
+            initialCompleted={progress.completedLessonIds}
+            synchronized={progress.available}
+            lastCompletedLessonId={progress.lastCompletedLessonId}
+            lastCompletedAt={progress.lastCompletedAt}
+          />
+        </section>
+      )}
+
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="grid gap-5 lg:grid-cols-3">
           <article className="luminous-card rounded-3xl border border-amber-200/10 bg-stone-900/55 p-6">
@@ -76,10 +129,10 @@ export default async function CoursesPage() {
             </p>
           </article>
           <article className="luminous-card rounded-3xl border border-sky-200/10 bg-stone-900/55 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-300/70">02 · Dos vistas</p>
-            <h2 className="mt-3 text-xl font-semibold">Mapa general y avance personal</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-300/70">02 · Una sola ruta</p>
+            <h2 className="mt-3 text-xl font-semibold">El mapa incorpora tu avance</h2>
             <p className="mt-3 text-sm leading-6 text-stone-400">
-              Esta pantalla muestra el trayecto entero. “Mi aprendizaje” muestra la última tarea aprobada y la próxima acción de cada alumno.
+              Al iniciar sesión, esta misma pantalla recuerda tu última tarea, destaca el próximo paso y señala con candados lo que aún no desbloqueaste.
             </p>
           </article>
           <article className="luminous-card rounded-3xl border border-violet-200/10 bg-stone-900/55 p-6">
@@ -130,15 +183,18 @@ export default async function CoursesPage() {
               </div>
 
               <div className="mt-10 grid gap-5">
-                {cycle.stages.map((stage, stageIndex) => (
-                  <details
+                {cycle.stages.map((stage, stageIndex) => {
+                  const stageState = getStageState(stage.lessons.map((lesson) => lesson.id));
+
+                  return (
+                    <details
                     key={stage.id}
-                    open={cycleIndex === 0 && stageIndex === 0}
+                    open={student ? stageState === "current" : cycleIndex === 0 && stageIndex === 0}
                     className={`group overflow-hidden rounded-3xl border bg-stone-900/60 ${
                       stage.track === "comparative"
                         ? "border-violet-300/20"
                         : "border-amber-200/10"
-                    }`}
+                    } ${stageState === "locked" ? "opacity-65" : ""}`}
                   >
                     <summary className="cursor-pointer list-none p-6 sm:p-8">
                       <div className="grid gap-5 sm:grid-cols-[70px_1fr_auto] sm:items-center">
@@ -153,6 +209,21 @@ export default async function CoursesPage() {
                             {stage.track === "comparative" && (
                               <span className="rounded-full border border-violet-300/25 bg-violet-300/[0.06] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-violet-200">
                                 Especialización comparativa
+                              </span>
+                            )}
+                            {student && stageState === "completed" && (
+                              <span className="rounded-full border border-emerald-300/25 bg-emerald-300/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-emerald-200">
+                                ✓ Completada
+                              </span>
+                            )}
+                            {student && stageState === "current" && (
+                              <span className="rounded-full border border-sky-300/25 bg-sky-300/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sky-200">
+                                Etapa actual
+                              </span>
+                            )}
+                            {student && stageState === "locked" && (
+                              <span className="rounded-full border border-stone-600 bg-black/20 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-500">
+                                🔒 Bloqueada
                               </span>
                             )}
                           </div>
@@ -200,25 +271,37 @@ export default async function CoursesPage() {
                         <div>
                           <h4 className="text-sm font-semibold uppercase tracking-[0.14em] text-stone-300">Balizado de videos</h4>
                           <ol className="mt-4 grid gap-3">
-                            {stage.lessons.map((lesson, lessonIndex) => (
-                              <li key={lesson.id} className="rounded-2xl border border-stone-800 bg-black/20 p-4">
+                            {stage.lessons.map((lesson, lessonIndex) => {
+                              const lessonState = getLessonState(lesson.id);
+                              const isLocked = lessonState === "locked";
+
+                              return (
+                              <li key={lesson.id} className={`rounded-2xl border bg-black/20 p-4 ${isLocked ? "border-stone-900 opacity-55" : "border-stone-800"}`}>
                                 <div className="flex items-start gap-4">
                                   <span className="grid size-8 shrink-0 place-items-center rounded-full border border-stone-700 text-xs text-stone-500">
-                                    {lessonIndex + 1}
+                                    {isLocked ? "🔒" : lessonState === "completed" ? "✓" : lessonIndex + 1}
                                   </span>
                                   <div className="min-w-0 flex-1">
                                     <div className="flex flex-wrap items-center justify-between gap-2">
                                       <p className="font-medium text-stone-200">{lesson.title}</p>
                                       <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${
-                                        lesson.status === "published"
+                                        lessonState === "completed"
                                           ? "bg-emerald-300/10 text-emerald-200"
-                                          : "bg-stone-800 text-stone-500"
+                                          : lessonState === "current"
+                                            ? "bg-sky-300/10 text-sky-200"
+                                            : "bg-stone-800 text-stone-500"
                                       }`}>
-                                        {lesson.status === "published" ? "Publicada" : "Video pendiente"}
+                                        {lessonState === "completed"
+                                          ? "Completada"
+                                          : lessonState === "current"
+                                            ? lesson.status === "published" ? "Disponible ahora" : "Próxima · video pendiente"
+                                            : lessonState === "locked"
+                                              ? "No desbloqueada"
+                                              : lesson.status === "published" ? "Publicada" : "Video pendiente"}
                                       </span>
                                     </div>
                                     <p className="mt-2 text-sm leading-6 text-stone-500">{lesson.focus}</p>
-                                    {lesson.status === "published" && lesson.href && (
+                                    {lesson.status === "published" && lesson.href && !isLocked && (
                                       <Link href={lesson.href} className="mt-3 inline-flex text-sm font-medium text-amber-200 hover:text-amber-100">
                                         Abrir lección →
                                       </Link>
@@ -226,32 +309,36 @@ export default async function CoursesPage() {
                                   </div>
                                 </div>
                               </li>
-                            ))}
+                              );
+                            })}
                           </ol>
                         </div>
                       </div>
                     </div>
                   </details>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
         ))}
       </section>
 
-      <section className="mx-auto max-w-5xl px-5 py-20 text-center sm:px-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/70">Tu vista personal</p>
-        <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">El mapa es común; el avance es tuyo</h2>
-        <p className="mx-auto mt-5 max-w-2xl leading-7 text-stone-400">
-          Iniciá sesión para volver directamente a tu última etapa, revisar la última tarea aprobada y ver qué enseñanza sigue.
-        </p>
-        <Link
-          href={student ? "/mi-aprendizaje" : "/acceso?next=/mi-aprendizaje"}
-          className="mt-8 inline-flex rounded-xl bg-sky-300 px-6 py-3 font-semibold text-stone-950 transition hover:bg-sky-200"
-        >
-          {student ? "Abrir mi aprendizaje" : "Acceder a mi aprendizaje"}
-        </Link>
-      </section>
+      {!student && (
+        <section className="mx-auto max-w-5xl px-5 py-20 text-center sm:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/70">Seguimiento opcional</p>
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">El mapa es común; el avance es tuyo</h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-stone-400">
+            Iniciá sesión para que esta misma ruta recuerde tu última etapa, muestre tu próximo paso y sincronice los cuestionarios aprobados.
+          </p>
+          <Link
+            href="/acceso?next=/cursos"
+            className="mt-8 inline-flex rounded-xl bg-sky-300 px-6 py-3 font-semibold text-stone-950 transition hover:bg-sky-200"
+          >
+            Acceder para guardar mi avance
+          </Link>
+        </section>
+      )}
     </main>
   );
 }
