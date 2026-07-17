@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.31
+**Versión:** 0.32
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -625,6 +625,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-040 | Netlify Free sin tarjeta ni recargas como alojamiento público inicial, GitHub `main` como fuente de producción y dominio propio como evolución portable | Aceptada para el MVP |
 | DM-041 | Fallo controlado de Supabase: una configuración ausente deshabilita funciones personales, pero nunca bloquea portada, cursos, Biblioteca ni otros contenidos públicos | Aceptada |
 | DM-042 | Portada orientada al engagement con contraste cinematográfico, una acción inicial dominante, evidencia curricular verificable y movimiento CSS respetuoso de `prefers-reduced-motion` | Aceptada |
+| DM-043 | La bienvenida institucional de la portada presenta el camino del Autoconocimiento y la Realización del Sí Mismo mediante la relación entre Atman, Brahmán y Parabrahmán | Aceptada |
 
 ---
 
@@ -691,6 +692,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.32 | 17-07-2026 | Se incorpora en la portada el texto institucional entregado por el fundador sobre Autoconocimiento, YO SOY, Atman, Brahmán y Parabrahmán | Convertir la bienvenida en una declaración explícita de la orientación filosófica de la escuela |
 | 0.31 | 17-07-2026 | Rediseño de la portada con hero cinematográfico, primer paso explícito, señales académicas reales y auditoría heurística de engagement | Mejorar comprensión, impacto y continuidad sin inventar métricas ni añadir una dependencia visual pesada |
 | 0.30 | 16-07-2026 | El proxy deja pasar contenido público cuando faltan variables de Supabase; autenticación y escritura conservan validaciones propias | Garantizar que una falla de identidad no contradiga el principio institucional de acceso libre al conocimiento |
 | 0.29 | 16-07-2026 | Netlify Free reemplaza Vercel como alojamiento público inicial; se prohíben tarjeta, recargas y complementos pagos | Cumplir el requisito explícito de que la publicación no implique datos de pago ni posibilidad de cobro automático |

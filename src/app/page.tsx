@@ -93,9 +93,11 @@ export default async function Home() {
                 <span className="block">ver, comprender y profundizar.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-stone-200 sm:text-xl sm:leading-8">
-                Recorre enseñanzas en video, encuentros y fuentes tradicionales
-                dentro de una ruta clara de autoconocimiento. Empieza libremente
-                y avanza a tu propio ritmo.
+                Bienvenidos al camino del Autoconocimiento y la Realización del Sí
+                Mismo. Nos adentramos en la esencia del Vedanta Advaita, una
+                filosofía milenaria que enseña mediante el YO SOY: la Unidad entre
+                el Atman (Ser), el Brahmán (la Consciencia Impersonal) Y Parabrahmán
+                (El Absoluto).
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
