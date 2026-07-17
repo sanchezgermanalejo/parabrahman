@@ -116,10 +116,10 @@ export function LearningProgress({
               </span>
             )}
             <Link
-              href="/cursos"
+              href="#mapa-curricular"
               className="rounded-xl border border-sky-300/25 px-6 py-3 text-center text-sm font-semibold text-sky-100 transition hover:border-sky-300/50 hover:bg-sky-300/10"
             >
-              Ver la ruta completa
+              Ver mapa completo
             </Link>
           </div>
         </div>

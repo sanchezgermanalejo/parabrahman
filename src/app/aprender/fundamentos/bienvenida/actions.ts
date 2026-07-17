@@ -79,7 +79,7 @@ export async function submitLessonQuiz(
     };
   }
 
-  revalidatePath("/mi-aprendizaje");
+  revalidatePath("/cursos");
   revalidatePath("/aprender/fundamentos/bienvenida");
   return {
     status: "passed",

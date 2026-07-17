@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.30
+**Versión:** 0.37
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -204,16 +204,37 @@ El canal oficial `https://www.youtube.com/@parabrahmanyosoy` es la fuente audiov
 
 Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumnos autenticados, después de validar el cuestionario nuevamente en el servidor. Las políticas RLS limitan cada registro a su propietario. El almacenamiento local permanece temporalmente como respaldo para visitantes y mientras se aplica la migración, pero no es la fuente académica oficial.
 
+La Ruta de Aprendizaje en `/cursos` es la única vista académica. Para visitantes muestra el mapa público completo; al iniciar sesión incorpora en la misma pantalla el último avance, la próxima tarea, porcentajes y estados secuenciales. Una lección aprobada aparece completada, la primera pendiente queda como próximo paso y las posteriores muestran candado hasta completar la secuencia. Los candados organizan progresión, no pago ni privilegios comerciales. La URL histórica `/mi-aprendizaje` redirige permanentemente a `/cursos` y no aparece en la navegación.
+
 ### Sánscrito para Vedanta
 
 - Ruta pública desde sonido, IAST y devanāgarī hasta lectura guiada.
 - Vocabulario contextual de Vedanta Advaita.
 - Gramática nominal y verbal, sandhi, samāsa y sintaxis.
+- Diez cuadros comparativos de casos, temas nominales, pronombres, tiempos y modos, formas no personales, sandhi, compuestos, sintaxis y diferencias entre sánscrito védico y clásico.
 - Tarjetas y ejercicios interactivos de reconocimiento.
-- Lecturas de mahāvākyas y fuentes con contexto, no como consignas aisladas.
-- Audio humano revisado en una fase posterior; la voz sintética no será autoridad fonética.
+- Método explícito de seis pasos: transcribir, segmentar, lematizar, analizar, traducir e interpretar.
+- Laboratorio histórico desde Ṛgveda y Sāmaveda hasta Upaniṣads, Bhagavad Gītā, Vivekacūḍāmaṇi, Dṛg-Dṛśya-Viveka y Upadeśa Sāram.
+- Cada lectura presenta devanāgarī, IAST, traducción pedagógica, formas analizadas, foco gramatical, advertencia contextual y vínculo a la fuente.
+- Laboratorio oral con escucha lenta, segmentación silábica, grabación local, reproducción de la propia voz y reconocimiento experimental cuando el navegador lo permite.
+- Audio humano revisado en una fase posterior; la voz sintética y el reconocimiento generalista no serán autoridad fonética.
 
-El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre la conversación cotidiana. La progresión distingue escritura, transliteración, forma de diccionario, flexión y traducción. Su trayecto automatizado organiza cuatro ciclos, doce clases secuenciales, objetivos, contenidos, evaluaciones y logros. El progreso se conserva localmente durante el MVP; no constituye un título oficial ni una certificación de dominio, y deberá migrar a Supabase con validación en servidor antes de adquirir valor académico formal. El contenido principal se renderiza en servidor y solo los laboratorios interactivos utilizan estado en el navegador. Antes de certificar aprendizajes se requerirá revisión especializada de fonética, gramática y ejercicios.
+El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre la conversación cotidiana. La progresión distingue escritura, transliteración, forma de diccionario, flexión, traducción e interpretación. Su trayecto automatizado organiza cuatro ciclos, doce clases secuenciales, objetivos, contenidos, evaluaciones y logros. Los cuadros gramaticales funcionan como referencia inicial y el laboratorio permite ocultar o revelar capas de cada pasaje, inspeccionar palabras y consultar el texto fuente. Se distingue el sánscrito védico del clásico para no presentar como universales las regularidades de una sola época. Las traducciones son pedagógicas y no reemplazan ediciones críticas ni comentarios tradicionales. Los autores modernos que enseñaron en otras lenguas no serán retrotraducidos artificialmente al sánscrito.
+
+El progreso se conserva localmente durante el MVP; no constituye un título oficial ni una certificación de dominio, y deberá migrar a Supabase con validación en servidor antes de adquirir valor académico formal. El contenido principal se renderiza en servidor y solo los laboratorios interactivos utilizan estado en el navegador. Antes de certificar aprendizajes se requerirá revisión especializada de fonética, gramática, fuentes y ejercicios.
+
+El laboratorio de pronunciación utiliza capacidades nativas del navegador para conservar simplicidad y evitar infraestructura de audio prematura. La grabación con `MediaRecorder` permanece en la memoria de la pestaña y permite autoescucha. La síntesis intenta seleccionar una voz `sa-IN` y, si no existe, declara cualquier aproximación. El reconocimiento compara la transcripción del navegador con variantes esperadas, por lo que solo informa reconocimiento léxico aproximado: no evalúa de forma fiable cantidad vocálica, aspiración, retroflexión, acento védico ni calidad ritual. Algunos navegadores pueden enviar el audio a su propio servicio de reconocimiento; la interfaz lo advierte antes del uso. La evolución correcta será incorporar audios humanos revisados y un evaluador fonético especializado, con consentimiento y política de privacidad explícitos.
+
+### Metafísica conceptual
+
+- Ruta pública `/metafisica` con una geometría fija y siete dimensiones seleccionables.
+- OM como origen visual y Prakṛti/Puruṣa como polaridad pedagógica del despliegue.
+- Dimensiones material, vital o vegetal, animal, astral, causal, Ātman autoiluminoso y Brahman.
+- Correspondencias con cinco kośas, tres guṇas, cinco elementos, siete lokas y veinticinco tattvas.
+- Sistema septenario comparativo de chakras, días, colores y notas musicales.
+- Controles accesibles y movimiento ambiental desactivable mediante `prefers-reduced-motion`.
+
+El módulo es una síntesis pedagógica propia de Parabrahman, no una afirmación de equivalencia canónica única entre sistemas procedentes de marcos diferentes. Los 25 tattvas se presentan según el esquema Sāṃkhya —veinticuatro principios de Prakṛti y Puruṣa— como apoyo al discernimiento; Brahman no se convierte en un tattva adicional. Las asociaciones con días, colores, notas y chakras sirven como lenguaje contemplativo y mnemónico de la escuela y deberán revisarse académicamente antes de incorporarse como contenido evaluable. La geometría permanece inamovible para conservar orientación; la interacción selecciona y compara capas sin reorganizar el modelo.
 
 ### Biblioteca
 
@@ -619,11 +640,18 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-034 | Pasajes de Tradición con original sánscrito breve, referencia exacta, desglose literal, síntesis propia y límites de interpretación | Aceptada |
 | DM-035 | Trayecto automatizado de sánscrito con cuatro ciclos y doce clases secuenciales; avance local no acreditado durante el MVP | Aceptada |
 | DM-036 | Biblioteca pública con catálogo curado y acceso según derechos: fuente oficial, dominio público, vista previa o préstamo controlado | Aceptada |
-| DM-037 | Ruta pública de 5 ciclos, 15 etapas y 92 videos balizados, separada del panel personal de última actividad y próximo paso | Aceptada |
+| DM-037 | Ruta pública de 5 ciclos, 15 etapas y 92 videos balizados, separada del panel personal de última actividad y próximo paso | Reemplazada por DM-046 |
 | DM-038 | Chakras y siete niveles como especialización comparativa; los cuatro pādas de Māṇḍūkya permanecen como núcleo del análisis Advaita | Aceptada |
 | DM-039 | Vercel Hobby como alojamiento público inicial | Reemplazada por DM-040 a pedido del propietario |
 | DM-040 | Netlify Free sin tarjeta ni recargas como alojamiento público inicial, GitHub `main` como fuente de producción y dominio propio como evolución portable | Aceptada para el MVP |
 | DM-041 | Fallo controlado de Supabase: una configuración ausente deshabilita funciones personales, pero nunca bloquea portada, cursos, Biblioteca ni otros contenidos públicos | Aceptada |
+| DM-042 | Portada orientada al engagement con contraste cinematográfico, una acción inicial dominante, evidencia curricular verificable y movimiento CSS respetuoso de `prefers-reduced-motion` | Aceptada |
+| DM-043 | La bienvenida institucional de la portada presenta el camino del Autoconocimiento y la Realización del Sí Mismo mediante la relación entre Atman, Brahmán y Parabrahmán | Aceptada |
+| DM-044 | Módulo `/metafisica` con siete dimensiones, geometría fija y correspondencias comparativas; se declara como síntesis pedagógica propia y no como equivalencia canónica única del Advaita | Aceptada |
+| DM-045 | El texto institucional entregado por el fundador reemplaza íntegramente el titular anterior de la portada; Metafísica obtiene además un CTA visible dentro del hero | Aceptada |
+| DM-046 | Una sola Ruta de Aprendizaje en `/cursos`: pública para explorar y personalizada al iniciar sesión con progreso, próximo paso y candados secuenciales; `/mi-aprendizaje` redirige a ella | Aceptada |
+| DM-047 | Sánscrito se estructura como gramática sistemática y laboratorio histórico de lectura con devanāgarī, IAST, análisis y traducción; se distinguen etapas védica, clásica y moderna y no se inventan originales sánscritos | Aceptada |
+| DM-048 | Laboratorio oral progresivo: síntesis y reconocimiento del navegador como ayuda declaradamente experimental, grabación local para autoescucha y futura sustitución por audio humano y evaluación fonética especializada | Aceptada |
 
 ---
 
@@ -680,7 +708,8 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 15. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR;
 16. revisar académicamente el catálogo inicial de Biblioteca y comprobar periódicamente disponibilidad, idioma y derechos de cada enlace;
 17. revisar los 92 títulos del mapa curricular, especialmente tattvas, Parabrahman y el bloque comparativo de siete centros, antes de producir cada serie de videos.
-18. completar el primer despliegue de Netlify Free sin asociar tarjeta, registrar la URL pública y configurar Site URL y Redirect URLs en Supabase.
+18. completar el primer despliegue de Netlify Free sin asociar tarjeta, registrar la URL pública y configurar Site URL y Redirect URLs en Supabase;
+19. revisar académicamente las correspondencias del módulo Metafísica antes de convertirlas en afirmaciones evaluables o producir sus videos.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -690,6 +719,13 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.37 | 17-07-2026 | Laboratorio oral con escucha, micrófono, reproducción local, guía articulatoria y reconocimiento experimental para seis expresiones | Incorporar práctica de pronunciación desde el MVP sin presentar un reconocedor generalista como autoridad fonética ni almacenar grabaciones del alumno |
+| 0.36 | 17-07-2026 | Se incorporan diez cuadros gramaticales interactivos, método de traducción y ocho lecturas analizadas desde el Ṛgveda hasta Ramana Maharshi | Convertir Sánscrito en una carrera de lectura fundamentada, distinguir lengua védica y clásica y enseñar a justificar transliteración, análisis y traducción |
+| 0.35 | 17-07-2026 | Se elimina “Mi aprendizaje” como vista separada y su seguimiento se integra en `/cursos` con completados, próximo paso y candados | Evitar navegación redundante y mantener mapa curricular y progreso personal dentro de una única experiencia |
+| 0.34 | 17-07-2026 | El texto institucional reemplaza por completo “Ver, comprender y profundizar” y se incorpora el acceso directo Metafísica en el hero | Aplicar literalmente la jerarquía de portada solicitada y hacer visible el nuevo módulo sin depender del desplazamiento |
+| 0.33 | 17-07-2026 | Nuevo módulo Metafísica con mapa geométrico de siete dimensiones, 25 tattvas y correspondencias seleccionables | Dar forma navegable a la metafísica conceptual de Parabrahman distinguiendo síntesis pedagógica y autoridad tradicional |
+| 0.32 | 17-07-2026 | Se incorpora en la portada el texto institucional entregado por el fundador sobre Autoconocimiento, YO SOY, Atman, Brahmán y Parabrahmán | Convertir la bienvenida en una declaración explícita de la orientación filosófica de la escuela |
+| 0.31 | 17-07-2026 | Rediseño de la portada con hero cinematográfico, primer paso explícito, señales académicas reales y auditoría heurística de engagement | Mejorar comprensión, impacto y continuidad sin inventar métricas ni añadir una dependencia visual pesada |
 | 0.30 | 16-07-2026 | El proxy deja pasar contenido público cuando faltan variables de Supabase; autenticación y escritura conservan validaciones propias | Garantizar que una falla de identidad no contradiga el principio institucional de acceso libre al conocimiento |
 | 0.29 | 16-07-2026 | Netlify Free reemplaza Vercel como alojamiento público inicial; se prohíben tarjeta, recargas y complementos pagos | Cumplir el requisito explícito de que la publicación no implique datos de pago ni posibilidad de cobro automático |
 | 0.28 | 16-07-2026 | Vercel Hobby como alojamiento público inicial, asistente de publicación y guía de configuración con Supabase | Reemplazar la dependencia de localhost por una URL HTTPS reproducible sin introducir infraestructura innecesaria en el MVP |
