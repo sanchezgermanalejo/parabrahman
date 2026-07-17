@@ -96,18 +96,14 @@ export default async function Home() {
                 <span className="status-pulse size-2 rounded-full bg-emerald-300 text-emerald-300" />
                 Escuela audiovisual de acceso libre
               </p>
-              <h1 className="aurora-title mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
-                Vedanta Advaita para
-                <span className="block">ver, comprender y profundizar.</span>
-              </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-stone-200 sm:text-xl sm:leading-8">
+              <h1 className="aurora-title mt-5 max-w-4xl text-3xl font-semibold leading-[1.14] tracking-[-0.035em] sm:text-5xl lg:text-[3.4rem]">
                 Bienvenidos al camino del Autoconocimiento y la Realización del Sí
                 Mismo. Nos adentramos en la esencia del Vedanta Advaita, una
                 filosofía milenaria que enseña mediante el YO SOY: la Unidad entre
                 el Atman (Ser), el Brahmán (la Consciencia Impersonal) Y Parabrahmán
                 (El Absoluto).
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              </h1>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/aprender/fundamentos/bienvenida"
                   className="hero-primary-cta group inline-flex items-center justify-center gap-3 rounded-2xl bg-amber-300 px-6 py-4 text-center font-bold text-stone-950 shadow-[0_16px_50px_-18px_rgba(251,191,36,0.95)] transition hover:bg-amber-200"
@@ -120,6 +116,12 @@ export default async function Home() {
                   className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-black/30 px-6 py-4 text-center font-semibold text-white backdrop-blur-md transition hover:border-sky-200/50 hover:bg-sky-200/10"
                 >
                   Explorar la ruta completa
+                </Link>
+                <Link
+                  href="/metafisica"
+                  className="inline-flex items-center justify-center rounded-2xl border border-violet-300/35 bg-violet-400/15 px-6 py-4 text-center font-semibold text-violet-100 shadow-[0_14px_45px_-24px_rgba(167,139,250,0.8)] backdrop-blur-md transition hover:border-violet-200/65 hover:bg-violet-300/20"
+                >
+                  Metafísica
                 </Link>
               </div>
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-stone-300 sm:text-sm">

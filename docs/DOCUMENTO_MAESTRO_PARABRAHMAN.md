@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.33
+**Versión:** 0.34
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -638,6 +638,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-042 | Portada orientada al engagement con contraste cinematográfico, una acción inicial dominante, evidencia curricular verificable y movimiento CSS respetuoso de `prefers-reduced-motion` | Aceptada |
 | DM-043 | La bienvenida institucional de la portada presenta el camino del Autoconocimiento y la Realización del Sí Mismo mediante la relación entre Atman, Brahmán y Parabrahmán | Aceptada |
 | DM-044 | Módulo `/metafisica` con siete dimensiones, geometría fija y correspondencias comparativas; se declara como síntesis pedagógica propia y no como equivalencia canónica única del Advaita | Aceptada |
+| DM-045 | El texto institucional entregado por el fundador reemplaza íntegramente el titular anterior de la portada; Metafísica obtiene además un CTA visible dentro del hero | Aceptada |
 
 ---
 
@@ -705,6 +706,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.34 | 17-07-2026 | El texto institucional reemplaza por completo “Ver, comprender y profundizar” y se incorpora el acceso directo Metafísica en el hero | Aplicar literalmente la jerarquía de portada solicitada y hacer visible el nuevo módulo sin depender del desplazamiento |
 | 0.33 | 17-07-2026 | Nuevo módulo Metafísica con mapa geométrico de siete dimensiones, 25 tattvas y correspondencias seleccionables | Dar forma navegable a la metafísica conceptual de Parabrahman distinguiendo síntesis pedagógica y autoridad tradicional |
 | 0.32 | 17-07-2026 | Se incorpora en la portada el texto institucional entregado por el fundador sobre Autoconocimiento, YO SOY, Atman, Brahmán y Parabrahmán | Convertir la bienvenida en una declaración explícita de la orientación filosófica de la escuela |
 | 0.31 | 17-07-2026 | Rediseño de la portada con hero cinematográfico, primer paso explícito, señales académicas reales y auditoría heurística de engagement | Mejorar comprensión, impacto y continuidad sin inventar métricas ni añadir una dependencia visual pesada |
