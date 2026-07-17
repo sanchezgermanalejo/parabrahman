@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.36
+**Versión:** 0.37
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -216,11 +216,14 @@ La Ruta de Aprendizaje en `/cursos` es la única vista académica. Para visitant
 - Método explícito de seis pasos: transcribir, segmentar, lematizar, analizar, traducir e interpretar.
 - Laboratorio histórico desde Ṛgveda y Sāmaveda hasta Upaniṣads, Bhagavad Gītā, Vivekacūḍāmaṇi, Dṛg-Dṛśya-Viveka y Upadeśa Sāram.
 - Cada lectura presenta devanāgarī, IAST, traducción pedagógica, formas analizadas, foco gramatical, advertencia contextual y vínculo a la fuente.
-- Audio humano revisado en una fase posterior; la voz sintética no será autoridad fonética.
+- Laboratorio oral con escucha lenta, segmentación silábica, grabación local, reproducción de la propia voz y reconocimiento experimental cuando el navegador lo permite.
+- Audio humano revisado en una fase posterior; la voz sintética y el reconocimiento generalista no serán autoridad fonética.
 
 El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre la conversación cotidiana. La progresión distingue escritura, transliteración, forma de diccionario, flexión, traducción e interpretación. Su trayecto automatizado organiza cuatro ciclos, doce clases secuenciales, objetivos, contenidos, evaluaciones y logros. Los cuadros gramaticales funcionan como referencia inicial y el laboratorio permite ocultar o revelar capas de cada pasaje, inspeccionar palabras y consultar el texto fuente. Se distingue el sánscrito védico del clásico para no presentar como universales las regularidades de una sola época. Las traducciones son pedagógicas y no reemplazan ediciones críticas ni comentarios tradicionales. Los autores modernos que enseñaron en otras lenguas no serán retrotraducidos artificialmente al sánscrito.
 
 El progreso se conserva localmente durante el MVP; no constituye un título oficial ni una certificación de dominio, y deberá migrar a Supabase con validación en servidor antes de adquirir valor académico formal. El contenido principal se renderiza en servidor y solo los laboratorios interactivos utilizan estado en el navegador. Antes de certificar aprendizajes se requerirá revisión especializada de fonética, gramática, fuentes y ejercicios.
+
+El laboratorio de pronunciación utiliza capacidades nativas del navegador para conservar simplicidad y evitar infraestructura de audio prematura. La grabación con `MediaRecorder` permanece en la memoria de la pestaña y permite autoescucha. La síntesis intenta seleccionar una voz `sa-IN` y, si no existe, declara cualquier aproximación. El reconocimiento compara la transcripción del navegador con variantes esperadas, por lo que solo informa reconocimiento léxico aproximado: no evalúa de forma fiable cantidad vocálica, aspiración, retroflexión, acento védico ni calidad ritual. Algunos navegadores pueden enviar el audio a su propio servicio de reconocimiento; la interfaz lo advierte antes del uso. La evolución correcta será incorporar audios humanos revisados y un evaluador fonético especializado, con consentimiento y política de privacidad explícitos.
 
 ### Metafísica conceptual
 
@@ -648,6 +651,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-045 | El texto institucional entregado por el fundador reemplaza íntegramente el titular anterior de la portada; Metafísica obtiene además un CTA visible dentro del hero | Aceptada |
 | DM-046 | Una sola Ruta de Aprendizaje en `/cursos`: pública para explorar y personalizada al iniciar sesión con progreso, próximo paso y candados secuenciales; `/mi-aprendizaje` redirige a ella | Aceptada |
 | DM-047 | Sánscrito se estructura como gramática sistemática y laboratorio histórico de lectura con devanāgarī, IAST, análisis y traducción; se distinguen etapas védica, clásica y moderna y no se inventan originales sánscritos | Aceptada |
+| DM-048 | Laboratorio oral progresivo: síntesis y reconocimiento del navegador como ayuda declaradamente experimental, grabación local para autoescucha y futura sustitución por audio humano y evaluación fonética especializada | Aceptada |
 
 ---
 
@@ -715,6 +719,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.37 | 17-07-2026 | Laboratorio oral con escucha, micrófono, reproducción local, guía articulatoria y reconocimiento experimental para seis expresiones | Incorporar práctica de pronunciación desde el MVP sin presentar un reconocedor generalista como autoridad fonética ni almacenar grabaciones del alumno |
 | 0.36 | 17-07-2026 | Se incorporan diez cuadros gramaticales interactivos, método de traducción y ocho lecturas analizadas desde el Ṛgveda hasta Ramana Maharshi | Convertir Sánscrito en una carrera de lectura fundamentada, distinguir lengua védica y clásica y enseñar a justificar transliteración, análisis y traducción |
 | 0.35 | 17-07-2026 | Se elimina “Mi aprendizaje” como vista separada y su seguimiento se integra en `/cursos` con completados, próximo paso y candados | Evitar navegación redundante y mantener mapa curricular y progreso personal dentro de una única experiencia |
 | 0.34 | 17-07-2026 | El texto institucional reemplaza por completo “Ver, comprender y profundizar” y se incorpora el acceso directo Metafísica en el hero | Aplicar literalmente la jerarquía de portada solicitada y hacer visible el nuevo módulo sin depender del desplazamiento |

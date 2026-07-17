@@ -1,6 +1,7 @@
 import { SanskritCareer } from "@/components/sanskrit-career";
 import { SanskritGrammarLab } from "@/components/sanskrit-grammar-lab";
 import { SanskritPractice } from "@/components/sanskrit-practice";
+import { SanskritPronunciationLab } from "@/components/sanskrit-pronunciation-lab";
 import { SanskritReadingLab } from "@/components/sanskrit-reading-lab";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -13,6 +14,7 @@ import {
   vedantaVocabulary,
 } from "@/content/sanskrit";
 import { grammarTables, sanskritReadings, translationMethod } from "@/content/sanskrit-reading";
+import { pronunciationExercises } from "@/content/sanskrit-pronunciation";
 import { getCurrentStudent } from "@/lib/auth/current-student";
 
 export const metadata = {
@@ -48,7 +50,21 @@ export default async function SanskritPage() {
           <div className="mt-9 flex flex-wrap gap-3">
             <a href="#carrera" className="rounded-xl bg-amber-300 px-5 py-3 font-semibold text-stone-950 transition hover:bg-amber-200">Comenzar carrera automatizada</a>
             <a href="#gramatica" className="rounded-xl border border-amber-300/30 px-5 py-3 font-semibold text-amber-100 transition hover:bg-amber-300/10">Cuadros gramaticales</a>
+            <a href="#pronunciacion" className="rounded-xl border border-violet-300/30 px-5 py-3 font-semibold text-violet-100 transition hover:bg-violet-300/10">Escuchar y pronunciar</a>
             <a href="#textos" className="rounded-xl border border-sky-300/30 px-5 py-3 font-semibold text-sky-100 transition hover:bg-sky-300/10">Laboratorio de textos</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="pronunciacion" className="scroll-mt-24 border-y border-violet-100/10 bg-stone-950/65">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-300/70">Laboratorio oral · escucha y micrófono</p>
+          <h2 className="mt-3 max-w-4xl text-3xl font-semibold sm:text-4xl">Escuchar, grabarse y recibir una orientación inmediata</h2>
+          <p className="mt-4 max-w-4xl leading-7 text-stone-400">
+            Practica contrastes decisivos como vocal breve y larga, aspiración, anusvāra, visarga y grupos consonánticos. La grabación permite comparar tu voz; el reconocimiento automático ofrece una señal orientativa cuando el navegador admite sánscrito, sin reemplazar la corrección de un docente ni un modelo fonético especializado.
+          </p>
+          <div className="mt-10">
+            <SanskritPronunciationLab exercises={pronunciationExercises} />
           </div>
         </div>
       </section>
@@ -204,7 +220,7 @@ export default async function SanskritPage() {
               </a>
             ))}
           </div>
-          <p className="mt-7 rounded-2xl border border-amber-300/15 bg-amber-300/5 px-5 py-4 text-sm leading-6 text-amber-100/75">Próximo incremento académico: audio humano revisado, ejercicios de escritura manuscrita, más paradigmas por tipo nominal y sincronización del avance con la cuenta del alumno. No se publicará pronunciación sintética como sustituto de una fuente competente.</p>
+          <p className="mt-7 rounded-2xl border border-amber-300/15 bg-amber-300/5 px-5 py-4 text-sm leading-6 text-amber-100/75">Próximo incremento académico: sustituir progresivamente la voz sintética por audios humanos revisados, añadir ejercicios de escritura manuscrita, ampliar paradigmas y sincronizar el avance con la cuenta del alumno. La evaluación automática actual reconoce palabras; no certifica fonética ni recitación védica.</p>
         </div>
       </section>
     </main>
