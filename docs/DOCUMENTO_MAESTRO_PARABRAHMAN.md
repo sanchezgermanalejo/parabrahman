@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.38
+**Versión:** 0.39
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -719,6 +719,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.39 | 17-07-2026 | El módulo Metafísica adopta un explorador integrado con recorrido único, mapa contextual, jerarquía de correspondencias, paneles desplegables y navegación anterior/siguiente | Transformar el gráfico en una herramienta práctica de estudio, eliminar controles duplicados y reducir la carga visual sin ocultar las relaciones avanzadas |
 | 0.38 | 17-07-2026 | Nueva jerarquía tipográfica de portada: bienvenida, título equilibrado, explicación institucional y recorrido visual Atman → Brahmán → Parabrahmán | Mantener íntegro el texto oficial sin tratar todo el párrafo como encabezado, mejorar legibilidad, comprensión conceptual y adaptación móvil |
 | 0.37 | 17-07-2026 | Laboratorio oral con escucha, micrófono, reproducción local, guía articulatoria y reconocimiento experimental para seis expresiones | Incorporar práctica de pronunciación desde el MVP sin presentar un reconocedor generalista como autoridad fonética ni almacenar grabaciones del alumno |
 | 0.36 | 17-07-2026 | Se incorporan diez cuadros gramaticales interactivos, método de traducción y ocho lecturas analizadas desde el Ṛgveda hasta Ramana Maharshi | Convertir Sánscrito en una carrera de lectura fundamentada, distinguir lengua védica y clásica y enseñar a justificar transliteración, análisis y traducción |
