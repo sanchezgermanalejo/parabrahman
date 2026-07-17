@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.32
+**Versión:** 0.33
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -214,6 +214,17 @@ Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumn
 - Audio humano revisado en una fase posterior; la voz sintética no será autoridad fonética.
 
 El módulo `/sanscrito` prioriza la capacidad de leer y analizar fuentes sobre la conversación cotidiana. La progresión distingue escritura, transliteración, forma de diccionario, flexión y traducción. Su trayecto automatizado organiza cuatro ciclos, doce clases secuenciales, objetivos, contenidos, evaluaciones y logros. El progreso se conserva localmente durante el MVP; no constituye un título oficial ni una certificación de dominio, y deberá migrar a Supabase con validación en servidor antes de adquirir valor académico formal. El contenido principal se renderiza en servidor y solo los laboratorios interactivos utilizan estado en el navegador. Antes de certificar aprendizajes se requerirá revisión especializada de fonética, gramática y ejercicios.
+
+### Metafísica conceptual
+
+- Ruta pública `/metafisica` con una geometría fija y siete dimensiones seleccionables.
+- OM como origen visual y Prakṛti/Puruṣa como polaridad pedagógica del despliegue.
+- Dimensiones material, vital o vegetal, animal, astral, causal, Ātman autoiluminoso y Brahman.
+- Correspondencias con cinco kośas, tres guṇas, cinco elementos, siete lokas y veinticinco tattvas.
+- Sistema septenario comparativo de chakras, días, colores y notas musicales.
+- Controles accesibles y movimiento ambiental desactivable mediante `prefers-reduced-motion`.
+
+El módulo es una síntesis pedagógica propia de Parabrahman, no una afirmación de equivalencia canónica única entre sistemas procedentes de marcos diferentes. Los 25 tattvas se presentan según el esquema Sāṃkhya —veinticuatro principios de Prakṛti y Puruṣa— como apoyo al discernimiento; Brahman no se convierte en un tattva adicional. Las asociaciones con días, colores, notas y chakras sirven como lenguaje contemplativo y mnemónico de la escuela y deberán revisarse académicamente antes de incorporarse como contenido evaluable. La geometría permanece inamovible para conservar orientación; la interacción selecciona y compara capas sin reorganizar el modelo.
 
 ### Biblioteca
 
@@ -626,6 +637,7 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-041 | Fallo controlado de Supabase: una configuración ausente deshabilita funciones personales, pero nunca bloquea portada, cursos, Biblioteca ni otros contenidos públicos | Aceptada |
 | DM-042 | Portada orientada al engagement con contraste cinematográfico, una acción inicial dominante, evidencia curricular verificable y movimiento CSS respetuoso de `prefers-reduced-motion` | Aceptada |
 | DM-043 | La bienvenida institucional de la portada presenta el camino del Autoconocimiento y la Realización del Sí Mismo mediante la relación entre Atman, Brahmán y Parabrahmán | Aceptada |
+| DM-044 | Módulo `/metafisica` con siete dimensiones, geometría fija y correspondencias comparativas; se declara como síntesis pedagógica propia y no como equivalencia canónica única del Advaita | Aceptada |
 
 ---
 
@@ -682,7 +694,8 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 15. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR;
 16. revisar académicamente el catálogo inicial de Biblioteca y comprobar periódicamente disponibilidad, idioma y derechos de cada enlace;
 17. revisar los 92 títulos del mapa curricular, especialmente tattvas, Parabrahman y el bloque comparativo de siete centros, antes de producir cada serie de videos.
-18. completar el primer despliegue de Netlify Free sin asociar tarjeta, registrar la URL pública y configurar Site URL y Redirect URLs en Supabase.
+18. completar el primer despliegue de Netlify Free sin asociar tarjeta, registrar la URL pública y configurar Site URL y Redirect URLs en Supabase;
+19. revisar académicamente las correspondencias del módulo Metafísica antes de convertirlas en afirmaciones evaluables o producir sus videos.
 
 Después se incorporará la administración editorial mínima para actualizar el catálogo sin modificar código.
 
@@ -692,6 +705,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.33 | 17-07-2026 | Nuevo módulo Metafísica con mapa geométrico de siete dimensiones, 25 tattvas y correspondencias seleccionables | Dar forma navegable a la metafísica conceptual de Parabrahman distinguiendo síntesis pedagógica y autoridad tradicional |
 | 0.32 | 17-07-2026 | Se incorpora en la portada el texto institucional entregado por el fundador sobre Autoconocimiento, YO SOY, Atman, Brahmán y Parabrahmán | Convertir la bienvenida en una declaración explícita de la orientación filosófica de la escuela |
 | 0.31 | 17-07-2026 | Rediseño de la portada con hero cinematográfico, primer paso explícito, señales académicas reales y auditoría heurística de engagement | Mejorar comprensión, impacto y continuidad sin inventar métricas ni añadir una dependencia visual pesada |
 | 0.30 | 16-07-2026 | El proxy deja pasar contenido público cuando faltan variables de Supabase; autenticación y escritura conservan validaciones propias | Garantizar que una falla de identidad no contradiga el principio institucional de acceso libre al conocimiento |

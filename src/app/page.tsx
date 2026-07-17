@@ -35,6 +35,14 @@ const journeySignals = [
 
 const portals = [
   {
+    eyebrow: "Arquitectura conceptual",
+    title: "Metafísica de las siete dimensiones",
+    text: "Explora un mapa geométrico que relaciona dimensiones, kośas, guṇas, elementos, lokas, tattvas y chakras.",
+    href: "/metafisica",
+    action: "Abrir Metafísica",
+    accent: "violet",
+  },
+  {
     eyebrow: "Contexto histórico y tradicional",
     title: "Del Ṛgveda al Vedanta contemporáneo",
     text: "Explora Vedas, Upaniṣads, maestros, literatura y regiones de India dentro de una cronología verificable.",
@@ -214,7 +222,7 @@ export default async function Home() {
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/70">Una escuela, múltiples accesos</p>
           <h2 className="mt-3 text-3xl font-semibold sm:text-5xl">Profundiza desde diferentes dimensiones.</h2>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {portals.map((portal) => (
             <article key={portal.href} className={`portal-card portal-card-${portal.accent} luminous-card flex min-h-96 flex-col rounded-[2rem] border p-8 sm:p-10`}>
               <p className="text-xs font-semibold uppercase tracking-[0.18em]">{portal.eyebrow}</p>
