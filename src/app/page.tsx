@@ -96,13 +96,26 @@ export default async function Home() {
                 <span className="status-pulse size-2 rounded-full bg-emerald-300 text-emerald-300" />
                 Escuela audiovisual de acceso libre
               </p>
-              <h1 className="aurora-title mt-5 max-w-4xl text-3xl font-semibold leading-[1.14] tracking-[-0.035em] sm:text-5xl lg:text-[3.4rem]">
-                Bienvenidos al camino del Autoconocimiento y la Realización del Sí
-                Mismo. Nos adentramos en la esencia del Vedanta Advaita, una
-                filosofía milenaria que enseña mediante el YO SOY: la Unidad entre
-                el Atman (Ser), el Brahmán (la Consciencia Impersonal) Y Parabrahmán
-                (El Absoluto).
-              </h1>
+              <div className="hero-message mt-6">
+                <p className="hero-welcome">Bienvenidos al camino del</p>
+                <h1 className="hero-title">
+                  Autoconocimiento
+                  <span> y la Realización del Sí Mismo.</span>
+                </h1>
+                <p className="hero-introduction">
+                  Nos adentramos en la esencia del <strong>Vedanta Advaita</strong>, una
+                  filosofía milenaria que enseña mediante el <strong>YO SOY</strong>: la
+                  Unidad entre el Atman (Ser), el Brahmán (la Consciencia Impersonal) Y
+                  Parabrahmán (El Absoluto).
+                </p>
+                <div className="hero-concept-path" aria-label="Unidad entre Atman, Brahmán y Parabrahmán">
+                  <span><small>Ser</small>Atman</span>
+                  <b aria-hidden="true">→</b>
+                  <span><small>Consciencia impersonal</small>Brahmán</span>
+                  <b aria-hidden="true">→</b>
+                  <span><small>El Absoluto</small>Parabrahmán</span>
+                </div>
+              </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/aprender/fundamentos/bienvenida"
