@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.42
+**Versión:** 0.43
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -654,8 +654,9 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-046 | Una sola Ruta de Aprendizaje en `/cursos`: pública para explorar y personalizada al iniciar sesión con progreso, próximo paso y candados secuenciales; `/mi-aprendizaje` redirige a ella | Aceptada |
 | DM-047 | Sánscrito se estructura como gramática sistemática y laboratorio histórico de lectura con devanāgarī, IAST, análisis y traducción; se distinguen etapas védica, clásica y moderna y no se inventan originales sánscritos | Aceptada |
 | DM-048 | Laboratorio oral progresivo: síntesis y reconocimiento del navegador como ayuda declaradamente experimental, grabación local para autoescucha y futura sustitución por audio humano y evaluación fonética especializada | Aceptada |
-| DM-049 | Portada mínima con el título exacto “Bienvenidos al Autoconocimiento”, accesos principales y una capa de contraste integrada al fondo; sin tarjeta lateral ni textos o indicadores redundantes | Aceptada |
+| DM-049 | Portada mínima con el título exacto “Bienvenidos al Autoconocimiento”, accesos principales y una capa de contraste integrada al fondo; sin tarjeta lateral ni textos o indicadores redundantes | Reemplazada por DM-051 |
 | DM-050 | Publicación mediante un único comando Windows que ejecuta push, PR y merge; Netlify despliega `main` automáticamente y no se habilita publicación oculta sin revisión | Aceptada |
+| DM-051 | Portada visual sin titular visible: la imagen institucional y los accesos principales constituyen la experiencia; la identidad permanece como encabezado semántico oculto | Aceptada |
 
 ---
 
@@ -723,6 +724,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.43 | 18-07-2026 | Se elimina el título visible “Bienvenidos al Autoconocimiento”; la portada conserva imagen y acciones, con identidad institucional oculta semánticamente | Dar protagonismo completo a la portada original sin perder estructura accesible para lectores de pantalla y buscadores |
 | 0.42 | 18-07-2026 | Se formaliza un único publicador Windows sin pausa inicial para push, PR y merge; Netlify continúa desplegando `main` automáticamente | Reducir pasos manuales sin introducir un observador oculto que pueda publicar trabajo incompleto, secretos o cambios ajenos |
 | 0.41 | 18-07-2026 | La portada se reduce al título canónico “Bienvenidos al Autoconocimiento” y sus accesos principales; se eliminan tarjeta lateral, explicación, recorrido conceptual, antetítulo y beneficios | Evitar redundancias y superposición, recuperar la imagen institucional y convertir el contenido en una capa armónica en vez de una caja que oculte el fondo |
 | 0.40 | 17-07-2026 | La bienvenida de portada se resume en una apertura, el título “Realización del Sí Mismo” y una frase sobre YO SOY y la unidad Atman–Brahmán–Parabrahmán | Reducir repetición, aumentar impacto visual y permitir que el recorrido conceptual complete la explicación sin convertirla en un párrafo dominante |

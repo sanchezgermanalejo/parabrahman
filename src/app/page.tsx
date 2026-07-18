@@ -92,10 +92,8 @@ export default async function Home() {
         <div className="mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-end px-5 pb-20 pt-28 sm:px-8 sm:pb-24 lg:min-h-[790px] lg:pb-28">
           <div className="w-full">
             <div className="hero-focus enter-rise">
-              <h1 className="hero-simple-title">
-                Bienvenidos al <span>Autoconocimiento</span>
-              </h1>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <h1 className="sr-only">Parabrahman — Escuela de Vedanta Advaita</h1>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/aprender/fundamentos/bienvenida"
                   className="hero-primary-cta group inline-flex items-center justify-center gap-3 rounded-2xl bg-amber-300 px-6 py-4 text-center font-bold text-stone-950 shadow-[0_16px_50px_-18px_rgba(251,191,36,0.95)] transition hover:bg-amber-200"
