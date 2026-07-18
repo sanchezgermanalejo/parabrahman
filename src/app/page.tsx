@@ -89,7 +89,7 @@ export default async function Home() {
         <div className="hero-orbit hero-orbit-gold" aria-hidden="true" />
         <div className="hero-orbit hero-orbit-blue" aria-hidden="true" />
 
-        <div className="mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-end px-5 pb-[clamp(6.5rem,16vh,9rem)] pt-24 sm:px-8 sm:pt-28">
+        <div className="mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-end px-5 pb-[clamp(10rem,24vh,14rem)] pt-24 sm:px-8 sm:pt-28">
           <div className="w-full">
             <div className="hero-focus enter-rise">
               <h1 className="sr-only">Parabrahman — Escuela de Vedanta Advaita</h1>
@@ -106,12 +106,6 @@ export default async function Home() {
                   className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-black/30 px-6 py-4 text-center font-semibold text-white backdrop-blur-md transition hover:border-sky-200/50 hover:bg-sky-200/10"
                 >
                   Explorar la ruta completa
-                </Link>
-                <Link
-                  href="/metafisica"
-                  className="inline-flex items-center justify-center rounded-2xl border border-violet-300/35 bg-violet-400/15 px-6 py-4 text-center font-semibold text-violet-100 shadow-[0_14px_45px_-24px_rgba(167,139,250,0.8)] backdrop-blur-md transition hover:border-violet-200/65 hover:bg-violet-300/20"
-                >
-                  Metafísica
                 </Link>
               </div>
             </div>
