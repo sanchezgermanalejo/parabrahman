@@ -89,7 +89,7 @@ export default async function Home() {
         <div className="hero-orbit hero-orbit-gold" aria-hidden="true" />
         <div className="hero-orbit hero-orbit-blue" aria-hidden="true" />
 
-        <div className="mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-end px-5 pb-20 pt-28 sm:px-8 sm:pb-24 lg:min-h-[790px] lg:pb-28">
+        <div className="mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-end px-5 pb-[clamp(6.5rem,16vh,9rem)] pt-24 sm:px-8 sm:pt-28">
           <div className="w-full">
             <div className="hero-focus enter-rise">
               <h1 className="sr-only">Parabrahman — Escuela de Vedanta Advaita</h1>

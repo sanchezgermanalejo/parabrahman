@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.43
+**Versión:** 0.44
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -724,6 +724,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.44 | 18-07-2026 | La portada elimina el alto mínimo fijo de escritorio y posiciona las acciones con separación proporcional a la altura visible | Mantener la botonera dentro del primer pantallazo en notebooks y otras pantallas horizontales de poca altura |
 | 0.43 | 18-07-2026 | Se elimina el título visible “Bienvenidos al Autoconocimiento”; la portada conserva imagen y acciones, con identidad institucional oculta semánticamente | Dar protagonismo completo a la portada original sin perder estructura accesible para lectores de pantalla y buscadores |
 | 0.42 | 18-07-2026 | Se formaliza un único publicador Windows sin pausa inicial para push, PR y merge; Netlify continúa desplegando `main` automáticamente | Reducir pasos manuales sin introducir un observador oculto que pueda publicar trabajo incompleto, secretos o cambios ajenos |
 | 0.41 | 18-07-2026 | La portada se reduce al título canónico “Bienvenidos al Autoconocimiento” y sus accesos principales; se eliminan tarjeta lateral, explicación, recorrido conceptual, antetítulo y beneficios | Evitar redundancias y superposición, recuperar la imagen institucional y convertir el contenido en una capa armónica en vez de una caja que oculte el fondo |
