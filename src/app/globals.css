@@ -200,38 +200,8 @@ html {
 
 .hero-focus {
   position: relative;
-  isolation: isolate;
   max-width: 58rem;
   padding-block: clamp(1rem, 3vw, 2rem);
-}
-
-.hero-focus::before {
-  position: absolute;
-  z-index: -1;
-  inset: -4rem -8rem -4rem -5rem;
-  pointer-events: none;
-  content: "";
-  background: radial-gradient(ellipse at 24% 54%, rgba(2, 7, 15, 0.94) 0%, rgba(3, 10, 20, 0.72) 42%, rgba(3, 10, 20, 0.26) 63%, transparent 78%);
-  filter: blur(10px);
-}
-
-.hero-simple-title {
-  max-width: 56rem;
-  color: #fff7df;
-  font-size: clamp(3rem, 7vw, 6.8rem);
-  font-weight: 650;
-  letter-spacing: -0.06em;
-  line-height: 0.94;
-  text-wrap: balance;
-  text-shadow: 0 14px 48px rgba(0, 0, 0, 0.72);
-}
-
-.hero-simple-title > span {
-  display: block;
-  background: linear-gradient(100deg, #fde68a 2%, #fef3c7 38%, #bae6fd 72%, #7dd3fc 96%);
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 8px 24px rgba(56, 189, 248, 0.13));
 }
 
 .hero-primary-cta {
@@ -1033,8 +1003,6 @@ html {
   }
 
   .hero-orbit { width: 20rem; height: 20rem; }
-  .hero-focus::before { inset: -3rem -2rem; }
-  .hero-simple-title { letter-spacing: -0.048em; }
   .metaphysics-pole { top: 4%; min-width: 5.6rem; padding: .5rem; font-size: .75rem; }
   .metaphysics-pole-purusha { left: 0; }
   .metaphysics-pole-prakriti { right: 0; }
