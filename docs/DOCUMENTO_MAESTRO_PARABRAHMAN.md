@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.40
+**Versión:** 0.42
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -600,6 +600,8 @@ Un cambio de código, configuración, arquitectura o documentación no se consid
 
 GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los secretos, archivos `.env.local`, dependencias instaladas, compilaciones y credenciales permanecen fuera del repositorio.
 
+La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: valida la autorización, publica la rama preparada, crea o reutiliza un PR, lo fusiona en `main` y deja que Netlify despliegue automáticamente. El script no requiere una pausa inicial. Por seguridad no se instalará un observador oculto que publique cada guardado o commit sin revisión, y el último comando deberá ejecutarse desde la sesión Windows autorizada mientras el entorno de Codex no tenga salida de red a GitHub.
+
 ### Decisiones actualmente recomendadas, aún por ratificar
 
 | ID | Decisión | Estado |
@@ -646,12 +648,14 @@ GitHub es el respaldo colaborativo y el registro de evolución del proyecto. Los
 | DM-040 | Netlify Free sin tarjeta ni recargas como alojamiento público inicial, GitHub `main` como fuente de producción y dominio propio como evolución portable | Aceptada para el MVP |
 | DM-041 | Fallo controlado de Supabase: una configuración ausente deshabilita funciones personales, pero nunca bloquea portada, cursos, Biblioteca ni otros contenidos públicos | Aceptada |
 | DM-042 | Portada orientada al engagement con contraste cinematográfico, una acción inicial dominante, evidencia curricular verificable y movimiento CSS respetuoso de `prefers-reduced-motion` | Aceptada |
-| DM-043 | La bienvenida institucional de la portada presenta el camino del Autoconocimiento y la Realización del Sí Mismo mediante la relación entre Atman, Brahmán y Parabrahmán | Aceptada |
+| DM-043 | La bienvenida institucional de la portada presenta el camino del Autoconocimiento y la Realización del Sí Mismo mediante la relación entre Atman, Brahmán y Parabrahmán | Reemplazada por DM-049 |
 | DM-044 | Módulo `/metafisica` con siete dimensiones, geometría fija y correspondencias comparativas; se declara como síntesis pedagógica propia y no como equivalencia canónica única del Advaita | Aceptada |
-| DM-045 | El texto institucional entregado por el fundador reemplaza íntegramente el titular anterior de la portada; Metafísica obtiene además un CTA visible dentro del hero | Aceptada |
+| DM-045 | El texto institucional entregado por el fundador reemplaza íntegramente el titular anterior de la portada; Metafísica obtiene además un CTA visible dentro del hero | Reemplazada por DM-049 |
 | DM-046 | Una sola Ruta de Aprendizaje en `/cursos`: pública para explorar y personalizada al iniciar sesión con progreso, próximo paso y candados secuenciales; `/mi-aprendizaje` redirige a ella | Aceptada |
 | DM-047 | Sánscrito se estructura como gramática sistemática y laboratorio histórico de lectura con devanāgarī, IAST, análisis y traducción; se distinguen etapas védica, clásica y moderna y no se inventan originales sánscritos | Aceptada |
 | DM-048 | Laboratorio oral progresivo: síntesis y reconocimiento del navegador como ayuda declaradamente experimental, grabación local para autoescucha y futura sustitución por audio humano y evaluación fonética especializada | Aceptada |
+| DM-049 | Portada mínima con el título exacto “Bienvenidos al Autoconocimiento”, accesos principales y una capa de contraste integrada al fondo; sin tarjeta lateral ni textos o indicadores redundantes | Aceptada |
+| DM-050 | Publicación mediante un único comando Windows que ejecuta push, PR y merge; Netlify despliega `main` automáticamente y no se habilita publicación oculta sin revisión | Aceptada |
 
 ---
 
@@ -719,6 +723,8 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.42 | 18-07-2026 | Se formaliza un único publicador Windows sin pausa inicial para push, PR y merge; Netlify continúa desplegando `main` automáticamente | Reducir pasos manuales sin introducir un observador oculto que pueda publicar trabajo incompleto, secretos o cambios ajenos |
+| 0.41 | 18-07-2026 | La portada se reduce al título canónico “Bienvenidos al Autoconocimiento” y sus accesos principales; se eliminan tarjeta lateral, explicación, recorrido conceptual, antetítulo y beneficios | Evitar redundancias y superposición, recuperar la imagen institucional y convertir el contenido en una capa armónica en vez de una caja que oculte el fondo |
 | 0.40 | 17-07-2026 | La bienvenida de portada se resume en una apertura, el título “Realización del Sí Mismo” y una frase sobre YO SOY y la unidad Atman–Brahmán–Parabrahmán | Reducir repetición, aumentar impacto visual y permitir que el recorrido conceptual complete la explicación sin convertirla en un párrafo dominante |
 | 0.39 | 17-07-2026 | El módulo Metafísica adopta un explorador integrado con recorrido único, mapa contextual, jerarquía de correspondencias, paneles desplegables y navegación anterior/siguiente | Transformar el gráfico en una herramienta práctica de estudio, eliminar controles duplicados y reducir la carga visual sin ocultar las relaciones avanzadas |
 | 0.38 | 17-07-2026 | Nueva jerarquía tipográfica de portada: bienvenida, título equilibrado, explicación institucional y recorrido visual Atman → Brahmán → Parabrahmán | Mantener íntegro el texto oficial sin tratar todo el párrafo como encabezado, mejorar legibilidad, comprensión conceptual y adaptación móvil |

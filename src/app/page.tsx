@@ -4,7 +4,7 @@ import Link from "next/link";
 import hero from "../../public/brand/parabrahman-hero.png";
 import { SiteHeader } from "@/components/site-header";
 import { TodayMeetingCard } from "@/components/zoom-library";
-import { academyCourse, youtubeChannel } from "@/content/academy";
+import { academyCourse } from "@/content/academy";
 import { curriculumSummary } from "@/content/curriculum";
 import { getCurrentStudent } from "@/lib/auth/current-student";
 
@@ -89,31 +89,12 @@ export default async function Home() {
         <div className="hero-orbit hero-orbit-gold" aria-hidden="true" />
         <div className="hero-orbit hero-orbit-blue" aria-hidden="true" />
 
-        <div className="mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:min-h-[790px] lg:pb-24">
-          <div className="grid w-full items-end gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-10">
-            <div className="hero-glass enter-rise max-w-3xl rounded-[2rem] p-6 sm:p-8 lg:p-10">
-              <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-amber-200 sm:text-sm">
-                <span className="status-pulse size-2 rounded-full bg-emerald-300 text-emerald-300" />
-                Escuela audiovisual de acceso libre
-              </p>
-              <div className="hero-message mt-6">
-                <p className="hero-welcome">Bienvenidos al camino del Autoconocimiento</p>
-                <h1 className="hero-title">
-                  Realización
-                  <span> del Sí Mismo.</span>
-                </h1>
-                <p className="hero-introduction">
-                  El <strong>Vedanta Advaita</strong> revela, mediante el <strong>YO SOY</strong>,
-                  la unidad esencial entre Atman, Brahmán y Parabrahmán.
-                </p>
-                <div className="hero-concept-path" aria-label="Unidad entre Atman, Brahmán y Parabrahmán">
-                  <span><small>Ser</small>Atman</span>
-                  <b aria-hidden="true">→</b>
-                  <span><small>Consciencia impersonal</small>Brahmán</span>
-                  <b aria-hidden="true">→</b>
-                  <span><small>El Absoluto</small>Parabrahmán</span>
-                </div>
-              </div>
+        <div className="mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-end px-5 pb-20 pt-28 sm:px-8 sm:pb-24 lg:min-h-[790px] lg:pb-28">
+          <div className="w-full">
+            <div className="hero-focus enter-rise">
+              <h1 className="hero-simple-title">
+                Bienvenidos al <span>Autoconocimiento</span>
+              </h1>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="/aprender/fundamentos/bienvenida"
@@ -135,36 +116,7 @@ export default async function Home() {
                   Metafísica
                 </Link>
               </div>
-              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-stone-300 sm:text-sm">
-                <span>Sin pago obligatorio</span>
-                <span className="text-amber-300/50" aria-hidden="true">◆</span>
-                <span>Sin cuenta para explorar</span>
-                <span className="text-sky-300/50" aria-hidden="true">◆</span>
-                <span>Centrado en video</span>
-              </div>
             </div>
-
-            <aside className="hero-next-step reveal-on-scroll rounded-[1.75rem] border border-white/15 bg-[#06111d]/75 p-6 shadow-[0_24px_90px_-35px_rgba(56,189,248,0.72)] backdrop-blur-xl lg:mb-3">
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-200/80">Tu puerta de entrada</p>
-                <span className="rounded-full border border-emerald-300/25 bg-emerald-300/10 px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-emerald-200">Disponible</span>
-              </div>
-              <p className="mt-5 text-sm text-stone-400">Lección 01</p>
-              <h2 className="mt-2 text-2xl font-semibold leading-tight text-white">Bienvenida al recorrido</h2>
-              <p className="mt-3 text-sm leading-6 text-stone-300">
-                Descubre cómo estudiar con el canal oficial como centro de la experiencia.
-              </p>
-              <Link
-                href="/aprender/fundamentos/bienvenida"
-                className="group mt-6 flex items-center justify-between rounded-2xl border border-sky-200/20 bg-sky-300/10 px-4 py-3.5 font-semibold text-sky-100 transition hover:border-sky-200/45 hover:bg-sky-300/15"
-              >
-                Abrir primera lección
-                <span className="grid size-8 place-items-center rounded-full bg-sky-200 text-slate-950 transition group-hover:translate-x-1" aria-hidden="true">→</span>
-              </Link>
-              <a href={youtubeChannel.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-semibold text-stone-300 transition hover:text-amber-200">
-                Ver canal oficial en YouTube ↗
-              </a>
-            </aside>
           </div>
         </div>
 
