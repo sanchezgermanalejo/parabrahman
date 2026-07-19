@@ -16,7 +16,7 @@ export type TraditionLink = {
 export const traditionPeriods: readonly TraditionPeriod[] = [
   {
     id: "veda",
-    period: "Período védico",
+    period: "Período védico · ca. 1500–500 a. C.",
     title: "Saṃhitās: del Ṛgveda a los cuatro Vedas",
     summary:
       "El Ṛgveda conserva himnos de la cultura védica y forma, junto con Yajurveda, Sāmaveda y Atharvaveda, el núcleo de śruti. Cada Veda se relaciona con estratos de Saṃhitā, Brāhmaṇa, Āraṇyaka y Upaniṣad.",
@@ -27,7 +27,7 @@ export const traditionPeriods: readonly TraditionPeriod[] = [
   },
   {
     id: "upanishads",
-    period: "Final del período védico",
+    period: "Upaniṣads védicas · ca. 700–100 a. C.",
     title: "Las Upaniṣads y la interiorización del conocimiento",
     summary:
       "Las Upaniṣads exploran ātman, Brahman, conocimiento, liberación y el sentido último del Veda. Las principales incluyen Bṛhadāraṇyaka, Chāndogya, Aitareya, Taittirīya, Kena, Katha, Īśa, Muṇḍaka, Māṇḍūkya y Praśna.",
@@ -36,7 +36,7 @@ export const traditionPeriods: readonly TraditionPeriod[] = [
   },
   {
     id: "prasthanatrayi",
-    period: "Antigüedad tardía",
+    period: "Antigüedad tardía · ca. 200 a. C.–200 d. C.",
     title: "Prasthānatrayī: triple fundamento del Vedanta",
     summary:
       "Las Upaniṣads, la Bhagavad Gītā y los Brahma Sūtras se convierten en el triple punto de partida escriturario, práctico y razonado que las distintas escuelas vedánticas interpretan de maneras diferentes.",
@@ -46,8 +46,8 @@ export const traditionPeriods: readonly TraditionPeriod[] = [
   },
   {
     id: "gaudapada",
-    period: "Advaita preclásico · ca. siglos VI–VII",
-    title: "Gauḍapāda y la Māṇḍūkya Kārikā",
+    period: "Advaita preclásico · ca. siglo VI",
+    title: "Gauḍapāda (ca. siglo VI) y la Māṇḍūkya Kārikā",
     summary:
       "La Kārikā vinculada a la Māṇḍūkya Upaniṣad desarrolla una exposición temprana y sistemática de la no dualidad, el análisis de los estados de experiencia y la doctrina de no-originación.",
     focus: ["Māṇḍūkya Upaniṣad", "cuatro estados", "ajāti", "linaje de enseñanza"],
@@ -56,7 +56,7 @@ export const traditionPeriods: readonly TraditionPeriod[] = [
   {
     id: "shankara",
     period: "Advaita clásico · ca. siglo VIII",
-    title: "Śaṅkara y la sistematización del Advaita Vedanta",
+    title: "Śaṅkara (ca. siglo VIII) y la sistematización del Advaita Vedanta",
     summary:
       "Śaṅkara articula la no dualidad mediante comentarios al Prasthānatrayī y métodos de enseñanza orientados al reconocimiento liberador. La tradición lo vincula también con linajes monásticos y centros de enseñanza en India.",
     focus: ["adhyāsa", "jñāna", "Brahman no dual", "comentarios", "método pedagógico"],
@@ -69,16 +69,16 @@ export const traditionPeriods: readonly TraditionPeriod[] = [
     title: "Desarrollo de comentarios, subescuelas y manuales",
     summary:
       "Discípulos y autores posteriores amplían la epistemología, el lenguaje y la pedagogía del Advaita. Se consolidan líneas interpretativas y textos introductorios para distintos niveles de estudio.",
-    focus: ["Sureśvara", "Padmapāda", "Vācaspati Miśra", "Prakāśātman", "Vidyāraṇya", "Madhusūdana Sarasvatī"],
+    focus: ["Sureśvara · siglo VIII", "Padmapāda · siglo VIII", "Vācaspati Miśra · siglo IX", "Prakāśātman · siglos X–XI", "Vidyāraṇya · ca. 1296–1386", "Madhusūdana Sarasvatī · ca. 1540–1640"],
     resources: [{ label: "Historia doctrinal del Advaita", url: "https://iep.utm.edu/advaita-vedanta/" }],
   },
   {
     id: "vedanta-dialogue",
     period: "Vedanta plural · siglos XI–XIII y posteriores",
-    title: "Diálogo con Viśiṣṭādvaita, Dvaita y otras lecturas",
+    title: "Diálogo con Rāmānuja (1017–1137), Madhva (siglo XIII) y otras lecturas",
     summary:
       "Rāmānuja, Madhva y otros ācāryas interpretan las mismas fuentes vedánticas desde posiciones distintas. Conocer esas diferencias permite comprender que Vedanta no es sinónimo exclusivo de Advaita.",
-    focus: ["Rāmānuja", "Madhva", "Viśiṣṭādvaita", "Dvaita", "debate entre escuelas"],
+    focus: ["Rāmānuja · 1017–1137", "Madhva · ca. 1238–1317", "Viśiṣṭādvaita", "Dvaita", "debate entre escuelas"],
     resources: [
       { label: "Panorama de filosofías hindúes", url: "https://iep.utm.edu/hindu-ph/" },
       { label: "Conocer la tradición de Madhva", url: "https://iep.utm.edu/madhva/" },
@@ -90,7 +90,7 @@ export const traditionPeriods: readonly TraditionPeriod[] = [
     title: "Transmisión moderna y alcance universal",
     summary:
       "El Vedanta llega a públicos globales mediante órdenes tradicionales, movimientos modernos, traducciones y maestros de distintas formas de transmisión. La plataforma distinguirá siempre la exégesis tradicional de expresiones contemporáneas de no dualidad.",
-    focus: ["Ramakrishna y Vivekananda", "Ramana Maharshi", "Swami Sivananda", "Swami Chinmayananda", "Swami Dayananda Saraswati", "Nisargadatta Maharaj"],
+    focus: ["Ramakrishna · 1836–1886", "Vivekananda · 1863–1902", "Ramana Maharshi · 1879–1950", "Swami Sivananda · 1887–1963", "Swami Chinmayananda · 1916–1993", "Swami Dayananda Saraswati · 1930–2015", "Nisargadatta Maharaj · 1897–1981"],
     resources: [{ label: "Marco histórico del Advaita", url: "https://iep.utm.edu/advaita-vedanta/" }],
     datingNote:
       "La inclusión en esta etapa indica influencia histórica, no equivalencia doctrinal ni pertenencia a un único sampradāya.",
@@ -102,40 +102,40 @@ export const textFamilies = [
     title: "Śruti y corpus védico",
     role: "Fuente revelada en la comprensión tradicional",
     items: [
-      { label: "Cuatro Vedas", url: "https://vedicheritage.gov.in/introduction/" },
-      { label: "Brāhmaṇas", url: "https://vedicheritage.gov.in/introduction/" },
-      { label: "Āraṇyakas", url: "https://vedicheritage.gov.in/introduction/" },
-      { label: "Upaniṣads principales", url: "https://vedicheritage.gov.in/upanishads/" },
+      { label: "Cuatro Vedas", date: "ca. 1500–500 a. C.", url: "https://vedicheritage.gov.in/introduction/" },
+      { label: "Brāhmaṇas", date: "ca. 1000–700 a. C.", url: "https://vedicheritage.gov.in/introduction/" },
+      { label: "Āraṇyakas", date: "ca. 900–600 a. C.", url: "https://vedicheritage.gov.in/introduction/" },
+      { label: "Upaniṣads principales", date: "ca. 700–100 a. C.", url: "https://vedicheritage.gov.in/upanishads/" },
     ],
   },
   {
     title: "Prasthānatrayī",
     role: "Base textual compartida por las escuelas de Vedanta",
     items: [
-      { label: "Upaniṣads", url: "https://vedicheritage.gov.in/upanishads/" },
-      { label: "Bhagavad Gītā", url: "https://www.gitasupersite.iitk.ac.in/" },
-      { label: "Brahma Sūtras de Bādarāyaṇa", url: "https://www.gitasupersite.iitk.ac.in/bs_home" },
+      { label: "Upaniṣads", date: "ca. 700–100 a. C.", url: "https://vedicheritage.gov.in/upanishads/" },
+      { label: "Bhagavad Gītā", date: "ca. 200 a. C.–200 d. C.", url: "https://www.gitasupersite.iitk.ac.in/" },
+      { label: "Brahma Sūtras de Bādarāyaṇa", date: "ca. 200 a. C.–200 d. C.", url: "https://www.gitasupersite.iitk.ac.in/bs_home" },
     ],
   },
   {
     title: "Advaita clásico",
     role: "Exposición, comentario y razonamiento no dual",
     items: [
-      { label: "Māṇḍūkya Kārikā", url: "https://iep.utm.edu/advaita-vedanta/" },
-      { label: "Brahma Sūtra Bhāṣya", url: "https://www.gitasupersite.iitk.ac.in/bs_home" },
-      { label: "Comentarios de Śaṅkara", url: "https://plato.stanford.edu/entries/shankara/" },
-      { label: "Upadeśasāhasrī", url: "https://plato.stanford.edu/entries/shankara/" },
+      { label: "Māṇḍūkya Kārikā", date: "ca. siglo VI", url: "https://iep.utm.edu/advaita-vedanta/" },
+      { label: "Brahma Sūtra Bhāṣya", date: "ca. siglo VIII", url: "https://www.gitasupersite.iitk.ac.in/bs_home" },
+      { label: "Comentarios de Śaṅkara", date: "ca. siglo VIII", url: "https://plato.stanford.edu/entries/shankara/" },
+      { label: "Upadeśasāhasrī", date: "ca. siglo VIII", url: "https://plato.stanford.edu/entries/shankara/" },
     ],
   },
   {
     title: "Manuales y profundización",
     role: "Puertas pedagógicas posteriores",
     items: [
-      { label: "Pañcadaśī", url: "https://iep.utm.edu/advaita-vedanta/" },
-      { label: "Vedāntasāra", url: "https://iep.utm.edu/advaita-vedanta/" },
-      { label: "Vedāntaparibhāṣā", url: "https://iep.utm.edu/advaita-vedanta/" },
-      { label: "Advaitasiddhi", url: "https://iep.utm.edu/advaita-vedanta/" },
-      { label: "Textos de prakaraṇa", url: "https://iep.utm.edu/advaita-vedanta/" },
+      { label: "Pañcadaśī", date: "ca. siglo XIV", url: "https://iep.utm.edu/advaita-vedanta/" },
+      { label: "Vedāntasāra", date: "ca. siglos XV–XVI", url: "https://iep.utm.edu/advaita-vedanta/" },
+      { label: "Vedāntaparibhāṣā", date: "ca. siglo XVII", url: "https://iep.utm.edu/advaita-vedanta/" },
+      { label: "Advaitasiddhi", date: "ca. siglo XVI", url: "https://iep.utm.edu/advaita-vedanta/" },
+      { label: "Textos de prakaraṇa", date: "siglos VIII–XVII", url: "https://iep.utm.edu/advaita-vedanta/" },
     ],
   },
 ] as const;
@@ -144,6 +144,7 @@ export const primaryPassages = [
   {
     id: "rigveda-one-reality",
     source: "Ṛgveda",
+    date: "ca. 1200 a. C. · datación aproximada del estrato",
     reference: "1.164.46",
     devanagari: "एकं सद् विप्रा बहुधा वदन्ति",
     iast: "ekaṃ sad viprā bahudhā vadanti",
@@ -163,6 +164,7 @@ export const primaryPassages = [
   {
     id: "chandogya-tat-tvam-asi",
     source: "Chāndogya Upaniṣad",
+    date: "ca. 700–500 a. C.",
     reference: "6.8.7",
     devanagari: "तत् त्वम् असि श्वेतकेतो",
     iast: "tat tvam asi śvetaketo",
@@ -181,6 +183,7 @@ export const primaryPassages = [
   {
     id: "brihadaranyaka-aham-brahmasmi",
     source: "Bṛhadāraṇyaka Upaniṣad",
+    date: "ca. 700–500 a. C.",
     reference: "1.4.10",
     devanagari: "अहं ब्रह्मास्मि",
     iast: "ahaṃ brahmāsmi",
@@ -198,6 +201,7 @@ export const primaryPassages = [
   {
     id: "mandukya-ayam-atma-brahma",
     source: "Māṇḍūkya Upaniṣad",
+    date: "ca. 300–100 a. C.",
     reference: "mantra 2",
     devanagari: "अयमात्मा ब्रह्म",
     iast: "ayam ātmā brahma",
@@ -215,6 +219,7 @@ export const primaryPassages = [
   {
     id: "aitareya-prajnanam-brahma",
     source: "Aitareya Upaniṣad",
+    date: "ca. 700–500 a. C.",
     reference: "3.1.3",
     devanagari: "प्रज्ञानं ब्रह्म",
     iast: "prajñānaṃ brahma",
@@ -231,6 +236,7 @@ export const primaryPassages = [
   {
     id: "isha-all-this",
     source: "Īśā Upaniṣad",
+    date: "ca. 300–100 a. C.",
     reference: "mantra 1",
     devanagari: "ईशावास्यमिदं सर्वं यत्किञ्च जगत्यां जगत्",
     iast: "īśāvāsyam idaṃ sarvaṃ yat kiñca jagatyāṃ jagat",
@@ -250,6 +256,7 @@ export const primaryPassages = [
   {
     id: "gita-real-unreal",
     source: "Bhagavad Gītā",
+    date: "ca. 200 a. C.–200 d. C.",
     reference: "2.16",
     devanagari: "नासतो विद्यते भावो नाभावो विद्यते सतः। उभयोरपि दृष्टोऽन्तस्त्वनयोस्तत्त्वदर्शिभिः॥",
     iast: "nāsato vidyate bhāvo nābhāvo vidyate sataḥ; ubhayor api dṛṣṭo ’ntas tv anayos tattvadarśibhiḥ",

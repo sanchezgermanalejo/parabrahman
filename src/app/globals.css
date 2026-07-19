@@ -766,6 +766,134 @@ html {
   .dimension-accordions summary small { display: none; }
 }
 
+/* Explorador unificado: una sola selección y una sola ficha activa. */
+.metaphysics-workbench {
+  overflow: hidden;
+  border: 1px solid rgba(196, 181, 253, 0.14);
+  border-radius: clamp(1.35rem, 4vw, 2.25rem);
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--dimension-color) 10%, transparent), transparent 26rem),
+    linear-gradient(145deg, rgba(8, 11, 22, 0.97), rgba(2, 6, 12, 0.99));
+  box-shadow: 0 36px 120px -70px color-mix(in srgb, var(--dimension-color) 72%, transparent);
+}
+
+.metaphysics-workbench-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+}
+
+.metaphysics-workbench-header > div:first-child { max-width: 45rem; }
+.metaphysics-workbench-header p { color: #c4b5fd; font-size: 0.67rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.metaphysics-workbench-header h2 { margin-top: 0.45rem; color: white; font-size: clamp(1.65rem, 4vw, 2.5rem); font-weight: 650; letter-spacing: -0.035em; }
+.metaphysics-workbench-header > div:first-child > span { display: block; margin-top: 0.55rem; color: #a8a29e; font-size: 0.9rem; line-height: 1.6; }
+
+.metaphysics-origin {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  border: 1px solid rgba(253, 230, 138, 0.18);
+  border-radius: 1rem;
+  padding: 0.7rem 0.85rem;
+  color: #fde68a;
+  background: rgba(251, 191, 36, 0.045);
+}
+
+.metaphysics-origin strong { grid-row: 1 / 3; font-size: 2rem; line-height: 1; }
+.metaphysics-origin span { border-radius: 999px; padding: 0.2rem 0.5rem; color: #d6d3d1; font-size: 0.64rem; background: rgba(255, 255, 255, 0.045); }
+.metaphysics-origin i { color: #78716c; font-size: 0.65rem; font-style: normal; }
+
+.dimension-journey {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0 clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
+  border: 0;
+  background: transparent;
+}
+
+.dimension-journey button {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.6rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  color: #a8a29e;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.dimension-journey button:last-child { border-right: 1px solid rgba(255, 255, 255, 0.08); }
+.dimension-journey button::after { inset: auto 0 0; height: 3px; }
+.dimension-journey button:hover { transform: translateY(-2px); }
+.dimension-journey button.is-selected {
+  border-color: color-mix(in srgb, var(--dimension-color) 48%, transparent);
+  color: white;
+  background: color-mix(in srgb, var(--dimension-color) 13%, rgba(255, 255, 255, 0.025));
+  box-shadow: 0 14px 35px -26px var(--dimension-color);
+}
+
+.dimension-journey button > span { width: 2rem; border-radius: 0.7rem; }
+.dimension-journey button > div { display: grid; min-width: 0; gap: 0.15rem; }
+.dimension-journey button small { color: #78716c; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.dimension-journey button strong { overflow: hidden; color: inherit; font-size: 0.72rem; line-height: 1.2; text-overflow: ellipsis; }
+
+.metaphysics-level-progress { height: 4px; margin-inline: clamp(1rem, 3vw, 2rem); overflow: hidden; border-radius: 999px; background: rgba(255, 255, 255, 0.055); }
+.metaphysics-level-progress span { display: block; height: 100%; border-radius: inherit; background: var(--dimension-color); box-shadow: 0 0 18px var(--dimension-color); transition: width 300ms ease; }
+
+.metaphysics-workbench > .dimension-detail {
+  margin-top: clamp(1rem, 3vw, 2rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--dimension-color) 12%, transparent), transparent 32%),
+    rgba(5, 12, 22, 0.84);
+}
+
+.metaphysics-workbench > .dimension-detail .dimension-detail-progress { display: none; }
+
+@media (max-width: 1023px) {
+  .dimension-journey {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .dimension-journey button { scroll-snap-align: none; }
+}
+
+@media (max-width: 639px) {
+  .metaphysics-workbench-header { align-items: flex-start; flex-direction: column; }
+  .metaphysics-origin { width: 100%; grid-template-columns: auto 1fr auto 1fr; }
+  .metaphysics-origin strong { grid-row: auto; }
+  .dimension-journey {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .dimension-journey button { min-height: 4rem; scroll-snap-align: none; }
+  .dimension-detail { padding: 1.2rem; }
+  .dimension-detail-header h2 { font-size: clamp(2rem, 11vw, 3rem); }
+  .dimension-summary { margin-top: 1.2rem; line-height: 1.65; }
+  .dimension-primary-grid { margin-top: 1.2rem; }
+  .dimension-symbolic-grid { grid-template-columns: 1fr; }
+  .dimension-symbolic-grid > div { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.055); }
+  .dimension-symbolic-grid > div:last-child { border-bottom: 0; }
+  .dimension-navigation { gap: 0.5rem; }
+  .dimension-navigation button strong { max-width: 5.2rem; }
+}
+
 .tattva-module {
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
