@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useState } from "react";
 
 import { dimensionLayers, type DimensionLayer } from "@/content/metaphysics";
 
@@ -31,6 +31,20 @@ export function MetaphysicsMap() {
 
   return (
     <section className={`metaphysics-workbench dimension-detail-${selected.id}`} aria-label="Explorador de las siete dimensiones">
+      <header className="metaphysics-workbench-header">
+        <div>
+          <p>Recorrido interactivo</p>
+          <h2>Explora los siete niveles</h2>
+          <span>Elegí una dimensión y descubrí sus correspondencias en una sola ficha.</span>
+        </div>
+        <div className="metaphysics-origin" aria-label="Origen conceptual">
+          <strong>ॐ</strong>
+          <span>Prakṛti</span>
+          <i aria-hidden="true">+</i>
+          <span>Puruṣa</span>
+        </div>
+      </header>
+
       <nav className="dimension-journey" aria-label="Recorrido por las siete dimensiones">
         {dimensionLayers.map((layer) => (
           <button
@@ -41,66 +55,19 @@ export function MetaphysicsMap() {
             aria-current={selectedId === layer.id ? "step" : undefined}
           >
             <span>{layer.id}</span>
-            <small>{layer.name}</small>
+            <div>
+              <small>Nivel {layer.id}</small>
+              <strong>{layer.name}</strong>
+            </div>
           </button>
         ))}
       </nav>
 
-      <div className="metaphysics-workspace">
-        <div className="metaphysics-mandala-shell">
-          <div className="metaphysics-map-heading">
-            <div>
-              <span>Mapa integral</span>
-              <strong>Del origen a la Consciencia</strong>
-            </div>
-            <p><i style={{ background: `var(--dimension-color)` }} /> Dimensión activa</p>
-          </div>
+      <div className="metaphysics-level-progress" aria-label={`Nivel ${selected.id} de 7`}>
+        <span style={{ width: `${(selected.id / dimensionLayers.length) * 100}%` }} />
+      </div>
 
-          <div className="metaphysics-mandala" aria-label="Mapa geométrico de las siete dimensiones">
-            <div className="metaphysics-ring ring-1" />
-            <div className="metaphysics-ring ring-2" />
-            <div className="metaphysics-ring ring-3" />
-            <div className="metaphysics-axis" />
-            <div className="metaphysics-core" aria-hidden="true">
-              <span className="text-4xl sm:text-6xl">ॐ</span>
-              <small>Origen</small>
-            </div>
-            <div className="metaphysics-pole metaphysics-pole-purusha">
-              <strong>Puruṣa</strong>
-              <span>Consciencia</span>
-            </div>
-            <div className="metaphysics-pole metaphysics-pole-prakriti">
-              <strong>Prakṛti</strong>
-              <span>Manifestación</span>
-            </div>
-            <div className="metaphysics-nodes">
-              {dimensionLayers.map((layer, index) => (
-                <button
-                  key={layer.id}
-                  type="button"
-                  className={`metaphysics-node metaphysics-node-${layer.id} ${selectedId === layer.id ? "is-selected" : ""}`}
-                  style={{ "--node-index": index } as CSSProperties}
-                  onClick={() => setSelectedId(layer.id)}
-                  aria-pressed={selectedId === layer.id}
-                  aria-label={`Dimensión ${layer.id}: ${layer.name}`}
-                >
-                  <span>{layer.id}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="metaphysics-map-caption">
-            <span className={`metaphysics-node-${selected.id}`}>{selected.id}</span>
-            <div>
-              <small>Ahora explorando</small>
-              <strong>{selected.name}</strong>
-            </div>
-            <p>{selected.plane}</p>
-          </div>
-        </div>
-
-        <article className={`dimension-detail dimension-detail-${selected.id}`} aria-live="polite">
+      <article className={`dimension-detail dimension-detail-${selected.id}`} aria-live="polite">
           <div className="dimension-detail-progress" aria-hidden="true">
             <span style={{ width: `${(selected.id / dimensionLayers.length) * 100}%` }} />
           </div>
@@ -166,8 +133,7 @@ export function MetaphysicsMap() {
               <span aria-hidden="true">→</span>
             </button>
           </footer>
-        </article>
-      </div>
+      </article>
     </section>
   );
 }

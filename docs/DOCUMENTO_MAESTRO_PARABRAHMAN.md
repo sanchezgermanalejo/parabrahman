@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.45
+**Versión:** 0.46
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -227,14 +227,15 @@ El laboratorio de pronunciación utiliza capacidades nativas del navegador para 
 
 ### Metafísica conceptual
 
-- Ruta pública `/metafisica` con una geometría fija y siete dimensiones seleccionables.
-- OM como origen visual y Prakṛti/Puruṣa como polaridad pedagógica del despliegue.
+- Ruta pública `/metafisica` con un único recorrido progresivo de siete dimensiones seleccionables.
+- OM como origen visual y Prakṛti/Puruṣa como polaridad pedagógica, integrados en el encabezado del recorrido.
 - Dimensiones material, vital o vegetal, animal, astral, causal, Ātman autoiluminoso y Brahman.
 - Correspondencias con cinco kośas, tres guṇas, cinco elementos, siete lokas y veinticinco tattvas.
 - Sistema septenario comparativo de chakras, días, colores y notas musicales.
-- Controles accesibles y movimiento ambiental desactivable mediante `prefers-reduced-motion`.
+- Controles accesibles, tarjetas táctiles y una sola ficha activa con adaptación de siete, cuatro o dos columnas según el ancho disponible.
+- Movimiento ambiental desactivable mediante `prefers-reduced-motion`.
 
-El módulo es una síntesis pedagógica propia de Parabrahman, no una afirmación de equivalencia canónica única entre sistemas procedentes de marcos diferentes. Los 25 tattvas se presentan según el esquema Sāṃkhya —veinticuatro principios de Prakṛti y Puruṣa— como apoyo al discernimiento; Brahman no se convierte en un tattva adicional. Las asociaciones con días, colores, notas y chakras sirven como lenguaje contemplativo y mnemónico de la escuela y deberán revisarse académicamente antes de incorporarse como contenido evaluable. La geometría permanece inamovible para conservar orientación; la interacción selecciona y compara capas sin reorganizar el modelo.
+El módulo es una síntesis pedagógica propia de Parabrahman, no una afirmación de equivalencia canónica única entre sistemas procedentes de marcos diferentes. Los 25 tattvas se presentan según el esquema Sāṃkhya —veinticuatro principios de Prakṛti y Puruṣa— como apoyo al discernimiento; Brahman no se convierte en un tattva adicional. Las asociaciones con días, colores, notas y chakras sirven como lenguaje contemplativo y mnemónico de la escuela y deberán revisarse académicamente antes de incorporarse como contenido evaluable. La interfaz evita gráficos y controles paralelos: cada selección actualiza una única ficha, conserva el orden 1–7 y ofrece navegación anterior/siguiente. Esta estructura reduce carga cognitiva y mantiene equivalencia funcional entre escritorio y móvil.
 
 ### Biblioteca
 
@@ -244,9 +245,9 @@ El módulo es una síntesis pedagógica propia de Parabrahman, no una afirmació
 - Búsqueda y filtros.
 - Versionado y preparación futura para recuperación semántica.
 
-La primera Biblioteca pública vive en `/biblioteca` y reúne veinte obras o colecciones desde las Saṃhitās védicas y las Upaniṣads hasta Ramana Maharshi y Nisargadatta Maharaj. El catálogo permite buscar por título, autor, época o tema y filtrar por cinco etapas históricas. Cada ficha registra autoría, época, idioma, tipo de acceso, fuente y una nota de derechos. Se priorizan portales oficiales o académicos, ediciones de dominio público y descargas ofrecidas por las instituciones editoras. Para obras modernas protegidas, como *I Am That / Yo soy Eso*, se enlazan préstamos digitales controlados, vistas bibliográficas o ediciones oficiales: Parabrahman no aloja ni redistribuye copias no autorizadas. La selección es introductoria y deberá someterse a revisión académica y periódica de enlaces.
+La primera Biblioteca pública vive en `/biblioteca` y reúne veinte obras o colecciones desde las Saṃhitās védicas y las Upaniṣads hasta Ramana Maharshi y Nisargadatta Maharaj. El catálogo permite buscar por título, autor, época o tema y filtrar por cinco etapas históricas. Cada ficha registra autoría, fechas de vida cuando son históricamente identificables, fecha o rango de composición/publicación, época, idioma, tipo de acceso, fuente y una nota de derechos. Las cronologías antiguas, estratificadas o debatidas se marcan expresamente como aproximadas; nunca se presenta una conjetura como fecha tradicional indiscutida. Se priorizan portales oficiales o académicos, ediciones de dominio público y descargas ofrecidas por las instituciones editoras. Para obras modernas protegidas, como *I Am That / Yo soy Eso*, se enlazan préstamos digitales controlados, vistas bibliográficas o ediciones oficiales: Parabrahman no aloja ni redistribuye copias no autorizadas. La selección es introductoria y deberá someterse a revisión académica y periódica de enlaces.
 
-El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado. Cada período y obra conduce a una fuente académica, institucional u oficial seleccionada. En geografía, el contexto histórico y la ubicación cartográfica son enlaces distintos para no confundir una fuente de estudio con una coordenada. Los pasajes comentados incorporan únicamente fragmentos breves del original sánscrito, referencia, desglose literal y síntesis editorial propia; no reproducen traducciones modernas sin autorización y siempre declaran los límites de una lectura aislada.
+El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, las Upaniṣads, el Prasthānatrayī, el Advaita clásico, desarrollos posteriores, otras escuelas de Vedanta y la transmisión moderna. Distingue Sanātana Dharma, Vedanta y Advaita, e incorpora literatura, maestros, regiones de India y fuentes verificables. Es un mapa editorial inicial, no una declaración de exhaustividad; períodos, familias de textos, pasajes y maestros muestran su fecha o rango cronológico en la misma ficha. Las fechas discutidas se presentan como aproximaciones y los textos completos requerirán licencia o enlace autorizado. Cada período y obra conduce a una fuente académica, institucional u oficial seleccionada. En geografía, el contexto histórico y la ubicación cartográfica son enlaces distintos para no confundir una fuente de estudio con una coordenada. Los pasajes comentados incorporan únicamente fragmentos breves del original sánscrito, referencia, fecha aproximada, desglose literal y síntesis editorial propia; no reproducen traducciones modernas sin autorización y siempre declaran los límites de una lectura aislada.
 
 ### Encuentros
 
@@ -657,6 +658,8 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-049 | Portada mínima con el título exacto “Bienvenidos al Autoconocimiento”, accesos principales y una capa de contraste integrada al fondo; sin tarjeta lateral ni textos o indicadores redundantes | Reemplazada por DM-051 |
 | DM-050 | Publicación mediante un único comando Windows que ejecuta push, PR y merge; Netlify despliega `main` automáticamente y no se habilita publicación oculta sin revisión | Aceptada |
 | DM-051 | Portada visual sin titular visible: la imagen institucional y los accesos principales constituyen la experiencia; la identidad permanece como encabezado semántico oculto | Aceptada |
+| DM-052 | Metafísica reemplaza el mandala y la botonera duplicada por un único recorrido 1–7 con ficha activa, tarjetas táctiles y composición responsive | Aceptada |
+| DM-053 | Biblioteca y Tradición muestran fecha o rango en cada libro, período, pasaje y autor identificado, señalando expresamente cronologías aproximadas o debatidas | Aceptada |
 
 ---
 
@@ -724,6 +727,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.46 | 19-07-2026 | La botonera de portada asciende otra franja; Metafísica se unifica en un recorrido responsive sin mandala duplicado; Biblioteca y Tradición incorporan fechas visibles de obras, pasajes y autores | Evitar la superposición con la marca institucional, reducir carga cognitiva en escritorio y móvil y fortalecer la referencia cronológica de toda lectura histórica |
 | 0.45 | 18-07-2026 | Se elimina el CTA Metafísica del hero y la botonera restante asciende hasta una franja proporcional del 24% de la altura visible | Reducir competencia entre accesos, mantener visibles las acciones en notebook y respetar la composición central de la imagen institucional |
 | 0.44 | 18-07-2026 | La portada elimina el alto mínimo fijo de escritorio y posiciona las acciones con separación proporcional a la altura visible | Mantener la botonera dentro del primer pantallazo en notebooks y otras pantallas horizontales de poca altura |
 | 0.43 | 18-07-2026 | Se elimina el título visible “Bienvenidos al Autoconocimiento”; la portada conserva imagen y acciones, con identidad institucional oculta semánticamente | Dar protagonismo completo a la portada original sin perder estructura accesible para lectores de pantalla y buscadores |

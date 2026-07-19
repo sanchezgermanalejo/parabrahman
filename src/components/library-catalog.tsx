@@ -34,6 +34,8 @@ export function LibraryCatalog() {
           book.author,
           book.summary,
           book.era,
+          book.date,
+          book.authorDates,
           book.language,
         ]
           .filter(Boolean)
@@ -118,9 +120,16 @@ export function LibraryCatalog() {
                 <p className="mt-2 text-sm italic text-stone-500">{book.originalTitle}</p>
               )}
               <p className="mt-3 text-sm font-medium text-stone-300">{book.author}</p>
+              {book.authorDates && (
+                <p className="mt-1 text-xs leading-5 text-stone-500">{book.authorDates}</p>
+              )}
               <p className="mt-4 flex-1 text-sm leading-6 text-stone-400">{book.summary}</p>
 
               <dl className="mt-6 grid grid-cols-2 gap-3 border-t border-stone-800 pt-5 text-xs">
+                <div className="col-span-2 rounded-xl border border-amber-300/10 bg-amber-300/[0.035] px-3 py-2.5">
+                  <dt className="text-amber-300/60">Fecha o período</dt>
+                  <dd className="mt-1 font-medium leading-5 text-amber-100/90">{book.date}</dd>
+                </div>
                 <div>
                   <dt className="text-stone-600">Idioma</dt>
                   <dd className="mt-1 text-stone-300">{book.language}</dd>

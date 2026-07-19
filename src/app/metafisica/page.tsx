@@ -84,10 +84,9 @@ export default async function MetaphysicsPage() {
 
       <section className="border-t border-stone-800 bg-black/25">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
-          <p className="text-sm text-stone-500">El mapa contiene {dimensionLayers.length} dimensiones seleccionables. Su geometría permanece fija para facilitar orientación, comparación y futuras lecciones audiovisuales.</p>
+          <p className="text-sm text-stone-500">El recorrido contiene {dimensionLayers.length} dimensiones seleccionables dentro de una única interfaz. En escritorio y celular se mantiene el mismo orden, la misma ficha activa y la misma navegación progresiva.</p>
         </div>
       </section>
     </main>
   );
 }
-

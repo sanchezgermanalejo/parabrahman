@@ -18,6 +18,8 @@ export type LibraryBook = {
   originalTitle?: string;
   author: string;
   era: string;
+  date: string;
+  authorDates?: string;
   category: LibraryCategory;
   summary: string;
   language: string;
@@ -36,6 +38,7 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "Ṛgveda · Yajurveda · Sāmaveda · Atharvaveda",
     author: "Tradición védica",
     era: "Período védico",
+    date: "ca. 1500–500 a. C. · estratos diversos",
     category: "sanatana",
     summary:
       "Puerta de entrada al corpus más antiguo del Sanātana Dharma, con textos, recitación y recursos organizados por el portal patrimonial del Gobierno de India.",
@@ -51,6 +54,7 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "Colección de Upaniṣads védicas",
     author: "Tradición védica",
     era: "Final del período védico",
+    date: "ca. 700–100 a. C. · principales Upaniṣads",
     category: "sanatana",
     summary:
       "Textos que investigan ātman, Brahman, conocimiento y liberación; constituyen el fundamento revelado de las escuelas de Vedanta.",
@@ -65,6 +69,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Rāmāyaṇa de Vālmīki",
     author: "Vālmīki",
     era: "Épica sánscrita",
+    date: "ca. 500 a. C.–200 d. C. · composición estratificada",
+    authorDates: "Vālmīki · cronología histórica indeterminada",
     category: "sanatana",
     summary:
       "Una de las grandes epopeyas de India. Su relato de Rāma articula dharma, deber, devoción, gobierno y vida humana.",
@@ -79,6 +85,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Yoga Sūtras",
     author: "Patañjali",
     era: "Período clásico",
+    date: "ca. siglos II a. C.–V d. C. · datación discutida",
+    authorDates: "Patañjali · cronología histórica discutida",
     category: "sanatana",
     summary:
       "Aforismos fundamentales del Yoga clásico. Complementan el estudio vedántico al ordenar mente, práctica, concentración y liberación.",
@@ -93,6 +101,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Bhagavad Gītā",
     author: "Tradicionalmente atribuida a Vyāsa",
     era: "Épica sánscrita",
+    date: "ca. 200 a. C.–200 d. C.",
+    authorDates: "Vyāsa · figura tradicional, sin fecha histórica única",
     category: "prasthanatrayi",
     summary:
       "Diálogo entre Kṛṣṇa y Arjuna sobre acción, conocimiento, devoción, naturaleza del ser y liberación; es la base práctica del triple canon vedántico.",
@@ -107,6 +117,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Brahma Sūtras con bhāṣya de Śaṅkara",
     author: "Bādarāyaṇa · comentario de Śaṅkara",
     era: "Vedanta clásico",
+    date: "Sūtras ca. 200 a. C.–200 d. C. · comentario ca. siglo VIII",
+    authorDates: "Bādarāyaṇa · ca. siglo I a. C.; Śaṅkara · ca. siglo VIII",
     category: "prasthanatrayi",
     summary:
       "Aforismos que sistematizan la enseñanza de las Upaniṣads, acompañados por el comentario central de Śaṅkara para la tradición Advaita.",
@@ -122,6 +134,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "La joya suprema del discernimiento",
     author: "Atribuido tradicionalmente a Śaṅkara",
     era: "Advaita clásico",
+    date: "Fecha discutida · probablemente posterior al siglo VIII",
+    authorDates: "Śaṅkara · ca. siglo VIII; atribución de esta obra debatida",
     category: "advaita-classic",
     summary:
       "Manual pedagógico sobre discernimiento, cualificaciones del estudiante, maestro, ātman, ignorancia y liberación.",
@@ -138,6 +152,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "Mil enseñanzas",
     author: "Śaṅkara",
     era: "Advaita clásico · ca. siglo VIII",
+    date: "ca. siglo VIII d. C.",
+    authorDates: "Śaṅkara · ca. siglo VIII",
     category: "advaita-classic",
     summary:
       "Obra independiente de Śaṅkara que expone el método de enseñanza no dual mediante prosa y versos.",
@@ -152,6 +168,7 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Aṣṭāvakra Gītā",
     author: "Autor tradicional desconocido",
     era: "Advaita posclásico",
+    date: "ca. siglos VIII–XIV · estimación debatida",
     category: "advaita-classic",
     summary:
       "Diálogo radical sobre libertad, conciencia y desapego entre el sabio Aṣṭāvakra y el rey Janaka.",
@@ -166,6 +183,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Avadhūta Gītā",
     author: "Atribuida a Dattātreya",
     era: "Advaita posclásico",
+    date: "ca. siglos IX–X · estimación aproximada",
+    authorDates: "Dattātreya · figura tradicional; atribución no verificable históricamente",
     category: "advaita-classic",
     summary:
       "Canto no dual que presenta la identidad libre e indivisible del ser más allá de las categorías mentales.",
@@ -180,6 +199,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Pañcadaśī",
     author: "Vidyāraṇya",
     era: "Advaita posclásico · ca. siglo XIV",
+    date: "ca. siglo XIV d. C.",
+    authorDates: "Vidyāraṇya · ca. 1296–1386",
     category: "advaita-classic",
     summary:
       "Quince capítulos de exposición sistemática sobre discernimiento, conciencia, realidad, dicha y liberación.",
@@ -195,6 +216,7 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "Discernimiento entre el observador y lo observado",
     author: "Atribución tradicional discutida",
     era: "Advaita posclásico",
+    date: "ca. siglo XIV · atribución y fecha discutidas",
     category: "advaita-classic",
     summary:
       "Texto breve para investigar la diferencia entre aquello que conoce y todo lo que aparece como objeto conocido.",
@@ -210,6 +232,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "The Complete Works of Swami Vivekananda",
     author: "Swami Vivekananda",
     era: "Siglos XIX–XX",
+    date: "Conferencias y escritos · 1890–1902",
+    authorDates: "Swami Vivekananda · 1863–1902",
     category: "modern",
     summary:
       "Conferencias, escritos y conversaciones que llevaron el Vedanta a un público global y marcaron su transmisión moderna.",
@@ -224,6 +248,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     title: "Vedanta para principiantes",
     author: "Swami Sivananda",
     era: "Siglo XX",
+    date: "Primera mitad del siglo XX",
+    authorDates: "Swami Sivananda · 1887–1963",
     category: "modern",
     summary:
       "Introducción progresiva en español a los conceptos, prácticas y finalidad del Vedanta.",
@@ -239,6 +265,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "All About Hinduism",
     author: "Swami Sivananda",
     era: "Siglo XX",
+    date: "Primera mitad del siglo XX",
+    authorDates: "Swami Sivananda · 1887–1963",
     category: "modern",
     summary:
       "Panorama del Sanātana Dharma, sus escrituras, escuelas, prácticas, festividades y formas de vida.",
@@ -254,6 +282,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "Nāṉ Yār? · Who Am I?",
     author: "Sri Ramana Maharshi",
     era: "Siglo XX",
+    date: "Respuestas de 1902 · primera edición tamil de 1923",
+    authorDates: "Sri Ramana Maharshi · 1879–1950",
     category: "modern",
     summary:
       "Presentación breve del método de autoindagación asociado a Ramana Maharshi.",
@@ -269,6 +299,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "Talks with Sri Ramana Maharshi · selección",
     author: "Sri Ramana Maharshi",
     era: "Siglo XX",
+    date: "Conversaciones registradas entre 1935–1939",
+    authorDates: "Sri Ramana Maharshi · 1879–1950",
     category: "modern",
     summary:
       "Selección oficial de diálogos sobre autoindagación, mente, silencio, entrega y realización.",
@@ -284,6 +316,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "Gems from Bhagavan",
     author: "Sri Ramana Maharshi",
     era: "Siglo XX",
+    date: "Enseñanzas recopiladas · primera mitad del siglo XX",
+    authorDates: "Sri Ramana Maharshi · 1879–1950",
     category: "modern",
     summary:
       "Compilación breve de respuestas y enseñanzas de Ramana Maharshi organizada para una primera aproximación.",
@@ -299,6 +333,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "The Gospel of Sri Ramakrishna",
     author: "Mahendranath Gupta · traducción de Swami Nikhilananda",
     era: "Siglos XIX–XX",
+    date: "Conversaciones 1882–1886 · edición inglesa de 1942",
+    authorDates: "Sri Ramakrishna · 1836–1886; Mahendranath Gupta · 1854–1932",
     category: "modern",
     summary:
       "Registro de conversaciones de Sri Ramakrishna y una fuente central para comprender el movimiento que influyó en el Vedanta moderno.",
@@ -314,6 +350,8 @@ export const libraryBooks: readonly LibraryBook[] = [
     originalTitle: "I Am That",
     author: "Sri Nisargadatta Maharaj · conversaciones editadas por Maurice Frydman",
     era: "Siglo XX · publicado en 1973",
+    date: "Primera edición inglesa · 1973",
+    authorDates: "Nisargadatta Maharaj · 1897–1981; Maurice Frydman · 1901–1976",
     category: "contemporary",
     summary:
       "Conversaciones sobre el sentido de «yo soy», conciencia, identidad y lo absoluto. Es una referencia decisiva de la no dualidad contemporánea.",

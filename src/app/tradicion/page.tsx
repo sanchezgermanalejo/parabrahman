@@ -106,7 +106,7 @@ export default async function TraditionPage() {
                 {family.items.map((item) => (
                   <li key={item.label} className="border-b border-stone-800 pb-3 last:border-0">
                     <a href={item.url} target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-4 transition hover:text-sky-100">
-                      <span>{item.label}</span>
+                      <span className="grid gap-1"><strong className="font-medium text-stone-300 group-hover:text-sky-100">{item.label}</strong><small className="text-xs text-stone-600">{item.date}</small></span>
                       <span aria-hidden="true" className="text-sky-300/60 transition group-hover:text-sky-200">↗</span>
                     </a>
                   </li>
@@ -134,6 +134,7 @@ export default async function TraditionPage() {
                       <span>Lectura {index + 1}</span>
                       <span className="text-stone-700">·</span>
                       <span>{passage.source} · {passage.reference}</span>
+                      <span className="text-stone-500">· {passage.date}</span>
                     </div>
                     <blockquote lang="sa" className="mt-6 border-l-2 border-violet-300/40 pl-5 text-2xl leading-relaxed text-violet-100 sm:text-3xl">
                       {passage.devanagari}
