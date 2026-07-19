@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.47
+**Versión:** 0.48
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -728,6 +728,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.48 | 19-07-2026 | La botonera principal asciende una franja adicional del 3% de la altura visible, con límites adaptativos para móvil y escritorio | Ajustar finamente la composición con la marca incluida en la imagen de fondo sin fijar una posición rígida |
 | 0.47 | 19-07-2026 | Se reemplaza la detección simple del puerto por un arranque verificable con espera extendida, ejecución directa de Next.js y registro local; el iniciador queda versionado en `scripts/` | Evitar falsos positivos y cierres prematuros en computadoras donde el primer compilado tarda más de 45 segundos |
 | 0.46 | 19-07-2026 | La botonera de portada asciende otra franja; Metafísica se unifica en un recorrido responsive sin mandala duplicado; Biblioteca y Tradición incorporan fechas visibles de obras, pasajes y autores | Evitar la superposición con la marca institucional, reducir carga cognitiva en escritorio y móvil y fortalecer la referencia cronológica de toda lectura histórica |
 | 0.45 | 18-07-2026 | Se elimina el CTA Metafísica del hero y la botonera restante asciende hasta una franja proporcional del 24% de la altura visible | Reducir competencia entre accesos, mantener visibles las acciones en notebook y respetar la composición central de la imagen institucional |
