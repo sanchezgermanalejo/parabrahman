@@ -719,7 +719,7 @@ Completar la primera unidad audiovisual con datos editoriales reales:
 14. revisar periódicamente disponibilidad, autoridad y derechos de los enlaces externos de Tradición;
 15. renovar la autorización de GitHub, publicar los commits pendientes y actualizar el PR;
 16. revisar académicamente el catálogo inicial de Biblioteca y comprobar periódicamente disponibilidad, idioma y derechos de cada enlace;
-17. revisar los 92 títulos del mapa curricular, especialmente tattvas, Parabrahman y el bloque comparativo de siete centros, antes de producir cada serie de videos.
+17. revisar los 105 títulos del mapa curricular, especialmente tattvas, Parabrahman y el bloque comparativo de siete centros, antes de producir cada serie de videos.
 18. completar el primer despliegue de Netlify Free sin asociar tarjeta, registrar la URL pública y configurar Site URL y Redirect URLs en Supabase;
 19. revisar académicamente las correspondencias del módulo Metafísica antes de convertirlas en afirmaciones evaluables o producir sus videos.
 
@@ -731,6 +731,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.51 | 20-07-2026 | Las 15 etapas de la Ruta de Aprendizaje se normalizan en siete lecciones cada una, para un total de 105, y el código valida automáticamente esta regla | Crear una cadencia académica previsible, facilitar la producción audiovisual y evitar que futuras ediciones desequilibren la progresión |
 | 0.50 | 20-07-2026 | La lección 2 del recorrido inicial pasa a llamarse “¿Qué es el Vedanta Advaita?” en el aula y en el mapa curricular | Alinear el balizado académico con la secuencia audiovisual definida por el fundador sin cambiar el identificador que sostendrá el progreso del alumno |
 | 0.49 | 20-07-2026 | La primera lección de Fundamentos reemplaza la lista genérica del canal por el video específico `VbxxAhoZZx0` | Convertir “Bienvenida” en la primera unidad audiovisual real sin alterar el formato ya aprobado del aula |
 | 0.48 | 19-07-2026 | La botonera principal asciende una franja adicional del 3% de la altura visible, con límites adaptativos para móvil y escritorio | Ajustar finamente la composición con la marca incluida en la imagen de fondo sin fijar una posición rígida |

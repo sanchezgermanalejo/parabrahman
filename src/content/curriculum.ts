@@ -71,9 +71,19 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
             "Introducción al significado, propósito y enfoque no dual del Vedanta Advaita.",
           ),
           planned(
+            "pregunta-quien-soy",
+            "La pregunta fundamental: ¿quién soy?",
+            "Diferenciar identidad biográfica, experiencia y presencia consciente.",
+          ),
+          planned(
             "tat-tvam-asi",
             "Tat Tvam Asi: una brújula para toda la ruta",
             "Presentación inicial del mahāvākya sin adelantar su demostración.",
+          ),
+          planned(
+            "informacion-experiencia-conocimiento",
+            "Información, experiencia y conocimiento",
+            "Distinguir acumulación conceptual, estados pasajeros y comprensión liberadora.",
           ),
           planned(
             "como-estudiar-vedanta",
@@ -108,6 +118,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("que-es-advaita", "Advaita: el sentido de no dualidad", "Alcance y límites de la palabra advaita."),
           planned("prasthanatrayi", "El triple fundamento del Vedanta", "Upaniṣads, Bhagavad Gītā y Brahma Sūtras."),
           planned("shankara-linaje", "Śaṅkara y la tradición de enseñanza", "Comentarios, método y atribuciones responsables."),
+          planned("transmision-contemporanea", "Del linaje tradicional a la enseñanza contemporánea", "Continuidades, adaptaciones modernas y lugar de Parabrahman."),
         ],
       },
       {
@@ -130,6 +141,8 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("seis-disciplinas", "Las seis disciplinas internas", "Śama, dama, uparati, titikṣā, śraddhā y samādhāna."),
           planned("karma-yoga", "Karma yoga: actuar sin quedar atado", "Acción, actitud, resultado y crecimiento."),
           planned("dharma-valores", "Dharma y valores para el autoconocimiento", "No daño, veracidad, responsabilidad y coherencia."),
+          planned("upasana-meditacion", "Upāsanā y meditación preparatoria", "Atención, devoción y estabilidad al servicio del conocimiento."),
+          planned("plan-preparacion", "Diseñar una preparación cotidiana", "Integrar valores, acción consciente, contemplación y revisión personal."),
         ],
       },
     ],
@@ -161,6 +174,8 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("mente-observada", "Pensamientos y emociones también son conocidos", "Cambio mental y continuidad del conocer."),
           planned("testigo", "Sākṣin: la conciencia testigo", "Uso pedagógico y límites de la metáfora del testigo."),
           planned("reflejo-conciencia", "Cidābhāsa: conciencia reflejada", "Cómo aparece el conocedor individual."),
+          planned("conocedor-no-objeto", "El conocedor no es un objeto", "Investigar por qué la conciencia no aparece entre las cosas conocidas."),
+          planned("practica-observador", "Laboratorio de observador y observado", "Aplicar el discernimiento a cuerpo, sentidos, emociones y pensamientos."),
         ],
       },
       {
@@ -184,6 +199,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("manomaya", "Manomaya-kośa: emoción y pensamiento", "Mente reactiva y experiencia subjetiva."),
           planned("vijnanamaya", "Vijñānamaya-kośa: intelecto y decisión", "Discernimiento, agencia y sentido del yo."),
           planned("anandamaya", "Ānandamaya-kośa: causalidad y quietud", "Gozo condicionado y confusión con Brahman."),
+          planned("integrar-cuerpos-koshas", "Integrar los tres cuerpos y las cinco envolturas", "Correspondencias, diferencias y uso conjunto de ambos mapas."),
         ],
       },
       {
@@ -207,6 +223,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("ahamkara", "Ahaṃkāra: el constructor del yo", "Apropiación de cuerpo, rol y acción."),
           planned("citta", "Citta: memoria, huella y continuidad", "Recuerdo, hábito y disponibilidad mental."),
           planned("sentidos-pranas", "Sentidos, órganos de acción y cinco prāṇas", "La arquitectura funcional del cuerpo sutil."),
+          planned("antahkarana-conciencia", "Antaḥkaraṇa no es conciencia", "Distinguir el instrumento cambiante de aquello que lo ilumina."),
         ],
       },
     ],
@@ -239,6 +256,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("tamas", "Tamas: estabilidad, inercia y ocultamiento", "Materia, resistencia y confusión."),
           planned("maya", "Māyā: poder de proyección y ocultamiento", "Estatus pedagógico y orden empírico."),
           planned("karma-causalidad", "Karma y la red de causalidad", "Acción, resultado, saṃskāra y responsabilidad."),
+          planned("trascender-gunas", "Reconocer y trascender los guṇas", "Observación cotidiana sin identidad rígida ni juicio moralista."),
         ],
       },
       {
@@ -262,6 +280,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("cinco-elementos-densos", "Los cinco elementos densos", "Experiencia sensible y mundo manifestado."),
           planned("panchikarana", "Pañcīkaraṇa: combinación y manifestación", "Modelo tradicional de densificación."),
           planned("micro-macrocosmos", "Individuo y universo: microcosmos y macrocosmos", "Jīva, Hiraṇyagarbha, Virāṭ y orden total."),
+          planned("veinticinco-tattvas", "Los 25 tattvas del Sāṃkhya", "Puruṣa, prakṛti y las categorías del despliegue comparadas con el uso vedántico."),
         ],
       },
       {
@@ -286,7 +305,6 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("anahata", "Anāhata: vínculo y apertura", "Relación, compasión y amplitud emocional."),
           planned("vishuddha", "Viśuddha: expresión y discernimiento", "Palabra, escucha y verdad."),
           planned("ajna-sahasrara", "Ājñā y Sahasrāra: visión y trascendencia", "Integración simbólica y diferencia respecto de mokṣa."),
-          planned("siete-niveles-advaita", "Del mapa de siete niveles al discernimiento no dual", "Qué aporta el modelo y dónde debe abandonarse."),
         ],
       },
     ],
@@ -319,6 +337,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("profundo-prajna", "Suṣupti y Prājña", "Resolución de la dualidad y causalidad."),
           planned("turiya", "Turīya: no un estado más", "La conciencia no dual presente en toda experiencia."),
           planned("om-mandukya", "Oṃ y los cuatro pādas", "A, U, M y el silencio como enseñanza."),
+          planned("continuidad-conciencia", "La continuidad a través de los tres estados", "Indagación guiada sobre cambio, ausencia aparente y presencia consciente."),
         ],
       },
       {
@@ -366,6 +385,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("tat-tvam-asi-profundizacion", "Tat Tvam Asi en profundidad", "Eso, tú y la identidad indicada."),
           planned("ayam-atma-brahma", "Ayam Ātmā Brahma", "Este sí mismo es Brahman."),
           planned("bhaga-tyaga", "Bhāga-tyāga-lakṣaṇā", "Abandono de atributos incompatibles y significado común."),
+          planned("mahavakyas-integracion", "Integrar los cuatro mahāvākyas", "Una visión única expresada desde cuatro contextos upaniṣádicos."),
         ],
       },
     ],
@@ -417,13 +437,12 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
         track: "core",
         lessons: [
           planned("tattva-bodha", "Tattva Bodha: mapa introductorio", "Categorías básicas y preparación terminológica."),
-          planned("atma-bodha", "Ātma Bodha: discernimiento del sí mismo", "Lectura, atribución y enseñanza central."),
+          planned("atma-bodha", "Ātma Bodha y Vivekacūḍāmaṇi", "Discernimiento del sí mismo, práctica pedagógica y debate responsable de atribución."),
           planned("drg-drsya-texto", "Dṛg-Dṛśya-Viveka: lectura guiada", "Observador, observado y conciencia reflejada."),
           planned("mandukya-karika", "Māṇḍūkya Upaniṣad y Kārikā", "Estados, Oṃ, no dualidad y ajāti."),
           planned("gita-seleccion", "Bhagavad Gītā: acción, conocimiento y libertad", "Selección progresiva de capítulos."),
           planned("upanishads-seleccion", "Grandes pasajes de las Upaniṣads", "Īśa, Kena, Katha, Taittirīya, Chāndogya y Bṛhadāraṇyaka."),
           planned("brahma-sutras-intro", "Introducción a los Brahma Sūtras", "Estructura, propósito y comentario de Śaṅkara."),
-          planned("vivekachudamani", "Vivekacūḍāmaṇi: camino del discernimiento", "Uso pedagógico y debate de atribución."),
         ],
       },
       {
@@ -447,6 +466,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           planned("errores-no-dualidad", "Errores frecuentes sobre la no dualidad", "Nihilismo, bypass espiritual y absolutización del ego."),
           planned("relaciones-accion", "Relaciones y acción desde la comprensión", "Responsabilidad sin apropiación rígida."),
           planned("integracion-final", "Integración final: vivir lo comprendido", "Revisión de toda la ruta y plan de continuidad."),
+          planned("servicio-continuidad", "Servicio, comunidad y continuidad del estudio", "Compartir sin imponer, seguir aprendiendo y cuidar la transmisión."),
         ],
       },
     ],
@@ -454,6 +474,18 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
 ] as const;
 
 export const curriculumStages = curriculumCycles.flatMap((cycle) => cycle.stages);
+
+export const lessonsPerCurriculumStage = 7;
+
+const invalidCurriculumStage = curriculumStages.find(
+  (stage) => stage.lessons.length !== lessonsPerCurriculumStage,
+);
+
+if (invalidCurriculumStage) {
+  throw new Error(
+    `La etapa ${invalidCurriculumStage.id} debe tener exactamente ${lessonsPerCurriculumStage} lecciones.`,
+  );
+}
 
 export const curriculumLessons = curriculumStages.flatMap((stage) =>
   stage.lessons.map((lesson) => ({
