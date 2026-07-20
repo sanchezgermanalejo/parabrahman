@@ -26,6 +26,26 @@ export const traditionPeriods: readonly TraditionPeriod[] = [
       "Las fechas históricas del corpus védico son aproximadas y discutidas; la tradición lo comprende como apauruṣeya, no de autor humano.",
   },
   {
+    id: "brahmanas",
+    period: "Estrato védico ritual · ca. 1000–700 a. C.",
+    title: "Los Brāhmaṇas y la explicación del rito",
+    summary:
+      "Los Brāhmaṇas desarrollan el significado y la ejecución de los sacrificios vinculados con las distintas Saṃhitās. También conservan relatos, etimologías y correspondencias que preparan desarrollos posteriores.",
+    focus: ["Aitareya Brāhmaṇa", "Śatapatha Brāhmaṇa", "Taittirīya Brāhmaṇa", "ritual y simbolismo"],
+    resources: [{ label: "Consultar los Brāhmaṇas", url: "https://vedicheritage.gov.in/brahmanas/" }],
+    datingNote: "Las fechas son aproximadas y se superponen con otros estratos del corpus védico.",
+  },
+  {
+    id: "aranyakas",
+    period: "Transición védica · ca. 900–600 a. C.",
+    title: "Los Āraṇyakas y la interiorización del símbolo",
+    summary:
+      "Los Āraṇyakas enlazan la reflexión ritual con prácticas contemplativas y lecturas simbólicas. Varias Upaniṣads están integradas en estos conjuntos o estrechamente relacionadas con ellos.",
+    focus: ["Aitareya Āraṇyaka", "Taittirīya Āraṇyaka", "Bṛhadāraṇyaka", "contemplación y transición"],
+    resources: [{ label: "Consultar los Āraṇyakas", url: "https://vedicheritage.gov.in/aranyakas/" }],
+    datingNote: "La división entre Brāhmaṇa, Āraṇyaka y Upaniṣad no siempre corresponde a obras totalmente independientes.",
+  },
+  {
     id: "upanishads",
     period: "Upaniṣads védicas · ca. 700–100 a. C.",
     title: "Las Upaniṣads y la interiorización del conocimiento",
@@ -103,8 +123,8 @@ export const textFamilies = [
     role: "Fuente revelada en la comprensión tradicional",
     items: [
       { label: "Cuatro Vedas", date: "ca. 1500–500 a. C.", url: "https://vedicheritage.gov.in/introduction/" },
-      { label: "Brāhmaṇas", date: "ca. 1000–700 a. C.", url: "https://vedicheritage.gov.in/introduction/" },
-      { label: "Āraṇyakas", date: "ca. 900–600 a. C.", url: "https://vedicheritage.gov.in/introduction/" },
+      { label: "Brāhmaṇas", date: "ca. 1000–700 a. C.", url: "https://vedicheritage.gov.in/brahmanas/" },
+      { label: "Āraṇyakas", date: "ca. 900–600 a. C.", url: "https://vedicheritage.gov.in/aranyakas/" },
       { label: "Upaniṣads principales", date: "ca. 700–100 a. C.", url: "https://vedicheritage.gov.in/upanishads/" },
     ],
   },

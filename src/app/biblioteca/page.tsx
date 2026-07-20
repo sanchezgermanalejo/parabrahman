@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { LibraryCatalog } from "@/components/library-catalog";
 import { SiteHeader } from "@/components/site-header";
-import { libraryBooks } from "@/content/library";
+import { libraryBooks, vedicTextSequence } from "@/content/library";
 import { getCurrentStudent } from "@/lib/auth/current-student";
 
 export const metadata = {
@@ -54,6 +54,33 @@ export default async function LibraryPage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pt-16 sm:px-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300/70">
+          Secuencia del corpus védico
+        </p>
+        <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
+          De los Vedas a las Upaniṣads
+        </h2>
+        <p className="mt-4 max-w-4xl leading-7 text-stone-400">
+          Este es un orden textual y pedagógico. Las fechas son aproximadas, los
+          estratos se superponen y algunos textos forman parte de más de una categoría.
+        </p>
+        <ol className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {vedicTextSequence.map((item) => (
+            <li key={item.title} className="relative overflow-hidden rounded-3xl border border-amber-200/10 bg-stone-900/55 p-6">
+              <span className="grid size-10 place-items-center rounded-full border border-amber-300/30 bg-amber-300/10 font-semibold text-amber-100">
+                {item.order}
+              </span>
+              <h3 className="mt-5 font-serif text-2xl text-stone-100">{item.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-stone-400">{item.description}</p>
+              <a href={item.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex text-sm font-semibold text-sky-200 transition hover:text-sky-100">
+                Consultar fuente ↗
+              </a>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pt-16 sm:px-8">

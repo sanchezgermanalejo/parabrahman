@@ -113,7 +113,7 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
         track: "core",
         lessons: [
           planned("sanatana-dharma", "¿Qué es Sanātana Dharma?", "Marco tradicional plural y formas de vida."),
-          planned("cuatro-vedas", "Los cuatro Vedas y sus estratos", "Saṃhitā, Brāhmaṇa, Āraṇyaka y Upaniṣad."),
+          planned("cuatro-vedas", "Los cuatro Vedas y sus cuatro estratos", "Secuencia textual: Saṃhitās → Brāhmaṇas → Āraṇyakas → Upaniṣads."),
           planned("que-es-vedanta", "Vedanta: final y finalidad del Veda", "Textos, preguntas y escuelas interpretativas."),
           planned("que-es-advaita", "Advaita: el sentido de no dualidad", "Alcance y límites de la palabra advaita."),
           planned("prasthanatrayi", "El triple fundamento del Vedanta", "Upaniṣads, Bhagavad Gītā y Brahma Sūtras."),
