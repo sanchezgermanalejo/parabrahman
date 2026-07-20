@@ -40,8 +40,8 @@ export default async function WelcomeLessonPage() {
             <div className="video-frame aspect-video overflow-hidden rounded-2xl border border-amber-100/15 bg-black shadow-2xl shadow-black/40">
               <iframe
                 className="h-full w-full"
-                src={youtubeChannel.uploadsEmbedUrl}
-                title="Videos del canal oficial de Parabrahman"
+                src={lesson.video.embedUrl}
+                title={`${lesson.title} — Parabrahman`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -63,6 +63,14 @@ export default async function WelcomeLessonPage() {
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
+                  href={lesson.video.watchUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-xl border border-amber-300/35 bg-amber-300/10 px-5 py-3 text-center font-semibold text-amber-100 transition hover:border-amber-300/60 hover:bg-amber-300/15"
+                >
+                  Ver este video en YouTube ↗
+                </a>
+                <a
                   href={youtubeChannel.url}
                   target="_blank"
                   rel="noreferrer"
@@ -73,11 +81,10 @@ export default async function WelcomeLessonPage() {
               </div>
 
               <aside className="mt-8 rounded-2xl border border-sky-300/15 bg-sky-300/5 p-5 text-sm leading-6 text-stone-400">
-                <strong className="text-stone-200">Nota del MVP:</strong> el
-                reproductor intenta abrir las publicaciones del canal oficial.
-                Cuando seleccionemos la primera lista académica, cada lección
-                quedará vinculada a un video específico y conservará este mismo
-                formato.
+                <strong className="text-stone-200">Primera unidad audiovisual:</strong>{" "}
+                esta lección ya está vinculada a su video específico del canal
+                oficial. El reproductor utiliza el modo de privacidad mejorada
+                de YouTube y conserva el formato académico de la ruta.
               </aside>
 
               <LessonNotes lessonId={lesson.id} />

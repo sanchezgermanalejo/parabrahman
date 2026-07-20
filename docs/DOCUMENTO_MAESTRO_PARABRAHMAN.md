@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.48
+**Versión:** 0.49
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -201,6 +201,8 @@ El MVP usará Supabase Auth con correo y contraseña, confirmación de correo y 
 - Evaluaciones y certificados en fases posteriores.
 
 El canal oficial `https://www.youtube.com/@parabrahmanyosoy` es la fuente audiovisual central. YouTube conserva la responsabilidad de alojamiento, publicación y reproducción; Parabrahman organiza esos contenidos en recorridos, unidades y lecciones. El catálogo académico se mantiene separado del canal para permitir selección, secuenciación y contexto sin duplicar los videos.
+
+La primera lección de la ruta Fundamentos, “Bienvenida al recorrido”, queda vinculada al video de YouTube `VbxxAhoZZx0` mediante el dominio de privacidad mejorada `youtube-nocookie.com`. El identificador se conserva dentro del catálogo académico y la página deriva de allí tanto la inserción como el enlace de reproducción directa. La disponibilidad para alumnos depende de que el propietario mantenga el video público o no listado y habilite su inserción.
 
 Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumnos autenticados, después de validar el cuestionario nuevamente en el servidor. Las políticas RLS limitan cada registro a su propietario. El almacenamiento local permanece temporalmente como respaldo para visitantes y mientras se aplica la migración, pero no es la fuente académica oficial.
 
@@ -661,6 +663,7 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-052 | Metafísica reemplaza el mandala y la botonera duplicada por un único recorrido 1–7 con ficha activa, tarjetas táctiles y composición responsive | Aceptada |
 | DM-053 | Biblioteca y Tradición muestran fecha o rango en cada libro, período, pasaje y autor identificado, señalando expresamente cronologías aproximadas o debatidas | Aceptada |
 | DM-054 | El iniciador local verifica una respuesta HTTP real, ejecuta Next.js directamente, admite 150 segundos de arranque y conserva un registro de diagnóstico | Aceptada |
+| DM-055 | La lección inicial “Bienvenida” utiliza el video `VbxxAhoZZx0` con inserción de privacidad mejorada y acceso directo al video público | Aceptada |
 
 ---
 
@@ -728,6 +731,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.49 | 20-07-2026 | La primera lección de Fundamentos reemplaza la lista genérica del canal por el video específico `VbxxAhoZZx0` | Convertir “Bienvenida” en la primera unidad audiovisual real sin alterar el formato ya aprobado del aula |
 | 0.48 | 19-07-2026 | La botonera principal asciende una franja adicional del 3% de la altura visible, con límites adaptativos para móvil y escritorio | Ajustar finamente la composición con la marca incluida en la imagen de fondo sin fijar una posición rígida |
 | 0.47 | 19-07-2026 | Se reemplaza la detección simple del puerto por un arranque verificable con espera extendida, ejecución directa de Next.js y registro local; el iniciador queda versionado en `scripts/` | Evitar falsos positivos y cierres prematuros en computadoras donde el primer compilado tarda más de 45 segundos |
 | 0.46 | 19-07-2026 | La botonera de portada asciende otra franja; Metafísica se unifica en un recorrido responsive sin mandala duplicado; Biblioteca y Tradición incorporan fechas visibles de obras, pasajes y autores | Evitar la superposición con la marca institucional, reducir carga cognitiva en escritorio y móvil y fortalecer la referencia cronológica de toda lectura histórica |
