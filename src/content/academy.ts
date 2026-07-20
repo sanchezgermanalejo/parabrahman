@@ -22,6 +22,11 @@ export const academyCourse = {
       duration: "A tu ritmo",
       href: "/aprender/fundamentos/bienvenida",
       available: true,
+      video: {
+        youtubeId: "VbxxAhoZZx0",
+        embedUrl: "https://www.youtube-nocookie.com/embed/VbxxAhoZZx0?rel=0",
+        watchUrl: "https://www.youtube.com/watch?v=VbxxAhoZZx0",
+      },
       quiz: {
         passingScore: 2,
         questions: [
