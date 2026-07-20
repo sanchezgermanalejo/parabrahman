@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { AdvaitaEssentialLibrary } from "@/components/advaita-essential-library";
 import { LibraryCatalog } from "@/components/library-catalog";
 import { SiteHeader } from "@/components/site-header";
 import { libraryBooks, vedicTextSequence } from "@/content/library";
@@ -52,9 +53,17 @@ export default async function LibraryPage() {
             >
               Ver contexto histórico →
             </Link>
+            <a
+              href="#vedanta-advaita-esenciales"
+              className="rounded-full border border-violet-300/25 px-5 py-3 text-sm font-semibold text-violet-100 transition hover:border-violet-300/50 hover:bg-violet-300/10"
+            >
+              Ver 20 libros esenciales ↓
+            </a>
           </div>
         </div>
       </section>
+
+      <AdvaitaEssentialLibrary />
 
       <section className="mx-auto max-w-7xl px-5 pt-16 sm:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300/70">
