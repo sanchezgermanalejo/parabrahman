@@ -731,6 +731,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.50 | 20-07-2026 | La lección 2 del recorrido inicial pasa a llamarse “¿Qué es el Vedanta Advaita?” en el aula y en el mapa curricular | Alinear el balizado académico con la secuencia audiovisual definida por el fundador sin cambiar el identificador que sostendrá el progreso del alumno |
 | 0.49 | 20-07-2026 | La primera lección de Fundamentos reemplaza la lista genérica del canal por el video específico `VbxxAhoZZx0` | Convertir “Bienvenida” en la primera unidad audiovisual real sin alterar el formato ya aprobado del aula |
 | 0.48 | 19-07-2026 | La botonera principal asciende una franja adicional del 3% de la altura visible, con límites adaptativos para móvil y escritorio | Ajustar finamente la composición con la marca incluida en la imagen de fondo sin fijar una posición rígida |
 | 0.47 | 19-07-2026 | Se reemplaza la detección simple del puerto por un arranque verificable con espera extendida, ejecución directa de Next.js y registro local; el iniciador queda versionado en `scripts/` | Evitar falsos positivos y cierres prematuros en computadoras donde el primer compilado tarda más de 45 segundos |

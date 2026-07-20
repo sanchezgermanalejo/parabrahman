@@ -67,8 +67,8 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
           },
           planned(
             "yo-soy",
-            "La pregunta fundamental: ¿quién soy?",
-            "Diferenciar identidad biográfica, experiencia y presencia consciente.",
+            "¿Qué es el Vedanta Advaita?",
+            "Introducción al significado, propósito y enfoque no dual del Vedanta Advaita.",
           ),
           planned(
             "tat-tvam-asi",

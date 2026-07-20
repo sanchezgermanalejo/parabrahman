@@ -54,9 +54,9 @@ export const academyCourse = {
     {
       id: "yo-soy",
       order: 2,
-      title: "El sentido de «Yo Soy»",
+      title: "¿Qué es el Vedanta Advaita?",
       description:
-        "Próxima unidad: selección y secuencia de enseñanzas del canal.",
+        "Próxima unidad: introducción al significado, propósito y enfoque no dual del Vedanta Advaita.",
       duration: "Próximamente",
       href: youtubeChannel.url,
       available: false,
