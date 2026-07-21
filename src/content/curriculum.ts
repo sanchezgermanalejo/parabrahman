@@ -65,11 +65,13 @@ export const curriculumCycles: readonly CurriculumCycle[] = [
             status: "published",
             href: "/aprender/fundamentos/bienvenida",
           },
-          planned(
-            "yo-soy",
-            "¿Qué es el Vedanta Advaita?",
-            "Introducción al significado, propósito y enfoque no dual del Vedanta Advaita.",
-          ),
+          {
+            id: "yo-soy",
+            title: "¿Qué es el Vedanta Advaita?",
+            focus: "Introducción al significado, propósito y enfoque no dual del Vedanta Advaita.",
+            status: "published",
+            href: "/aprender/fundamentos/que-es-vedanta-advaita",
+          },
           planned(
             "pregunta-quien-soy",
             "La pregunta fundamental: ¿quién soy?",

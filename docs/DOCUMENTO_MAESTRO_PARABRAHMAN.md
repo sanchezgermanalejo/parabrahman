@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.49
+**Versión:** 0.54
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -731,6 +731,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.54 | 21-07-2026 | La segunda lección “¿Qué es el Vedanta Advaita?” incorpora el video oficial `3HjTyOKPN6A`, aula propia, cuestionario, notas, comunidad y progreso; ambas aulas pasan a utilizar una plantilla compartida | Publicar la segunda unidad audiovisual real, conectarla con la Ruta de Aprendizaje y preparar una base mantenible para sumar las próximas lecciones sin duplicar su estructura |
 | 0.53 | 20-07-2026 | Biblioteca incorpora un módulo independiente y validado de veinte libros fundamentales del Vedanta Advaita, con niveles, fechas, autorías, finalidad, fuentes y notas de atribución o derechos | Ofrecer una ruta bibliográfica reconocible sin mezclar el catálogo general del Sanātana Dharma con un canon pedagógico específico ni igualar la autoridad de todas las obras |
 | 0.52 | 20-07-2026 | Biblioteca y Tradición explicitan la secuencia Saṃhitās védicas → Brāhmaṇas → Āraṇyakas → Upaniṣads, incorporan dos colecciones y enlazan las fuentes oficiales específicas | Evitar el salto directo de los Vedas a las Upaniṣads y enseñar los cuatro estratos con un orden visible, sin ocultar sus solapamientos cronológicos y textuales |
 | 0.51 | 20-07-2026 | Las 15 etapas de la Ruta de Aprendizaje se normalizan en siete lecciones cada una, para un total de 105, y el código valida automáticamente esta regla | Crear una cadencia académica previsible, facilitar la producción audiovisual y evitar que futuras ediciones desequilibren la progresión |

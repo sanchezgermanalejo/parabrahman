@@ -5,6 +5,7 @@ import type { LessonDiscussionResult } from "@/lib/discussions";
 
 type LessonDiscussionProps = {
   lessonId: string;
+  lessonHref: string;
   discussion: LessonDiscussionResult;
   signedIn: boolean;
 };
@@ -19,6 +20,7 @@ function formatDate(date: string) {
 
 export function LessonDiscussion({
   lessonId,
+  lessonHref,
   discussion,
   signedIn,
 }: LessonDiscussionProps) {
@@ -44,7 +46,7 @@ export function LessonDiscussion({
         <DiscussionForm lessonId={lessonId} />
       ) : (
         <Link
-          href={`/acceso?next=/aprender/fundamentos/bienvenida`}
+          href={`/acceso?next=${encodeURIComponent(lessonHref)}`}
           className="mt-6 inline-flex rounded-xl border border-amber-300/30 px-5 py-3 font-semibold text-amber-100 transition hover:bg-amber-300/10"
         >
           Ingresar para participar
