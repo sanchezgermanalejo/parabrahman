@@ -10,36 +10,20 @@ export type DiscussionState = {
   message?: string;
 };
 
-export type QuizSubmissionResult = {
-  status: "passed" | "failed" | "local" | "error";
-  score: number;
-  maxScore: number;
-  message: string;
+export type LessonProgressState = {
+  status: "idle" | "viewed" | "error";
+  message?: string;
 };
 
-export async function submitLessonQuiz(
-  lessonId: string,
-  answers: Record<string, number>,
-): Promise<QuizSubmissionResult> {
+export async function markLessonViewed(
+  _previousState: LessonProgressState,
+  formData: FormData,
+): Promise<LessonProgressState> {
+  const lessonId = String(formData.get("lessonId") ?? "");
   const lesson = academyCourse.lessons.find((item) => item.id === lessonId);
 
-  if (!lesson || !("quiz" in lesson)) {
-    return { status: "error", score: 0, maxScore: 0, message: "La lección no es válida." };
-  }
-
-  const maxScore = lesson.quiz.questions.length;
-  const score = lesson.quiz.questions.reduce(
-    (total, question) => total + (answers[question.id] === question.correctOption ? 1 : 0),
-    0,
-  );
-
-  if (score < lesson.quiz.passingScore) {
-    return {
-      status: "failed",
-      score,
-      maxScore,
-      message: `Obtuviste ${score} de ${maxScore}. Revisa la lección y vuelve a intentarlo.`,
-    };
+  if (!lesson || !lesson.available) {
+    return { status: "error", message: "La lección no es válida." };
   }
 
   const supabase = await createClient();
@@ -48,34 +32,31 @@ export async function submitLessonQuiz(
 
   if (claimsError || typeof userId !== "string") {
     return {
-      status: "local",
-      score,
-      maxScore,
-      message: "Lección aprobada en este dispositivo. Ingresa para sincronizarla entre dispositivos.",
+      status: "error",
+      message: "Ingresa como alumno para guardar esta lección en tu perfil.",
     };
   }
 
+  const now = new Date().toISOString();
   const { error } = await supabase.from("lesson_progress").upsert(
     {
       user_id: userId,
       lesson_id: lessonId,
-      score,
-      max_score: maxScore,
-      completed_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
+      score: 1,
+      max_score: 1,
+      completed_at: now,
+      updated_at: now,
     },
     { onConflict: "user_id,lesson_id" },
   );
 
   if (error) {
     return {
-      status: "local",
-      score,
-      maxScore,
+      status: "error",
       message:
         error.code === "42P01"
-          ? "Lección aprobada localmente. Falta activar la tabla de progreso en Supabase."
-          : "Lección aprobada localmente; no pudimos sincronizarla ahora.",
+          ? "Falta activar la tabla de progreso en Supabase."
+          : "No pudimos guardar el avance ahora. Inténtalo nuevamente.",
     };
   }
 
@@ -84,10 +65,8 @@ export async function submitLessonQuiz(
     revalidatePath(lesson.href);
   }
   return {
-    status: "passed",
-    score,
-    maxScore,
-    message: "Lección aprobada y sincronizada con tu cuenta.",
+    status: "viewed",
+    message: "Lección vista y guardada en tu perfil.",
   };
 }
 
@@ -96,19 +75,12 @@ export async function publishDiscussion(
   formData: FormData,
 ): Promise<DiscussionState> {
   const lessonId = String(formData.get("lessonId") ?? "");
-  const kind = String(formData.get("kind") ?? "");
-  const rating = Number(formData.get("rating"));
+  const parentId = String(formData.get("parentId") ?? "").trim();
   const body = String(formData.get("body") ?? "").trim();
   const lesson = academyCourse.lessons.find((item) => item.id === lessonId);
 
   if (!lesson || !availableLessonIds.some((id) => id === lessonId)) {
     return { status: "error", message: "La lección no es válida." };
-  }
-  if (kind !== "comment" && kind !== "question") {
-    return { status: "error", message: "Selecciona comentario o pregunta." };
-  }
-  if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
-    return { status: "error", message: "Selecciona una valoración de 1 a 5 estrellas." };
   }
   if (body.length < 3 || body.length > 2000) {
     return { status: "error", message: "El texto debe tener entre 3 y 2000 caracteres." };
@@ -131,21 +103,40 @@ export async function publishDiscussion(
       ? metadata.full_name.trim()
       : "Alumno de Parabrahman";
 
-  const { error } = await supabase.from("lesson_discussions").insert({
+  if (parentId) {
+    const { data: parent, error: parentError } = await supabase
+      .from("lesson_discussions")
+      .select("id")
+      .eq("id", parentId)
+      .eq("lesson_id", lessonId)
+      .eq("status", "published")
+      .single();
+
+    if (parentError || !parent) {
+      return { status: "error", message: "El comentario al que respondes ya no está disponible." };
+    }
+  }
+
+  const payload: Record<string, string | number> = {
     lesson_id: lessonId,
     user_id: claims.sub,
     author_name: authorName.slice(0, 80),
-    kind,
-    rating,
+    kind: "comment",
+    rating: 5,
     body,
     status: "published",
-  });
+  };
+  if (parentId) payload.parent_id = parentId;
+
+  const { error } = await supabase.from("lesson_discussions").insert(payload);
 
   if (error) {
     return {
       status: "error",
       message:
-        error.code === "42P01"
+        error.code === "42703"
+          ? "Falta activar la actualización de respuestas en Supabase."
+          : error.code === "42P01"
           ? "La comunidad está preparada, pero falta activar su tabla en Supabase."
           : "No pudimos publicar ahora. Inténtalo nuevamente.",
     };
@@ -154,5 +145,6 @@ export async function publishDiscussion(
   if (lesson.href.startsWith("/")) {
     revalidatePath(lesson.href);
   }
-  return { status: "success", message: "Tu aporte ya es público." };
+  revalidatePath("/cuenta");
+  return { status: "success", message: parentId ? "Tu respuesta ya es pública." : "Tu comentario ya es público." };
 }

@@ -128,7 +128,7 @@ export function LearningProgress({
       <section className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
         <article className="luminous-card rounded-3xl border border-sky-200/10 bg-stone-900/70 p-6 sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300/70">
-            Última tarea aprobada
+            Última lección vista
           </p>
           {lastCompleted ? (
             <>
@@ -146,7 +146,7 @@ export function LearningProgress({
             <>
               <h3 className="mt-4 text-2xl font-semibold">Todavía no completaste una tarea</h3>
               <p className="mt-3 leading-7 text-stone-400">
-                Comenzá por la bienvenida y aprobá su cuestionario para registrar tu primer avance.
+                Comenzá por la bienvenida y marcala como vista para registrar tu primer avance.
               </p>
               <Link
                 href={academyCourse.lessons[0].href}

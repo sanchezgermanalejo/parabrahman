@@ -10,7 +10,7 @@ export default function WhatIsVedantaAdvaitaPage() {
     <AcademyLessonPage
       lessonId="yo-soy"
       introduction="Esta lección introduce qué significa Vedanta Advaita, cuál es su pregunta central y cómo orienta el camino progresivo del autoconocimiento."
-      unitNote="el video abre el estudio sistemático de la no dualidad. Después de verlo, el cuestionario permite comprobar las ideas centrales y registrar el avance del alumno."
+      unitNote="el video abre el estudio sistemático de la no dualidad. Después de verlo, el alumno puede guardarlo como visto y continuar el diálogo en los comentarios públicos."
     />
   );
 }

@@ -24,15 +24,25 @@ export function LessonDiscussion({
   discussion,
   signedIn,
 }: LessonDiscussionProps) {
+  const rootComments = discussion.items.filter((item) => !item.parentId);
+  const repliesByParent = new Map<string, typeof discussion.items>();
+  for (const item of discussion.items) {
+    if (!item.parentId) continue;
+    repliesByParent.set(item.parentId, [
+      ...(repliesByParent.get(item.parentId) ?? []),
+      item,
+    ]);
+  }
+
   return (
-    <section className="mt-10 rounded-3xl border border-sky-200/10 bg-stone-900/55 p-6 sm:p-8">
+    <section id="comentarios" className="mt-10 scroll-mt-28 rounded-3xl border border-sky-200/10 bg-stone-900/55 p-6 sm:p-8">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-300/70">
-        Comunidad pública
+        Conversación pública
       </p>
-      <h2 className="mt-2 text-2xl font-semibold">Comentarios y preguntas</h2>
+      <h2 className="mt-2 text-2xl font-semibold">Comentarios del video</h2>
       <p className="mt-3 max-w-3xl text-sm leading-6 text-stone-400">
-        Los aportes son visibles para todos. Publica con respeto y evita datos
-        personales; las contribuciones podrán moderarse cuando sea necesario.
+        Todos pueden leer esta conversación. Para comentar o responder debes
+        ingresar como alumno. Evita datos personales y participa con respeto.
       </p>
 
       {!discussion.available && (
@@ -54,26 +64,42 @@ export function LessonDiscussion({
       )}
 
       <div className="mt-10 grid gap-4">
-        {discussion.items.length === 0 ? (
+        {rootComments.length === 0 ? (
           <p className="rounded-2xl border border-dashed border-stone-700 px-5 py-8 text-center text-stone-500">
             Todavía no hay aportes publicados en esta lección.
           </p>
         ) : (
-          discussion.items.map((item) => (
+          rootComments.map((item) => (
             <article key={item.id} className="rounded-2xl border border-stone-800 bg-black/25 p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="font-medium text-stone-200">{item.authorName}</p>
                   <p className="mt-1 text-xs text-stone-500">
-                    {item.kind === "question" ? "Pregunta" : "Comentario"} · {formatDate(item.createdAt)}
+                    Comentario · {formatDate(item.createdAt)}
                   </p>
                 </div>
-                <p className="tracking-[0.12em] text-amber-300" aria-label={`${item.rating} de 5 estrellas`}>
-                  {"★".repeat(item.rating)}
-                  <span className="text-stone-700">{"★".repeat(5 - item.rating)}</span>
-                </p>
               </div>
               <p className="mt-4 whitespace-pre-wrap leading-7 text-stone-300">{item.body}</p>
+
+              {(repliesByParent.get(item.id) ?? []).map((reply) => (
+                <div key={reply.id} className="ml-4 mt-4 border-l border-sky-300/20 pl-4 sm:ml-8">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500">
+                    <span className="font-medium text-sky-100/80">{reply.authorName}</span>
+                    <span>·</span>
+                    <span>{formatDate(reply.createdAt)}</span>
+                  </div>
+                  <p className="mt-2 whitespace-pre-wrap leading-7 text-stone-400">{reply.body}</p>
+                </div>
+              ))}
+
+              {signedIn && (
+                <details className="mt-4 rounded-xl border border-stone-800 px-4 py-3">
+                  <summary className="cursor-pointer text-sm font-medium text-sky-200">
+                    Responder
+                  </summary>
+                  <DiscussionForm lessonId={lessonId} parentId={item.id} compact />
+                </details>
+              )}
             </article>
           ))
         )}

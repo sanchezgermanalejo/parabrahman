@@ -329,7 +329,7 @@ export default async function CoursesPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/70">Seguimiento opcional</p>
           <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">El mapa es común; el avance es tuyo</h2>
           <p className="mx-auto mt-5 max-w-2xl leading-7 text-stone-400">
-            Iniciá sesión para que esta misma ruta recuerde tu última etapa, muestre tu próximo paso y sincronice los cuestionarios aprobados.
+            Iniciá sesión para que esta misma ruta recuerde las lecciones vistas, muestre tu próximo paso y sincronice el avance en tu perfil.
           </p>
           <Link
             href="/acceso?next=/cursos"

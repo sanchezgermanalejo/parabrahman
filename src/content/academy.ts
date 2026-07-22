@@ -27,29 +27,6 @@ export const academyCourse = {
         embedUrl: "https://www.youtube-nocookie.com/embed/VbxxAhoZZx0?rel=0",
         watchUrl: "https://www.youtube.com/watch?v=VbxxAhoZZx0",
       },
-      quiz: {
-        passingScore: 2,
-        questions: [
-          {
-            id: "video-source",
-            prompt: "¿Cuál es la fuente principal de las enseñanzas audiovisuales unipersonales?",
-            options: ["El canal oficial de YouTube", "La sala de Zoom", "Los comentarios públicos"],
-            correctOption: 0,
-          },
-          {
-            id: "zoom-purpose",
-            prompt: "¿Qué encontrarás principalmente en el apartado Zoom?",
-            options: ["Reuniones y conversaciones", "Contraseñas privadas", "Contenido de pago obligatorio"],
-            correctOption: 0,
-          },
-          {
-            id: "free-access",
-            prompt: "¿Es obligatorio crear una cuenta para explorar las enseñanzas?",
-            options: ["Sí, siempre", "No; la cuenta sirve para funciones personales", "Solo si se realiza una donación"],
-            correctOption: 1,
-          },
-        ],
-      },
     },
     {
       id: "yo-soy",
@@ -64,37 +41,6 @@ export const academyCourse = {
         youtubeId: "3HjTyOKPN6A",
         embedUrl: "https://www.youtube-nocookie.com/embed/3HjTyOKPN6A?rel=0",
         watchUrl: "https://www.youtube.com/watch?v=3HjTyOKPN6A",
-      },
-      quiz: {
-        passingScore: 2,
-        questions: [
-          {
-            id: "advaita-meaning",
-            prompt: "¿Qué expresa la palabra «Advaita»?",
-            options: ["No dualidad", "Ritual obligatorio", "Separación absoluta"],
-            correctOption: 0,
-          },
-          {
-            id: "central-inquiry",
-            prompt: "¿Qué relación fundamental investiga el Vedanta Advaita?",
-            options: [
-              "La identidad esencial entre Atman y Brahman",
-              "La oposición permanente entre conciencia y existencia",
-              "La superioridad de una personalidad sobre otra",
-            ],
-            correctOption: 0,
-          },
-          {
-            id: "teaching-purpose",
-            prompt: "¿Cuál es la orientación central de esta enseñanza?",
-            options: [
-              "Acumular experiencias extraordinarias",
-              "Reconocer la realidad del Sí Mismo mediante discernimiento",
-              "Adoptar una nueva identidad social",
-            ],
-            correctOption: 1,
-          },
-        ],
       },
     },
     {

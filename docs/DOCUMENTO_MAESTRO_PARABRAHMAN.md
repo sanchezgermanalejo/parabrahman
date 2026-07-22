@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.54
+**Versión:** 0.55
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -204,9 +204,9 @@ El canal oficial `https://www.youtube.com/@parabrahmanyosoy` es la fuente audiov
 
 La primera lección de la ruta Fundamentos, “Bienvenida al recorrido”, queda vinculada al video de YouTube `VbxxAhoZZx0` mediante el dominio de privacidad mejorada `youtube-nocookie.com`. El identificador se conserva dentro del catálogo académico y la página deriva de allí tanto la inserción como el enlace de reproducción directa. La disponibilidad para alumnos depende de que el propietario mantenga el video público o no listado y habilite su inserción.
 
-Las lecciones aprobadas se registran en `lesson_progress` de Supabase para alumnos autenticados, después de validar el cuestionario nuevamente en el servidor. Las políticas RLS limitan cada registro a su propietario. El almacenamiento local permanece temporalmente como respaldo para visitantes y mientras se aplica la migración, pero no es la fuente académica oficial.
+Las lecciones vistas se registran en `lesson_progress` de Supabase únicamente para alumnos autenticados, mediante una acción explícita dentro del aula. Las políticas RLS limitan cada registro a su propietario. No se intenta inferir la reproducción desde YouTube ni se condiciona la continuidad a un examen; el perfil utiliza estos registros para recuperar el último punto y el próximo paso.
 
-La Ruta de Aprendizaje en `/cursos` es la única vista académica. Para visitantes muestra el mapa público completo; al iniciar sesión incorpora en la misma pantalla el último avance, la próxima tarea, porcentajes y estados secuenciales. Una lección aprobada aparece completada, la primera pendiente queda como próximo paso y las posteriores muestran candado hasta completar la secuencia. Los candados organizan progresión, no pago ni privilegios comerciales. La URL histórica `/mi-aprendizaje` redirige permanentemente a `/cursos` y no aparece en la navegación.
+La Ruta de Aprendizaje en `/cursos` es la única vista académica. Para visitantes muestra el mapa público completo; al iniciar sesión incorpora en la misma pantalla el último avance, la próxima tarea, porcentajes y estados secuenciales. Una lección vista aparece completada, la primera pendiente queda como próximo paso y las posteriores muestran candado hasta completar la secuencia. Los candados organizan progresión, no pago ni privilegios comerciales. La URL histórica `/mi-aprendizaje` redirige permanentemente a `/cursos` y no aparece en la navegación.
 
 ### Sánscrito para Vedanta
 
@@ -270,17 +270,17 @@ Zoom tendrá un espacio propio y visible junto al canal de YouTube. YouTube conc
 - Notificaciones controlables.
 - Sin chat privado durante las primeras fases.
 
-La primera lección incorpora una conversación pública con comentarios o preguntas, autor visible y valoración obligatoria de una a cinco estrellas. La lectura es pública y la publicación requiere una cuenta autenticada. La tabla `lesson_discussions` aplica RLS para impedir publicaciones en nombre de otra persona. Antes de ampliar el acceso deberán incorporarse reporte, moderación y límites de frecuencia.
+Cada video publicado incorpora comentarios de lectura pública. Publicar y responder requiere una cuenta autenticada; las respuestas se vinculan al comentario original y pueden aparecer como actividad pendiente en el perfil de su autor. Se eliminan el tipo “pregunta” y la valoración por estrellas para mantener una conversación simple. La tabla `lesson_discussions` aplica RLS para impedir publicaciones en nombre de otra persona. Antes de ampliar el acceso deberán incorporarse reporte, moderación y límites de frecuencia.
 
 El foro general en `/comunidad` organiza conversaciones asincrónicas en formato de chat pausado. Los visitantes pueden leer; los alumnos autenticados pueden crear temas, responder y adjuntar PDF, TXT, JPG, PNG o WebP de hasta 5 MB. PostgreSQL conserva el diálogo y Supabase Storage aloja los archivos. RLS protege la escritura y separa las cargas por usuario. Realtime, mensajería privada y notificaciones se incorporarán solo cuando la moderación básica esté operativa.
 
-### Evaluación y aprobación
+### Seguimiento del aprendizaje
 
-- Cada lección publicada deberá definir un cuestionario breve y un puntaje mínimo.
-- La finalización no se otorgará mediante un botón manual: se registrará al aprobar el cuestionario.
-- Cada intento mostrará el puntaje sin revelar automáticamente una interpretación filosófica no documentada.
-- Los cuestionarios de conocimiento se redactarán a partir de los objetivos y materiales reales de la lección.
-- El resultado local del MVP se migrará a Supabase junto con el progreso académico.
+- Las lecciones audiovisuales no incluyen cuestionarios obligatorios.
+- El alumno autenticado registra una lección como vista mediante una acción explícita.
+- Supabase conserva el progreso entre dispositivos con RLS; los visitantes mantienen acceso libre, pero no generan un perfil académico.
+- El perfil reúne último punto, próximo paso, respuestas a comentarios, actividad del foro y avisos de la agenda Zoom.
+- Evaluaciones formales podrán existir en recorridos especiales futuros, pero no condicionarán el acceso gratuito a los videos.
 
 ### Sostenibilidad
 
@@ -350,7 +350,7 @@ El orden de implementación será: inventario de fuentes, permisos, extracción,
 ### Dos vistas complementarias de aprendizaje
 
 - `/cursos` es el mapa público completo: muestra cinco ciclos, quince etapas y noventa y dos títulos de video balizados para ordenar la producción futura del canal.
-- `/mi-aprendizaje` es la vista personal protegida: destaca la etapa actual, la próxima tarea, la última tarea aprobada, su fecha y dos medidas distintas de avance —contenido publicado y ruta total planificada—.
+- `/cuenta` es el perfil personal protegido: reúne progreso, próximo paso, última lección vista, respuestas pendientes, conversaciones de la comunidad y agenda Zoom. `/mi-aprendizaje` se conserva solo como redirección histórica a `/cursos`.
 - El mapa curricular es una estructura editorial viva. Un título planificado no se presenta como una lección disponible hasta contar con video, objetivos, actividad y revisión.
 - El progreso definitivo continúa almacenado en `lesson_progress` con RLS. La consulta ordena `updated_at` para recuperar la actividad más reciente sin crear una segunda fuente de verdad.
 
@@ -633,10 +633,10 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-022 | Profundidad espiritual-tecnológica mediante CSS, movimiento reducido accesible y cero dependencia visual adicional | Aceptada |
 | DM-023 | WhatsApp global configurado por variable pública y sin credenciales en código | Reemplazada por DM-029 |
 | DM-024 | Asistente institucional limitado ahora; tutor filosófico futuro mediante RAG, fuentes citadas y evaluación humana | Aceptada |
-| DM-025 | Comentarios y preguntas de lectura pública, publicación autenticada, cinco estrellas y RLS | Aceptada |
-| DM-026 | Una lección se completa únicamente al aprobar su cuestionario mínimo | Aceptada |
+| DM-025 | Comentarios y preguntas de lectura pública, publicación autenticada, cinco estrellas y RLS | Reemplazada por DM-057 |
+| DM-026 | Una lección se completa únicamente al aprobar su cuestionario mínimo | Reemplazada por DM-056 |
 | DM-027 | Accesos de soporte identificados mediante isotipo de WhatsApp y un robot amable con auriculares en SVG local | Reemplazada por DM-029 |
-| DM-028 | Progreso autenticado en Supabase con RLS y validación del cuestionario en servidor | Aceptada |
+| DM-028 | Progreso autenticado en Supabase con RLS y validación del cuestionario en servidor | Reemplazada por DM-056 |
 | DM-029 | Un único chat flotante con emblema OM, indicador verde y derivación al teléfono público configurado | Aceptada |
 | DM-030 | Foro público asincrónico; escritura autenticada y adjuntos limitados en Supabase Storage con RLS | Aceptada |
 | DM-031 | Mapa de tradición en `/tradicion`, centrado en Advaita y diferenciado del conjunto plural del Sanātana Dharma | Aceptada |
@@ -664,6 +664,9 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-053 | Biblioteca y Tradición muestran fecha o rango en cada libro, período, pasaje y autor identificado, señalando expresamente cronologías aproximadas o debatidas | Aceptada |
 | DM-054 | El iniciador local verifica una respuesta HTTP real, ejecuta Next.js directamente, admite 150 segundos de arranque y conserva un registro de diagnóstico | Aceptada |
 | DM-055 | La lección inicial “Bienvenida” utiliza el video `VbxxAhoZZx0` con inserción de privacidad mejorada y acceso directo al video público | Aceptada |
+| DM-056 | Las lecciones audiovisuales eliminan cuestionarios obligatorios; un alumno autenticado registra explícitamente cada video como visto y Supabase conserva el avance con RLS | Aceptada |
+| DM-057 | Debajo de cada video hay comentarios públicos sin estrellas ni clasificación; publicar y responder exige sesión, y las respuestas se vinculan al comentario original | Aceptada |
+| DM-058 | `/cuenta` funciona como perfil y centro de actividad: progreso, próximo paso, respuestas del video y foro, contador pendiente y agenda Zoom con un único marcador de última revisión | Aceptada |
 
 ---
 
@@ -731,6 +734,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.55 | 22-07-2026 | Se eliminan los cuestionarios de las lecciones audiovisuales; el avance pasa a registrarse como video visto, los comentarios admiten respuestas autenticadas y `/cuenta` reúne ruta, actividad pendiente y agenda Zoom | Centrar la escuela en video y diálogo, reducir fricción evaluativa y convertir el perfil en el punto personal de continuidad y comunicación |
 | 0.54 | 21-07-2026 | La segunda lección “¿Qué es el Vedanta Advaita?” incorpora el video oficial `3HjTyOKPN6A`, aula propia, cuestionario, notas, comunidad y progreso; ambas aulas pasan a utilizar una plantilla compartida | Publicar la segunda unidad audiovisual real, conectarla con la Ruta de Aprendizaje y preparar una base mantenible para sumar las próximas lecciones sin duplicar su estructura |
 | 0.53 | 20-07-2026 | Biblioteca incorpora un módulo independiente y validado de veinte libros fundamentales del Vedanta Advaita, con niveles, fechas, autorías, finalidad, fuentes y notas de atribución o derechos | Ofrecer una ruta bibliográfica reconocible sin mezclar el catálogo general del Sanātana Dharma con un canon pedagógico específico ni igualar la autoridad de todas las obras |
 | 0.52 | 20-07-2026 | Biblioteca y Tradición explicitan la secuencia Saṃhitās védicas → Brāhmaṇas → Āraṇyakas → Upaniṣads, incorporan dos colecciones y enlazan las fuentes oficiales específicas | Evitar el salto directo de los Vedas a las Upaniṣads y enseñar los cuatro estratos con un orden visible, sin ocultar sus solapamientos cronológicos y textuales |

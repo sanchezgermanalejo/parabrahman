@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { LessonDiscussion } from "@/components/lesson-discussion";
 import { LessonNotes } from "@/components/lesson-notes";
-import { LessonQuiz } from "@/components/lesson-quiz";
+import { LessonViewedButton } from "@/components/lesson-viewed-button";
 import { SiteHeader } from "@/components/site-header";
 import { academyCourse, youtubeChannel } from "@/content/academy";
 import { getCurrentStudent } from "@/lib/auth/current-student";
@@ -26,8 +26,7 @@ export async function AcademyLessonPage({
   if (
     !lesson ||
     !lesson.available ||
-    !("video" in lesson) ||
-    !("quiz" in lesson)
+    !("video" in lesson)
   ) {
     notFound();
   }
@@ -103,12 +102,18 @@ export async function AcademyLessonPage({
 
               <LessonNotes lessonId={lesson.id} />
 
-              <LessonQuiz
+              <div className="mt-8 rounded-2xl border border-amber-300/15 bg-amber-300/5 p-5">
+                <p className="mb-4 text-sm leading-6 text-stone-400">
+                  Cuando termines el video, guarda esta lección para que tu
+                  perfil recuerde por dónde vas en la Ruta de Aprendizaje.
+                </p>
+                <LessonViewedButton
                 lessonId={lesson.id}
-                passingScore={lesson.quiz.passingScore}
-                questions={lesson.quiz.questions}
-                initiallyPassed={progress.completedLessonIds.includes(lesson.id)}
-              />
+                  lessonHref={lesson.href}
+                  signedIn={Boolean(student)}
+                  initiallyViewed={progress.completedLessonIds.includes(lesson.id)}
+                />
+              </div>
 
               <LessonDiscussion
                 lessonId={lesson.id}
