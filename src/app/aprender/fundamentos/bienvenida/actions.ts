@@ -80,7 +80,9 @@ export async function submitLessonQuiz(
   }
 
   revalidatePath("/cursos");
-  revalidatePath("/aprender/fundamentos/bienvenida");
+  if (lesson.href.startsWith("/")) {
+    revalidatePath(lesson.href);
+  }
   return {
     status: "passed",
     score,
@@ -97,8 +99,9 @@ export async function publishDiscussion(
   const kind = String(formData.get("kind") ?? "");
   const rating = Number(formData.get("rating"));
   const body = String(formData.get("body") ?? "").trim();
+  const lesson = academyCourse.lessons.find((item) => item.id === lessonId);
 
-  if (!availableLessonIds.some((id) => id === lessonId)) {
+  if (!lesson || !availableLessonIds.some((id) => id === lessonId)) {
     return { status: "error", message: "La lección no es válida." };
   }
   if (kind !== "comment" && kind !== "question") {
@@ -148,6 +151,8 @@ export async function publishDiscussion(
     };
   }
 
-  revalidatePath("/aprender/fundamentos/bienvenida");
+  if (lesson.href.startsWith("/")) {
+    revalidatePath(lesson.href);
+  }
   return { status: "success", message: "Tu aporte ya es público." };
 }

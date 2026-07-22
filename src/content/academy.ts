@@ -54,12 +54,48 @@ export const academyCourse = {
     {
       id: "yo-soy",
       order: 2,
-      title: "El sentido de «Yo Soy»",
+      title: "¿Qué es el Vedanta Advaita?",
       description:
-        "Próxima unidad: selección y secuencia de enseñanzas del canal.",
-      duration: "Próximamente",
-      href: youtubeChannel.url,
-      available: false,
+        "Introducción audiovisual al significado, propósito y enfoque no dual del Vedanta Advaita.",
+      duration: "A tu ritmo",
+      href: "/aprender/fundamentos/que-es-vedanta-advaita",
+      available: true,
+      video: {
+        youtubeId: "3HjTyOKPN6A",
+        embedUrl: "https://www.youtube-nocookie.com/embed/3HjTyOKPN6A?rel=0",
+        watchUrl: "https://www.youtube.com/watch?v=3HjTyOKPN6A",
+      },
+      quiz: {
+        passingScore: 2,
+        questions: [
+          {
+            id: "advaita-meaning",
+            prompt: "¿Qué expresa la palabra «Advaita»?",
+            options: ["No dualidad", "Ritual obligatorio", "Separación absoluta"],
+            correctOption: 0,
+          },
+          {
+            id: "central-inquiry",
+            prompt: "¿Qué relación fundamental investiga el Vedanta Advaita?",
+            options: [
+              "La identidad esencial entre Atman y Brahman",
+              "La oposición permanente entre conciencia y existencia",
+              "La superioridad de una personalidad sobre otra",
+            ],
+            correctOption: 0,
+          },
+          {
+            id: "teaching-purpose",
+            prompt: "¿Cuál es la orientación central de esta enseñanza?",
+            options: [
+              "Acumular experiencias extraordinarias",
+              "Reconocer la realidad del Sí Mismo mediante discernimiento",
+              "Adoptar una nueva identidad social",
+            ],
+            correctOption: 1,
+          },
+        ],
+      },
     },
     {
       id: "tat-tvam-asi",

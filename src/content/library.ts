@@ -31,6 +31,37 @@ export type LibraryBook = {
   alternativeLabel?: string;
 };
 
+export const vedicTextSequence = [
+  {
+    order: 1,
+    title: "Saṃhitās védicas",
+    shortTitle: "Vedas",
+    description: "Himnos, fórmulas y recitaciones de las cuatro colecciones védicas.",
+    url: "https://vedicheritage.gov.in/en/samhitas/",
+  },
+  {
+    order: 2,
+    title: "Brāhmaṇas",
+    shortTitle: "Brāhmaṇas",
+    description: "Explicaciones rituales y simbólicas vinculadas con cada tradición védica.",
+    url: "https://vedicheritage.gov.in/brahmanas/",
+  },
+  {
+    order: 3,
+    title: "Āraṇyakas",
+    shortTitle: "Āraṇyakas",
+    description: "Textos de transición hacia la contemplación y la interpretación interior.",
+    url: "https://vedicheritage.gov.in/aranyakas/",
+  },
+  {
+    order: 4,
+    title: "Upaniṣads",
+    shortTitle: "Upaniṣads",
+    description: "Investigación de ātman, Brahman, conocimiento y liberación.",
+    url: "https://vedicheritage.gov.in/upanishads/",
+  },
+] as const;
+
 export const libraryBooks: readonly LibraryBook[] = [
   {
     id: "vedic-samhitas",
@@ -47,6 +78,38 @@ export const libraryBooks: readonly LibraryBook[] = [
     url: "https://vedicheritage.gov.in/en/samhitas/",
     source: "Vedic Heritage Portal",
     rightsNote: "Consulta externa en el portal institucional de la IGNCA.",
+  },
+  {
+    id: "brahmanas",
+    title: "Brāhmaṇas",
+    originalTitle: "Aitareya · Kauṣītaki · Śatapatha · Taittirīya y otros",
+    author: "Tradición védica",
+    era: "Período védico",
+    date: "ca. 1000–700 a. C. · rangos aproximados y estratos diversos",
+    category: "sanatana",
+    summary:
+      "Segundo estrato del recorrido védico: textos asociados con las Saṃhitās que explican ritos, fórmulas, correspondencias y significados sacrificiales.",
+    language: "Sánscrito e inglés",
+    access: "Lectura oficial",
+    url: "https://vedicheritage.gov.in/brahmanas/",
+    source: "Vedic Heritage Portal",
+    rightsNote: "Consulta externa en el portal patrimonial oficial de la IGNCA.",
+  },
+  {
+    id: "aranyakas",
+    title: "Āraṇyakas",
+    originalTitle: "Aitareya · Kauṣītaki · Bṛhadāraṇyaka · Taittirīya y Talavakāra",
+    author: "Tradición védica",
+    era: "Período védico tardío",
+    date: "ca. 900–600 a. C. · rangos aproximados y superpuestos",
+    category: "sanatana",
+    summary:
+      "Tercer estrato del recorrido védico: textos que enlazan la interpretación ritual con la contemplación, el simbolismo y la investigación que culmina en las Upaniṣads.",
+    language: "Sánscrito e inglés",
+    access: "Lectura oficial",
+    url: "https://vedicheritage.gov.in/aranyakas/",
+    source: "Vedic Heritage Portal",
+    rightsNote: "Consulta externa en el portal patrimonial oficial de la IGNCA.",
   },
   {
     id: "upanishads",
