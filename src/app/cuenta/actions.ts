@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
@@ -47,7 +48,21 @@ export async function updateProfile(
   }
 
   await supabase.auth.refreshSession();
-  redirect("/");
+  redirect("/cuenta");
+}
+
+export async function markActivityReviewed() {
+  const supabase = await createClient();
+  const { data: claimsData, error: claimsError } = await supabase.auth.getClaims();
+  const userId = claimsData?.claims?.sub;
+
+  if (claimsError || typeof userId !== "string") redirect("/acceso?next=/cuenta");
+
+  await supabase.from("student_activity_state").upsert(
+    { user_id: userId, last_seen_at: new Date().toISOString() },
+    { onConflict: "user_id" },
+  );
+  revalidatePath("/cuenta");
 }
 
 export async function signOutFromAccount() {
