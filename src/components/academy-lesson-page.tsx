@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LessonDiscussion } from "@/components/lesson-discussion";
-import { LessonNotes } from "@/components/lesson-notes";
 import { LessonViewedButton } from "@/components/lesson-viewed-button";
 import { SiteHeader } from "@/components/site-header";
 import { academyCourse, youtubeChannel } from "@/content/academy";
@@ -99,8 +98,6 @@ export async function AcademyLessonPage({
                 </strong>{" "}
                 {unitNote}
               </aside>
-
-              <LessonNotes lessonId={lesson.id} />
 
               <div className="mt-8 rounded-2xl border border-amber-300/15 bg-amber-300/5 p-5">
                 <p className="mb-4 text-sm leading-6 text-stone-400">
