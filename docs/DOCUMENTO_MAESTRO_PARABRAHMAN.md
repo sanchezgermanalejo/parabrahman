@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.59
+**Versión:** 0.62
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -668,11 +668,14 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-057 | Debajo de cada video hay comentarios públicos sin estrellas ni clasificación; publicar y responder exige sesión, y las respuestas se vinculan al comentario original | Aceptada |
 | DM-058 | `/cuenta` funciona como perfil y centro de actividad: progreso, próximo paso, respuestas del video y foro, contador pendiente y agenda Zoom con un único marcador de última revisión | Aceptada |
 | DM-059 | Las “Notas del lector” se eliminan de las aulas; el único espacio de escritura bajo cada video es la conversación pública, legible por todos y con publicación reservada a alumnos autenticados | Aceptada |
-| DM-060 | YouTube y Zoom dejan de mostrarse en la navegación superior de escritorio y móvil; sus contenidos y rutas permanecen disponibles desde los contextos específicos de la escuela | Aceptada |
+| DM-060 | YouTube y Zoom dejan de mostrarse en la navegación superior de escritorio y móvil; sus contenidos y rutas permanecen disponibles desde los contextos específicos de la escuela | Reemplazada por DM-065 |
 | DM-061 | La etapa inicial conserva siete lecciones y fija su secuencia temprana: 1. Bienvenida, 2. ¿Qué es el Vedanta Advaita?, 3. ¿Quién soy yo? y 4. La presencia Yo Soy | Aceptada |
 | DM-062 | La quinta lección del módulo inicial es “Neti-neti: la negación de la ilusión”, entendida como práctica de discernimiento que niega las identificaciones que no constituyen el Sí Mismo | Aceptada |
 | DM-063 | El módulo inicial se completa con 6. “Atman, mi verdadera naturaleza” y 7. “La autorrealización del Sí Mismo”, cerrando una progresión desde la pregunta por la identidad hasta su integración | Aceptada |
 | DM-064 | La Etapa 1 adopta el título institucional único “Fundamentos del Vedanta Advaita” en el aula, el catálogo de rutas y el mapa curricular | Aceptada |
+| DM-065 | YouTube y Zoom vuelven a mostrarse como accesos directos en la navegación superior de escritorio y móvil; YouTube abre el canal oficial y Zoom conduce a `/encuentros` | Aceptada |
+| DM-066 | La navegación completa se reserva para anchos desde 1024 px; en tablet y celular los accesos se distribuyen en filas compactas sin desplazamiento horizontal ni superposición con la identidad | Aceptada |
+| DM-067 | El balizado curricular muestra miniaturas reales de YouTube para lecciones publicadas y una tarjeta institucional “Video próximamente” para unidades sin material; los identificadores se reutilizan desde `academy.ts` | Aceptada |
 
 ---
 
@@ -740,6 +743,9 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.62 | 23-07-2026 | El balizado de videos incorpora miniaturas reales, acción visual de reproducción y estados gráficos para las lecciones futuras | Convertir el mapa curricular en una experiencia audiovisual reconocible sin duplicar URLs ni inventar videos todavía no publicados |
+| 0.61 | 23-07-2026 | La botonera superior se corrige para tablet y celular: cambia de modo en 1024 px y muestra todos los accesos en filas adaptables | Evitar la superposición detectada a 768 px y asegurar que YouTube y Zoom sean visibles sin desplazamiento horizontal |
+| 0.60 | 23-07-2026 | Se restauran los accesos superiores a YouTube y Zoom en escritorio y móvil, conservando el canal oficial y la página de encuentros | Facilitar el acceso directo a las dos fuentes audiovisuales principales de la escuela |
 | 0.59 | 23-07-2026 | La Etapa 1 pasa a llamarse “Fundamentos del Vedanta Advaita” en todas sus representaciones académicas | Evitar títulos divergentes y establecer una denominación única para el primer módulo de siete lecciones |
 | 0.58 | 23-07-2026 | Las lecciones 6 y 7 del módulo inicial se fijan como “Atman, mi verdadera naturaleza” y “La autorrealización del Sí Mismo” | Completar las siete lecciones de Fundamentos con un cierre progresivo desde el discernimiento hasta el reconocimiento e integración del Sí Mismo |
 | 0.57 | 23-07-2026 | La quinta lección del módulo inicial se fija como “Neti-neti: la negación de la ilusión” sin alterar la regla de siete lecciones | Continuar el balizado progresivo de Fundamentos y situar el método de negación después del reconocimiento de la presencia Yo Soy |

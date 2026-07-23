@@ -30,7 +30,7 @@ export function SiteHeader({ student }: SiteHeaderProps) {
         </Link>
 
         <nav
-          className="hidden items-center gap-3 text-sm text-stone-300 md:flex"
+          className="hidden items-center gap-3 text-sm text-stone-300 lg:flex"
           aria-label="Navegación principal"
         >
           <Link href="/cursos" className="nav-glow transition hover:text-amber-200">
@@ -51,6 +51,20 @@ export function SiteHeader({ student }: SiteHeaderProps) {
           <Link href="/comunidad" className="nav-glow transition hover:text-sky-200">
             Comunidad
           </Link>
+          <a
+            href="https://www.youtube.com/@parabrahmanyosoy"
+            target="_blank"
+            rel="noreferrer"
+            className="nav-glow transition hover:text-red-200"
+          >
+            YouTube
+          </a>
+          <Link
+            href="/encuentros"
+            className="nav-glow transition hover:text-sky-200"
+          >
+            Zoom
+          </Link>
         </nav>
 
         <Link
@@ -65,7 +79,7 @@ export function SiteHeader({ student }: SiteHeaderProps) {
         </Link>
       </div>
       <nav
-        className="mx-auto flex max-w-7xl justify-center gap-6 overflow-x-auto px-4 pb-3 text-xs text-stone-400 md:hidden"
+        className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-5 gap-y-2 px-4 pb-3 text-xs text-stone-400 lg:hidden"
         aria-label="Navegación móvil"
       >
         <Link href="/cursos">Ruta</Link>
@@ -74,6 +88,17 @@ export function SiteHeader({ student }: SiteHeaderProps) {
         <Link href="/metafisica" className="text-violet-200">Metafísica</Link>
         <Link href="/sanscrito" className="text-emerald-200">Sánscrito</Link>
         <Link href="/comunidad" className="text-sky-200">Comunidad</Link>
+        <a
+          href="https://www.youtube.com/@parabrahmanyosoy"
+          target="_blank"
+          rel="noreferrer"
+          className="text-red-200"
+        >
+          YouTube
+        </a>
+        <Link href="/encuentros" className="text-sky-200">
+          Zoom
+        </Link>
       </nav>
     </header>
   );

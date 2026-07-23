@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { LearningProgress } from "@/components/learning-progress";
 import { SiteHeader } from "@/components/site-header";
+import { academyCourse } from "@/content/academy";
 import {
   curriculumCycles,
   curriculumLessons,
@@ -29,6 +31,12 @@ export default async function CoursesPage() {
     (lesson) => !completedLessonIds.has(lesson.id),
   );
   const firstName = student?.fullName?.split(" ")[0];
+  const academyLessonById = new Map<
+    string,
+    (typeof academyCourse.lessons)[number]
+  >(
+    academyCourse.lessons.map((lesson) => [lesson.id, lesson]),
+  );
 
   function getLessonState(lessonId: string) {
     if (!student) return "public" as const;
@@ -274,13 +282,49 @@ export default async function CoursesPage() {
                             {stage.lessons.map((lesson, lessonIndex) => {
                               const lessonState = getLessonState(lesson.id);
                               const isLocked = lessonState === "locked";
+                              const academyLesson = academyLessonById.get(lesson.id);
+                              const youtubeId =
+                                academyLesson && "video" in academyLesson
+                                  ? academyLesson.video.youtubeId
+                                  : null;
 
                               return (
                               <li key={lesson.id} className={`rounded-2xl border bg-black/20 p-4 ${isLocked ? "border-stone-900 opacity-55" : "border-stone-800"}`}>
-                                <div className="flex items-start gap-4">
-                                  <span className="grid size-8 shrink-0 place-items-center rounded-full border border-stone-700 text-xs text-stone-500">
-                                    {isLocked ? "🔒" : lessonState === "completed" ? "✓" : lessonIndex + 1}
-                                  </span>
+                                <div className="grid gap-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-start">
+                                  <div className="relative aspect-video overflow-hidden rounded-xl border border-stone-700/80 bg-[radial-gradient(circle_at_50%_35%,rgba(251,191,36,0.14),transparent_50%),#080b10]">
+                                    {youtubeId ? (
+                                      <>
+                                        <Image
+                                          src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`}
+                                          alt={`Miniatura del video ${lesson.title}`}
+                                          fill
+                                          unoptimized
+                                          sizes="(max-width: 639px) calc(100vw - 74px), 180px"
+                                          className="object-cover transition duration-500 hover:scale-[1.03]"
+                                        />
+                                        <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/10" />
+                                        <span className="absolute left-3 top-3 grid size-8 place-items-center rounded-full border border-white/25 bg-black/65 text-xs text-white backdrop-blur-sm">
+                                          {isLocked ? "🔒" : lessonState === "completed" ? "✓" : lessonIndex + 1}
+                                        </span>
+                                        <span className="absolute inset-0 grid place-items-center" aria-hidden="true">
+                                          <span className="grid size-11 place-items-center rounded-full border border-white/25 bg-black/65 text-base text-white shadow-xl backdrop-blur-sm">
+                                            ▶
+                                          </span>
+                                        </span>
+                                      </>
+                                    ) : (
+                                      <div className="absolute inset-0 grid place-items-center p-4 text-center">
+                                        <div>
+                                          <span className="mx-auto grid size-9 place-items-center rounded-full border border-amber-200/20 text-xs text-amber-100/70">
+                                            {isLocked ? "🔒" : lessonIndex + 1}
+                                          </span>
+                                          <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-stone-500">
+                                            Video próximamente
+                                          </p>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
                                   <div className="min-w-0 flex-1">
                                     <div className="flex flex-wrap items-center justify-between gap-2">
                                       <p className="font-medium text-stone-200">{lesson.title}</p>
