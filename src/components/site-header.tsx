@@ -51,20 +51,6 @@ export function SiteHeader({ student }: SiteHeaderProps) {
           <Link href="/comunidad" className="nav-glow transition hover:text-sky-200">
             Comunidad
           </Link>
-          <a
-            href="https://www.youtube.com/@parabrahmanyosoy"
-            target="_blank"
-            rel="noreferrer"
-            className="nav-glow transition hover:text-amber-200"
-          >
-            Canal de YouTube
-          </a>
-          <Link
-            href="/encuentros"
-            className="float-slow rounded-full border border-sky-300/25 px-3 py-1.5 text-sky-100 shadow-[0_0_24px_rgba(56,189,248,0.08)] transition hover:border-sky-300/50 hover:bg-sky-300/10"
-          >
-            Zoom
-          </Link>
         </nav>
 
         <Link
@@ -88,16 +74,6 @@ export function SiteHeader({ student }: SiteHeaderProps) {
         <Link href="/metafisica" className="text-violet-200">Metafísica</Link>
         <Link href="/sanscrito" className="text-emerald-200">Sánscrito</Link>
         <Link href="/comunidad" className="text-sky-200">Comunidad</Link>
-        <a
-          href="https://www.youtube.com/@parabrahmanyosoy"
-          target="_blank"
-          rel="noreferrer"
-        >
-          YouTube
-        </a>
-        <Link href="/encuentros" className="text-sky-200">
-          Zoom
-        </Link>
       </nav>
     </header>
   );

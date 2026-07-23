@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.55
+**Versión:** 0.59
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -259,7 +259,7 @@ El primer módulo contextual vive en `/tradicion` y recorre el corpus védico, l
 - Recordatorios y cambios de agenda.
 - Integración automática con Zoom solo si la operación manual deja de ser suficiente.
 
-Zoom tendrá un espacio propio y visible junto al canal de YouTube. YouTube concentrará las enseñanzas unipersonales; `/encuentros` presentará reuniones en vivo, conversaciones con participantes y grabaciones anteriores mediante miniaturas. La portada destacará el próximo encuentro. Hasta disponer de enlaces reales, la interfaz mostrará un estado vacío y no inventará reuniones.
+YouTube concentrará las enseñanzas unipersonales; `/encuentros` presentará reuniones en vivo, conversaciones con participantes y grabaciones anteriores mediante miniaturas. Ambos módulos seguirán disponibles desde sus contextos específicos, pero no ocuparán la navegación superior global durante esta etapa. Hasta disponer de enlaces reales, la interfaz mostrará un estado vacío y no inventará reuniones.
 
 ### Comunidad
 
@@ -667,6 +667,12 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-056 | Las lecciones audiovisuales eliminan cuestionarios obligatorios; un alumno autenticado registra explícitamente cada video como visto y Supabase conserva el avance con RLS | Aceptada |
 | DM-057 | Debajo de cada video hay comentarios públicos sin estrellas ni clasificación; publicar y responder exige sesión, y las respuestas se vinculan al comentario original | Aceptada |
 | DM-058 | `/cuenta` funciona como perfil y centro de actividad: progreso, próximo paso, respuestas del video y foro, contador pendiente y agenda Zoom con un único marcador de última revisión | Aceptada |
+| DM-059 | Las “Notas del lector” se eliminan de las aulas; el único espacio de escritura bajo cada video es la conversación pública, legible por todos y con publicación reservada a alumnos autenticados | Aceptada |
+| DM-060 | YouTube y Zoom dejan de mostrarse en la navegación superior de escritorio y móvil; sus contenidos y rutas permanecen disponibles desde los contextos específicos de la escuela | Aceptada |
+| DM-061 | La etapa inicial conserva siete lecciones y fija su secuencia temprana: 1. Bienvenida, 2. ¿Qué es el Vedanta Advaita?, 3. ¿Quién soy yo? y 4. La presencia Yo Soy | Aceptada |
+| DM-062 | La quinta lección del módulo inicial es “Neti-neti: la negación de la ilusión”, entendida como práctica de discernimiento que niega las identificaciones que no constituyen el Sí Mismo | Aceptada |
+| DM-063 | El módulo inicial se completa con 6. “Atman, mi verdadera naturaleza” y 7. “La autorrealización del Sí Mismo”, cerrando una progresión desde la pregunta por la identidad hasta su integración | Aceptada |
+| DM-064 | La Etapa 1 adopta el título institucional único “Fundamentos del Vedanta Advaita” en el aula, el catálogo de rutas y el mapa curricular | Aceptada |
 
 ---
 
@@ -734,6 +740,10 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.59 | 23-07-2026 | La Etapa 1 pasa a llamarse “Fundamentos del Vedanta Advaita” en todas sus representaciones académicas | Evitar títulos divergentes y establecer una denominación única para el primer módulo de siete lecciones |
+| 0.58 | 23-07-2026 | Las lecciones 6 y 7 del módulo inicial se fijan como “Atman, mi verdadera naturaleza” y “La autorrealización del Sí Mismo” | Completar las siete lecciones de Fundamentos con un cierre progresivo desde el discernimiento hasta el reconocimiento e integración del Sí Mismo |
+| 0.57 | 23-07-2026 | La quinta lección del módulo inicial se fija como “Neti-neti: la negación de la ilusión” sin alterar la regla de siete lecciones | Continuar el balizado progresivo de Fundamentos y situar el método de negación después del reconocimiento de la presencia Yo Soy |
+| 0.56 | 23-07-2026 | Se eliminan las notas privadas del aula y los accesos superiores a YouTube y Zoom; las lecciones 3 y 4 se fijan como “¿Quién soy yo?” y “La presencia Yo Soy” | Simplificar la experiencia audiovisual, concentrar la participación en comentarios públicos autenticados y consolidar el orden pedagógico del recorrido inicial |
 | 0.55 | 22-07-2026 | Se eliminan los cuestionarios de las lecciones audiovisuales; el avance pasa a registrarse como video visto, los comentarios admiten respuestas autenticadas y `/cuenta` reúne ruta, actividad pendiente y agenda Zoom | Centrar la escuela en video y diálogo, reducir fricción evaluativa y convertir el perfil en el punto personal de continuidad y comunicación |
 | 0.54 | 21-07-2026 | La segunda lección “¿Qué es el Vedanta Advaita?” incorpora el video oficial `3HjTyOKPN6A`, aula propia, cuestionario, notas, comunidad y progreso; ambas aulas pasan a utilizar una plantilla compartida | Publicar la segunda unidad audiovisual real, conectarla con la Ruta de Aprendizaje y preparar una base mantenible para sumar las próximas lecciones sin duplicar su estructura |
 | 0.53 | 20-07-2026 | Biblioteca incorpora un módulo independiente y validado de veinte libros fundamentales del Vedanta Advaita, con niveles, fechas, autorías, finalidad, fuentes y notas de atribución o derechos | Ofrecer una ruta bibliográfica reconocible sin mezclar el catálogo general del Sanātana Dharma con un canon pedagógico específico ni igualar la autoridad de todas las obras |

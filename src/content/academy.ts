@@ -8,7 +8,7 @@ export const youtubeChannel = {
 
 export const academyCourse = {
   slug: "fundamentos",
-  title: "Fundamentos de Vedanta Advaita",
+  title: "Fundamentos del Vedanta Advaita",
   eyebrow: "Recorrido inicial",
   description:
     "Una puerta de entrada ordenada a las enseñanzas audiovisuales de Parabrahman.",
@@ -44,13 +44,53 @@ export const academyCourse = {
       },
     },
     {
-      id: "tat-tvam-asi",
+      id: "pregunta-quien-soy",
       order: 3,
-      title: "Tat Tvam Asi",
+      title: "¿Quién soy yo?",
       description:
-        "Próxima unidad: profundización audiovisual en «Tú eres Eso».",
+        "Próxima unidad: investigación directa de la identidad y la presencia consciente.",
       duration: "Próximamente",
-      href: youtubeChannel.url,
+      href: "/cursos",
+      available: false,
+    },
+    {
+      id: "presencia-yo-soy",
+      order: 4,
+      title: "La presencia Yo Soy",
+      description:
+        "Próxima unidad: reconocimiento de la presencia anterior a toda identificación.",
+      duration: "Próximamente",
+      href: "/cursos",
+      available: false,
+    },
+    {
+      id: "neti-neti",
+      order: 5,
+      title: "Neti-neti: la negación de la ilusión",
+      description:
+        "Próxima unidad: discernimiento por negación de aquello que no constituye el Sí Mismo.",
+      duration: "Próximamente",
+      href: "/cursos",
+      available: false,
+    },
+    {
+      id: "atman-verdadera-naturaleza",
+      order: 6,
+      title: "Atman, mi verdadera naturaleza",
+      description:
+        "Próxima unidad: reconocimiento del Atman como la verdadera naturaleza del Sí Mismo.",
+      duration: "Próximamente",
+      href: "/cursos",
+      available: false,
+    },
+    {
+      id: "autorrealizacion-si-mismo",
+      order: 7,
+      title: "La autorrealización del Sí Mismo",
+      description:
+        "Próxima unidad: integración del recorrido inicial y significado de la autorrealización.",
+      duration: "Próximamente",
+      href: "/cursos",
       available: false,
     },
   ],
@@ -64,7 +104,7 @@ export const learningPaths = [
   {
     id: "fundamentos",
     order: 1,
-    title: "Fundamentos de Vedanta Advaita",
+    title: "Fundamentos del Vedanta Advaita",
     description:
       "Orientación inicial para comprender cómo estudiar y recorrer las enseñanzas.",
     status: "available",
