@@ -1,7 +1,7 @@
 # Documento Maestro — Parabrahman — Escuela de Vedanta Advaita
 
 **Estado:** Documento vivo
-**Versión:** 0.61
+**Versión:** 0.62
 **Fecha de creación:** 12 de julio de 2026
 **Responsables:** Parabrahman y socio técnico del proyecto
 **Próxima revisión:** al aprobar los fundamentos del producto o cerrar el primer módulo
@@ -675,6 +675,7 @@ La publicación operativa se concentra en `ACTUALIZAR_WEB_PARABRAHMAN.cmd`: vali
 | DM-064 | La Etapa 1 adopta el título institucional único “Fundamentos del Vedanta Advaita” en el aula, el catálogo de rutas y el mapa curricular | Aceptada |
 | DM-065 | YouTube y Zoom vuelven a mostrarse como accesos directos en la navegación superior de escritorio y móvil; YouTube abre el canal oficial y Zoom conduce a `/encuentros` | Aceptada |
 | DM-066 | La navegación completa se reserva para anchos desde 1024 px; en tablet y celular los accesos se distribuyen en filas compactas sin desplazamiento horizontal ni superposición con la identidad | Aceptada |
+| DM-067 | El balizado curricular muestra miniaturas reales de YouTube para lecciones publicadas y una tarjeta institucional “Video próximamente” para unidades sin material; los identificadores se reutilizan desde `academy.ts` | Aceptada |
 
 ---
 
@@ -742,6 +743,7 @@ Después se incorporará la administración editorial mínima para actualizar el
 
 | Versión | Fecha | Cambio | Motivo |
 |---|---|---|---|
+| 0.62 | 23-07-2026 | El balizado de videos incorpora miniaturas reales, acción visual de reproducción y estados gráficos para las lecciones futuras | Convertir el mapa curricular en una experiencia audiovisual reconocible sin duplicar URLs ni inventar videos todavía no publicados |
 | 0.61 | 23-07-2026 | La botonera superior se corrige para tablet y celular: cambia de modo en 1024 px y muestra todos los accesos en filas adaptables | Evitar la superposición detectada a 768 px y asegurar que YouTube y Zoom sean visibles sin desplazamiento horizontal |
 | 0.60 | 23-07-2026 | Se restauran los accesos superiores a YouTube y Zoom en escritorio y móvil, conservando el canal oficial y la página de encuentros | Facilitar el acceso directo a las dos fuentes audiovisuales principales de la escuela |
 | 0.59 | 23-07-2026 | La Etapa 1 pasa a llamarse “Fundamentos del Vedanta Advaita” en todas sus representaciones académicas | Evitar títulos divergentes y establecer una denominación única para el primer módulo de siete lecciones |
